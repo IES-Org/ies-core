@@ -1,0 +1,108 @@
+name: Create Issue Request
+description: Request a new feature, bugfix, or hotfix implementation
+title: "[Type]: "
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to submit a request! Please fill out this form as completely as possible.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of Change
+      description: What type of change is this?
+      options:
+        - develop
+        - bugfix
+        - hotfix
+    validations:
+      required: true
+
+  - type: input
+    id: review
+    attributes:
+      label: Review Branch Suffix
+      description: Optional name for review branches (qa-ready/* and rc-ready/*). Leave empty to use the issue title.
+      placeholder: my-enhancement
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        For development - What problem does this solve?
+        For bugs/hotfixes - What is the current behavior and what should happen instead?
+      placeholder: |
+        For development:
+        A clear description of the problem being solved. Ex. I'm always frustrated when [...]
+
+        For bugs/hotfixes:
+        Current behavior: [What happens now]
+        Expected behavior: [What should happen instead]
+        Impact: [Who is affected and how severely]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this change?
+      options:
+        - priority:low
+        - priority:medium
+        - priority:high
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Estimated Size
+      description: How large is this change?
+      options:
+        - size:xs (few hours)
+        - size:s (1-2 days)
+        - size:m (3-5 days)
+        - size:l (1-2 weeks)
+        - size:xl (2+ weeks)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What conditions must be met for this change to be considered complete?
+      placeholder: |
+        For development:
+        - [ ] implemented according to description
+        - [ ] Tests added/updated
+        - [ ] Documentation updated
+
+        For bugs/hotfixes:
+        - [ ] Fix implemented and verified
+        - [ ] Tests added/updated to prevent regression
+        - [ ] Root cause documented
+        - [ ] Incident report completed (for hotfixes)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our contribution guidelines
+      options:
+        - label: I have checked for duplicate issues
+          required: true
+        - label: I have provided all the necessary information
+          required: true
+        - label: For hotfixes - I understand this will be merged directly to main
+          required: false

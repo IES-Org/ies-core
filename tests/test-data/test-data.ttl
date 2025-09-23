@@ -1,0 +1,29 @@
+# NOTE: THIS IS AN EXAMPLE FILE ONLY. IT IS NOT MEANT TO BE USED IN PRODUCTION.
+# YOU SHOULD PROVIDE YOUR OWN VALIDATION QUERIES.
+
+@prefix ies: <http://ies.data.gov.uk/ontology/ies#> .
+@prefix domain: <http://ies.data.gov.uk/ontology/ies-domain#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+# Dataset Metadata
+# ToDo - replace [domain] with the actual domain name
+[] a void:Dataset ;
+    dcterms:title "IES [Domain] Data"@en-GB ;
+    dcterms:description "Instance data for the IES [Domain] ontology"@en-GB ;
+    dcterms:created "2024-12-26"^^xsd:date ;
+    dcterms:modified "2024-12-26"^^xsd:date ;
+    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
+    dcterms:rights "Crown Copyright"@en-GB ;
+    dcterms:dateCopyrighted "2024"^^xsd:gYear ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:language "en-GB" ;
+    dcterms:conformsTo domain: .
+
+# Example Individuals
+# domain:exampleInstance a domain:ExampleClass ;
+#     rdfs:label "Example Instance"@en-GB ;
+#     domain:hasValue "Some value" ;
+#     domain:hasRelation domain:otherInstance .

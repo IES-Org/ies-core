@@ -1,0 +1,29 @@
+##############################################
+# Note this file is a template and should be #
+# updated with the actual content.           #
+##############################################
+
+# Core Dependencies
+# Format: OntologyIRI | Version | Last Updated | Source URL | Local Path | Description
+
+# Foundational Ontologies
+http://purl.obolibrary.org/obo/bfo.owl | 2.0.2 | 2022-01-15 | https://basic-formal-ontology.org/bfo.owl | imports/bfo.owl | Basic Formal Ontology (BFO)
+
+# Common Vocabularies
+http://xmlns.com/foaf/0.1/ | 0.99 | 2014-01-14 | http://xmlns.com/foaf/0.1/ | imports/foaf.rdf | Friend of a Friend Vocabulary
+http://purl.org/dc/terms/ | 1.1 | 2012-06-14 | http://purl.org/dc/terms/ | imports/dcterms.rdf | Dublin Core Terms
+http://www.w3.org/2004/02/skos/core | 2009-08-18 | http://www.w3.org/TR/skos-reference/skos.rdf | imports/skos.rdf | Simple Knowledge Organization System
+
+# Domain Specific
+http://example.org/external/domain-ontology | 1.2.3 | 2024-01-10 | https://example.org/ontologies/domain.owl | imports/domain-ontology.owl | Domain-specific concepts and relations
+http://example.org/external/application-ontology | 0.9.1 | 2024-02-15 | https://example.org/ontologies/application.ttl | imports/application-ontology.ttl | Application-specific extensions
+
+# Development Dependencies
+http://www.w3.org/ns/shacl | 1.0 | 2017-07-20 | https://www.w3.org/ns/shacl.ttl | imports/shacl.ttl | Shapes Constraint Language
+
+# Notes:
+# - All versions should be pinned to specific releases
+# - Local copies should be stored in the imports directory
+# - Update this file when adding or updating dependencies
+# - Check compatibility when upgrading versions
+# - Validate imports closure after changes

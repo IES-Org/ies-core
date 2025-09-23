@@ -1,0 +1,227 @@
+# .github/workflows/pr-checks.yml
+# ==============================================================================
+# Pull Request Workflow
+# ==============================================================================
+#
+# This workflow manages the Pull Request process across IES repositories by:
+#
+# 1. Validating PR target branches according to established branch flow rules
+# 2. Automatically applying and managing PR labels
+# 3. Enforcing issue linking for feature, bugfix, and hotfix branches
+# 4. Cleaning up process labels after PR merge
+#
+# Branch Flow Rules:
+# - qa-ready/* -> rc-ready/* : QA-ready branches are prepared for release candidates
+# - rc-ready/* -> main       : Production release candidates
+# - develop/* -> qa-ready/*  : development of new classes and relationships
+# - bugfix/*  -> qa-ready/*  : Bug fixes that require QA review
+# - hotfix/*  -> main        : Critical production fixes
+#
+# Labels:
+# - Process: needs-review, needs-link, invalid-target
+# - Type: enhancement, bug, hotfix, release-candidate, production-release
+# - Inherited: priority:*, size:*, documentation
+#
+# Required Permissions:
+# - contents: read
+# - issues: write
+# - pull-requests: write
+#
+# Author: Dave Dyke (IES Ontology Team)
+# Last Updated: 2025-01-14
+# ==============================================================================
+
+name: Pull Request Checks (Automated)
+
+on:
+  pull_request:
+    types: [opened, closed, reopened, edited]
+    branches:
+      - main
+      - 'qa-ready/**'
+      - 'rc-ready/**'
+      - 'develop/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  process_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate PR target branch
+        if: github.event.action == 'opened' || github.event.action == 'edited'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.IES_ONTOLOGIES_PAT }}
+          script: |
+            const pr = context.payload.pull_request;
+            
+            try {
+              const sourceBranch = pr.head.ref;
+              const targetBranch = pr.base.ref;
+              
+              // Define allowed branch flows with prefix indicators
+              const allowedFlows = [
+                { source: 'qa-ready/', target: 'rc-ready/', targetIsPrefix: true, isPrefix: true },
+                { source: 'rc-ready/', target: 'main', targetIsPrefix: false, isPrefix: true },
+                { source: 'develop/', target: 'qa-ready/', targetIsPrefix: true, isPrefix: true },
+                { source: 'bugfix/', target: 'qa-ready/', targetIsPrefix: true, isPrefix: true },
+                { source: 'hotfix/', target: 'main', targetIsPrefix: false, isPrefix: true },
+                { source: 'sync-ies-tools-', target: 'main', targetIsPrefix: false, isPrefix: true }
+              ];
+              
+              // Check if PR is targeting the correct branch
+              let isValidFlow = false;
+              let matchedFlow = null;
+              
+              // Check for matches considering both source and target prefixes
+              for (const flow of allowedFlows) {
+                const sourceMatches = flow.isPrefix 
+                  ? sourceBranch.startsWith(flow.source)
+                  : sourceBranch === flow.source;
+                
+                if (sourceMatches) {
+                  if (flow.targetIsPrefix) {
+                    // For prefix targets, check if target branch starts with the required prefix
+                    isValidFlow = targetBranch.startsWith(flow.target);
+                  } else {
+                    // For exact targets, require exact match
+                    isValidFlow = targetBranch === flow.target;
+                  }
+                  matchedFlow = flow;
+                  break;
+                }
+              }
+              
+              if (!isValidFlow) {
+                let message = '';
+                if (matchedFlow) {
+                  const targetDesc = matchedFlow.targetIsPrefix 
+                    ? `a branch starting with \`${matchedFlow.target}\``
+                    : `the \`${matchedFlow.target}\` branch`;
+                  message = `⚠️ Invalid target branch. ${matchedFlow.source} ${matchedFlow.isPrefix ? 'branches' : 'branch'} should target ${targetDesc}, not \`${targetBranch}\`.`;
+                } else {
+                  message = `⚠️ Invalid branch flow. Unable to determine the correct target branch for \`${sourceBranch}\`.`;
+                }
+                
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: message
+                });
+                
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['invalid-target']
+                });
+              }
+              
+            } catch (error) {
+              console.error('Error validating PR target:', error);
+              core.setFailed(error.message);
+            }
+
+      - name: Process PR labels
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.IES_ONTOLOGIES_PAT }}
+          script: |
+            const pr = context.payload.pull_request;
+            
+            try {
+              if (context.payload.action === 'opened' || context.payload.action === 'reopened') {
+                const sourceBranch = pr.head.ref;
+                const targetBranch = pr.base.ref;
+                let labels = ['needs-review'];
+                
+                // Add appropriate flow label
+                if (sourceBranch.startsWith('develop/')) {
+                  labels.push('enhancement');
+                } else if (sourceBranch.startsWith('bugfix/')) {
+                  labels.push('bug');
+                } else if (sourceBranch.startsWith('hotfix/')) {
+                  labels.push('hotfix');
+                } else if (sourceBranch.startsWith('qa-ready/') && targetBranch.startsWith('rc-ready/')) {
+                  labels.push('release-candidate');
+                } else if (sourceBranch.startsWith('rc-ready/') && targetBranch === 'main') {
+                  labels.push('production-release');
+                }
+                
+                // Check if PR is linked to an issue (for develop/, bugfix/, hotfix/ branches)
+                if (['develop/', 'bugfix/', 'hotfix/'].some(prefix => sourceBranch.startsWith(prefix))) {
+                  const bodyMatch = pr.body?.match(/(closes|fixes|resolves) #(\d+)/i);
+                  if (bodyMatch) {
+                    const issueNumber = bodyMatch[2];
+                    console.log(`PR is linked to issue #${issueNumber}`);
+                    
+                    // Get linked issue labels
+                    const issue = await github.rest.issues.get({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: parseInt(issueNumber)
+                    });
+                    
+                    // Copy priority, size, and documentation labels from linked issue
+                    issue.data.labels.forEach(label => {
+                      if (label.name.startsWith('priority:') || 
+                          label.name.startsWith('size:') || 
+                          label.name === 'documentation') {
+                        labels.push(label.name);
+                      }
+                    });
+                  } else {
+                    // Add warning comment if no linked issue
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: pr.number,
+                      body: '⚠️ This PR is not linked to any issue. Please link an issue using "Closes #X" or "Fixes #X" in the PR description.'
+                    });
+                    labels.push('needs-link');
+                  }
+                }
+                
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: labels
+                });
+                
+              } else if (context.payload.action === 'closed' && pr.merged) {
+                // Remove review-related labels when PR is merged
+                const labelsToRemove = ['needs-review', 'needs-link', 'invalid-target'];
+                for (const label of labelsToRemove) {
+                  try {
+                    await github.rest.issues.removeLabel({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: pr.number,
+                      name: label
+                    });
+                  } catch (error) {
+                    // Ignore error if label doesn't exist
+                    if (error.status !== 404) throw error;
+                  }
+                }
+              }
+              
+              console.log('Pull request processed successfully');
+              
+            } catch (error) {
+              console.error('Error processing pull request:', error);
+              core.setFailed(error.message);
+            }

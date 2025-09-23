@@ -1,0 +1,203 @@
+# .github/workflows/setup-labels.yml
+
+name: Setup Repository Labels
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  setup_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup labels
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labels = [
+              // Existing standard labels
+              {
+                name: 'bug',
+                color: 'd73a4a',
+                description: 'Something is not working'
+              },
+              {
+                name: 'hotfix',
+                color: 'd63b5b',
+                description: 'Urgent fixes'
+              },
+              {
+                name: 'documentation',
+                color: '0075ca',
+                description: 'General documentation tasks'
+              },
+              {
+                name: 'duplicate',
+                color: 'cfd3d7',
+                description: 'This issue or pull request already exists'
+              },
+              {
+                name: 'enhancement',
+                color: 'a2eeef',
+                description: 'New feature or request'
+              },
+              {
+                name: 'good first issue',
+                color: '7057ff',
+                description: 'Good for newcomers'
+              },
+              {
+                name: 'help wanted',
+                color: '008672',
+                description: 'Extra attention is needed'
+              },
+              {
+                name: 'invalid',
+                color: 'e4e669',
+                description: 'This doesn\'t seem right'
+              },
+              {
+                name: 'question',
+                color: 'd876e3',
+                description: 'Further information is requested'
+              },
+              {
+                name: 'wontfix',
+                color: 'ffffff',
+                description: 'This will not be worked on'
+              },
+              
+              // Priority labels (keeping original colors)
+              {
+                name: 'priority:high',
+                color: 'b60205',
+                description: 'Urgent issues'
+              },
+              {
+                name: 'priority:medium',
+                color: 'fbca04',
+                description: 'Important but not urgent'
+              },
+              {
+                name: 'priority:low',
+                color: '0e8a16',
+                description: 'Nice to have'
+              },
+              
+              // Size labels
+              {
+                name: 'size:xs',
+                color: 'c2e0c6',
+                description: 'Extra small (few hours)'
+              },
+              {
+                name: 'size:s',
+                color: '90c986',
+                description: 'Small (1-2 days)'
+              },
+              {
+                name: 'size:m',
+                color: '5dae53',
+                description: 'Medium (3-5 days)'
+              },
+              {
+                name: 'size:l',
+                color: '338a2a',
+                description: 'Large (1-2 weeks)'
+              },
+              {
+                name: 'size:xl',
+                color: '165c10',
+                description: 'Extra large (2+ weeks)'
+              },
+              
+              // Process & Review labels
+              {
+                name: 'wip',
+                color: '1d76db',
+                description: 'Work in progress'
+              },
+              {
+                name: 'tech-review-needed',
+                color: '48C5DA',
+                description: 'Needs technical review'
+              },
+              {
+                name: 'ready-for-review',
+                color: 'F795DF',
+                description: 'Ready for final review'
+              },
+              {
+                name: 'has-issue',
+                color: '0E8A16',
+                description: 'PR linked to an issue'
+              },
+              {
+                name: 'needs-attention',
+                color: 'e11d21',
+                description: 'Pull request needs attention (wrong target branch etc.)'
+              },
+              {
+                name: 'release-candidate',
+                color: 'f22e32',
+                description: 'Pull request is a release candidate'
+              },
+              {
+                name: 'production-release',
+                color: 'f43f43',
+                description: 'Pull request is a production release'
+              },
+            
+              // Documentation-specific labels
+              {
+                name: 'docs-new',
+                color: '3A4520',
+                description: 'New documentation needed'
+              },
+              {
+                name: 'docs-update',
+                color: '464444',
+                description: 'Updates to existing docs'
+              },
+              {
+                name: 'docs-fix',
+                color: 'C90572',
+                description: 'Documentation fixes'
+              },
+              {
+                name: 'docs-clarity',
+                color: '7B61B1',
+                description: 'Improvements to documentation clarity'
+              }
+            ];
+            
+            for (const label of labels) {
+              try {
+                // Try to update existing label
+                await github.rest.issues.updateLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label.name,
+                  color: label.color,
+                  description: label.description
+                });
+                console.log(`Updated label: ${label.name}`);
+              } catch (error) {
+                if (error.status === 404) {
+                  // Label doesn't exist, create it
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: label.name,
+                    color: label.color,
+                    description: label.description
+                  });
+                  console.log(`Created label: ${label.name}`);
+                } else {
+                  throw error;
+                }
+              }
+            }

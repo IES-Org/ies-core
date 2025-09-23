@@ -1,0 +1,269 @@
+name: Create Pull Request
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_type:
+        description: 'PR type'
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - rc
+          - hotfix
+      base:
+        description: 'Target branch (qa/*, rc/*, or main)'
+        required: false
+        type: string
+        default: ''
+      head:
+        description: 'Source branch (defaults to current branch)'
+        required: false
+        type: string
+        default: ''
+      draft:
+        description: 'Create as draft PR'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write # needed for linking issues and adding labels
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REF_NAME: ${{ github.ref_name }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - name: Get source branch
+        id: get_source
+        run: |
+          if [ -n "${{ inputs.head }}" ]; then
+            # Verify specified branch exists
+            if ! git show-ref --verify --quiet "refs/remotes/origin/${{ inputs.head }}"; then
+              echo "Error: Source branch '${{ inputs.head }}' does not exist"
+              exit 1
+            fi
+            BRANCH="${{ inputs.head }}"
+          else
+            # Use current branch
+            BRANCH="$GITHUB_REF_NAME"
+          fi
+          
+          # Extract branch type and components
+          if [[ "$BRANCH" =~ ^(dev|bugfix|hotfix|qa|rc)/([^/]+)(-[0-9]+)?$ ]]; then
+            BRANCH_TYPE="${BASH_REMATCH[1]}"
+            BRANCH_SUFFIX="${BASH_REMATCH[2]}"
+            ISSUE_NUMBER="${BASH_REMATCH[3]#-}"  # Remove leading dash if present
+            
+            # Handle legacy branch names
+            if [ "$BRANCH_TYPE" = "develop" ]; then
+              BRANCH_TYPE="dev"
+            fi
+            
+            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            echo "type=$BRANCH_TYPE" >> $GITHUB_OUTPUT
+            echo "suffix=$BRANCH_SUFFIX" >> $GITHUB_OUTPUT
+            echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          else
+            echo "Error: Branch '$BRANCH' doesn't follow naming convention"
+            exit 1
+          fi
+
+      - name: Validate PR type
+        id: validate_pr_type
+        run: |
+          BRANCH_TYPE="${{ steps.get_source.outputs.type }}"
+          PR_TYPE="${{ inputs.pr_type }}"
+          
+          # Validate PR type matches branch type
+          if [ "$PR_TYPE" = "dev" ] && [ "$BRANCH_TYPE" != "dev" ] && [ "$BRANCH_TYPE" != "bugfix" ]; then
+            echo "Error: Dev PRs must come from dev/* or bugfix/* branches"
+            exit 1
+          elif [ "$PR_TYPE" = "qa" ] && [ "$BRANCH_TYPE" != "qa" ]; then
+            echo "Error: QA PRs must come from qa/* branches"
+            exit 1
+          elif [ "$PR_TYPE" = "rc" ] && [ "$BRANCH_TYPE" != "rc" ]; then
+            echo "Error: RC PRs must come from rc/* branches"
+            exit 1
+          elif [ "$PR_TYPE" = "hotfix" ] && [ "$BRANCH_TYPE" != "hotfix" ]; then
+            echo "Error: Hotfix PRs must come from hotfix/* branches"
+            exit 1
+          fi
+
+      - name: Determine target branch
+        id: get_target
+        run: |
+          if [ -n "${{ inputs.base }}" ]; then
+            TARGET_BRANCH="${{ inputs.base }}"
+          else
+            PR_TYPE="${{ inputs.pr_type }}"
+            SOURCE_BRANCH="${{ steps.get_source.outputs.branch }}"
+            
+            if [ "$PR_TYPE" = "dev" ]; then
+              # Extract feature name for qa branch
+              FEATURE=$(echo "$SOURCE_BRANCH" | sed -E 's/^(dev|bugfix)\/([^-]+).*/\2/')
+              TARGET_BRANCH="qa/$FEATURE"
+            elif [ "$PR_TYPE" = "qa" ]; then
+              echo "Error: QA PRs require target RC branch (--base rc/vX.YRC.Z)"
+              exit 1
+            elif [ "$PR_TYPE" = "rc" ]; then
+              # Extract major.minor version from RC branch
+              RC_VERSION=$(echo "$SOURCE_BRANCH" | sed -E 's/^rc\/v([0-9]+\.[0-9]+)RC\.[0-9]+$/\1/')
+              if [ -z "$RC_VERSION" ]; then
+                echo "Error: Cannot determine version from RC branch name"
+                exit 1
+              fi
+              TARGET_BRANCH="v$RC_VERSION"
+            elif [ "$PR_TYPE" = "hotfix" ]; then
+              echo "Error: Hotfix PRs require target release branch (--base vX.Y)"
+              exit 1
+            else
+              echo "Error: Target branch is required for $PR_TYPE PRs"
+              exit 1
+            fi
+          fi
+          
+          # Validate target branch pattern
+          if [ "${{ inputs.pr_type }}" = "dev" ]; then
+            if ! [[ "$TARGET_BRANCH" =~ ^qa/[^/]+$ ]]; then
+              echo "Error: Dev PRs must target a qa/* branch"
+              exit 1
+            fi
+          elif [ "${{ inputs.pr_type }}" = "qa" ]; then
+            if ! [[ "$TARGET_BRANCH" =~ ^rc/v[0-9]+\.[0-9]+RC\.[0-9]+$ ]]; then
+              echo "Error: QA PRs must target an rc/vX.YRC.Z branch"
+              exit 1
+            fi
+          elif [ "${{ inputs.pr_type }}" = "rc" ]; then
+            if ! [[ "$TARGET_BRANCH" =~ ^v[0-9]+\.[0-9]+$ ]]; then
+              echo "Error: RC PRs must target a vX.Y release branch"
+              exit 1
+            fi
+          elif [ "${{ inputs.pr_type }}" = "hotfix" ]; then
+            if ! [[ "$TARGET_BRANCH" =~ ^v[0-9]+\.[0-9]+$ ]]; then
+              echo "Error: Hotfix PRs must target a vX.Y release branch"
+              exit 1
+            fi
+          fi
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Verify target branch exists or create it
+          if ! git show-ref --verify --quiet "refs/remotes/origin/$TARGET_BRANCH"; then
+            if [ "$TARGET_BRANCH" = "main" ]; then
+              echo "Error: main branch should already exist"
+              exit 1
+            fi
+            
+            echo "Creating branch $TARGET_BRANCH from main..."
+            git fetch origin main
+            git checkout -b "$TARGET_BRANCH" origin/main
+            git push origin "$TARGET_BRANCH"
+            
+            # Return to original branch
+            git checkout ${{ github.ref_name }}
+          fi
+          
+          echo "target_branch=$TARGET_BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Create pull request
+        id: create_pr
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.IES_ONTOLOGIES_PAT }}
+          script: |
+            const sourceType = '${{ steps.get_source.outputs.type }}';
+            const prType = '${{ inputs.pr_type }}'.toUpperCase();
+            const sourceBranch = '${{ steps.get_source.outputs.branch }}';
+            const targetBranch = '${{ steps.get_target.outputs.target_branch }}';
+            const issueNumber = '${{ steps.get_source.outputs.issue_number }}';
+            const isDraft = ${{ inputs.draft }};
+            
+            try {
+              // Extract feature name from target branch for PR title
+              let title = `[${prType}] `;
+              const featureMatch = targetBranch.match(/qa\/([^/]+)|rc\/([^/]+)/);
+              if (featureMatch) {
+                const featureName = featureMatch[1] || featureMatch[2];
+                title += featureName.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+              } else {
+                // Fallback to branch suffix
+                title += '${{ steps.get_source.outputs.suffix }}'.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+              }
+              
+              // Determine labels
+              let labels = [];
+              if (sourceType === 'dev') {
+                labels.push('enhancement');
+              } else if (sourceType === 'bugfix') {
+                labels.push('bug');
+              } else if (sourceType === 'hotfix') {
+                labels.push('hotfix');
+              }
+              labels.push(isDraft ? 'wip' : 'ready-for-review');
+              
+              // Extract issue number from head branch if not already set
+              let extractedIssueNumber = null;
+              const headMatch = sourceBranch.match(/.*-(\d+)$/);
+              if (headMatch) {
+                extractedIssueNumber = headMatch[1];
+              }
+              
+              // Use extracted issue number or previously set one
+              const finalIssueNumber = extractedIssueNumber || issueNumber;
+              
+              // Create PR with link to issue
+              const pr = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: finalIssueNumber ? (prType === 'RC' ? `Closes #${finalIssueNumber}` : `Related to #${finalIssueNumber}`) : '',
+                head: sourceBranch,
+                base: targetBranch,
+                draft: isDraft
+              });
+              
+              // Add labels
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.data.number,
+                labels: labels
+              });
+              
+              // Link PR to issue if issue number exists
+              if (finalIssueNumber) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: parseInt(finalIssueNumber),
+                  body: `Linked to #${pr.data.number}`
+                });
+              }
+              
+              console.log(`Created PR #${pr.data.number}: ${pr.data.html_url}`);
+              return { prNumber: pr.data.number, prUrl: pr.data.html_url };
+              
+            } catch (error) {
+              console.error('Error creating pull request:', error);
+              core.setFailed(error.message);
+            }
+
+      - name: Show results
+        if: success()
+        run: |
+          echo "✨ Pull request created: ${{ fromJson(steps.create_pr.outputs.result).prUrl }}"

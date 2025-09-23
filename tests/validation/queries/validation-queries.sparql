@@ -1,0 +1,98 @@
+# Filename: validation-queries.sparql
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.org/ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+###############################################
+# Note this file is a template and should be  #
+# updated with the actual validation queries  #
+###############################################
+
+# Query 1: Find instances missing required properties
+SELECT DISTINCT ?instance
+WHERE {
+    ?instance a ex:Person .
+    FILTER NOT EXISTS { ?instance ex:firstName ?name }
+}
+
+# Query 2: Validate age range constraints
+SELECT ?person ?age
+WHERE {
+    ?person a ex:Person ;
+            ex:age ?age .
+    FILTER (?age < 0 || ?age > 150)
+}
+
+# Query 3: Check for orphaned instances
+SELECT ?instance
+WHERE {
+    ?instance ?p ?o .
+    FILTER NOT EXISTS {
+        ?instance a ?type .
+        ?type a owl:Class .
+    }
+}
+
+# Query 4: Validate date relationships
+SELECT ?project ?startDate ?endDate
+WHERE {
+    ?project a ex:Project ;
+             ex:startDate ?startDate ;
+             ex:endDate ?endDate .
+    FILTER (?endDate < ?startDate)
+}
+
+# Query 5: Check for duplicate unique identifiers
+SELECT ?id (COUNT(?instance) as ?count)
+WHERE {
+    ?instance ex:identifier ?id
+}
+GROUP BY ?id
+HAVING (?count > 1)
+
+# Query 6: Validate reference integrity
+SELECT ?instance ?ref
+WHERE {
+    ?instance ex:references ?ref .
+    FILTER NOT EXISTS {
+        ?ref a ?any
+    }
+}
+
+# Query 7: Check for deprecated class usage
+SELECT ?instance
+WHERE {
+    ?class rdfs:subClassOf owl:DeprecatedClass .
+    ?instance a ?class .
+}
+
+# Query 8: Validate cardinality constraints
+SELECT ?person (COUNT(?email) as ?emailCount)
+WHERE {
+    ?person a ex:Person ;
+            ex:email ?email .
+}
+GROUP BY ?person
+HAVING (?emailCount > 1)
+
+# Query 9: Check property domain/range consistency
+SELECT DISTINCT ?property ?subject ?object
+WHERE {
+    ?property rdfs:domain ?expectedDomain ;
+              rdfs:range ?expectedRange .
+    ?subject ?property ?object .
+    FILTER NOT EXISTS { ?subject a ?expectedDomain }
+    UNION
+    FILTER NOT EXISTS { ?object a ?expectedRange }
+}
+
+# Query 10: Validate enumerated values
+SELECT ?instance ?status
+WHERE {
+    ?instance a ex:Project ;
+              ex:status ?status .
+    FILTER (?status NOT IN ("PLANNED", "IN_PROGRESS", "COMPLETED", "CANCELLED"))
+}

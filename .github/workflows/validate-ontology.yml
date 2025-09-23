@@ -1,0 +1,40 @@
+# .github/workflows/validate-ontology.yml
+
+# Note: this is a dummy workflow pending the implementation of the ontology validation workflow
+
+name: Ontology Validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for running this workflow'
+        required: false
+        type: string
+        default: 'No reason provided'
+
+jobs:
+  null_job:
+    name: Do Nothing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Job Info
+        run: |
+          echo "🏃 Running null workflow"
+          echo "⏰ Time: $(date)"
+          echo "🔄 Run attempt: ${{ github.run_attempt }}"
+          echo "🆔 Run ID: ${{ github.run_id }}"
+          echo "💬 Reason: ${{ inputs.reason }}"
+
+      - name: Environment Info
+        run: |
+          echo "👤 Actor: ${{ github.actor }}"
+          echo "📦 Repository: ${{ github.repository }}"
+          echo "🌳 Branch: ${{ github.ref }}"
+          echo "💻 Runner OS: ${{ runner.os }}"
+
+      - name: Success
+        run: |
+          echo "✅ Null workflow completed successfully"
+          echo "⌛ Duration: $SECONDS seconds"

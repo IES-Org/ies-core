@@ -1,0 +1,19 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ndt: <http://nationaldigitaltwin.gov.uk/ontology/ndt#>  .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+@prefix ex: <http://example.com/> .
+
+ex:LabelShape a sh:PropertyShape ;
+		sh:path rdfs:label ;
+        sh:minCount 1  .
+
+ex:ClassShape a sh:NodeShape ;
+	sh:targetClass rdfs:Class ;
+	sh:property ex:LabelShape .
+
+ex:PropertyShape a sh:NodeShape ;
+    sh:targetClass owl:ObjectProperty ;
+    sh:property ex:LabelShape .

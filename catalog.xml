@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ToDo - replace the following URIs with the actual URIs of the ontologies -->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="<http://informationexchangestandard.org/ont/ies#>" uri="file://${PROJECT_ROOT}/core/src/ontology/ontology.ttl"/>
+    <!-- ToDo - uncomment and replace 'domain' with the actual name of a domain ontology -->
+    <!-- <uri name="https://example.org/ies-domain" uri="file://${PROJECT_ROOT}/src/ontology/ontology.ttl"/> -->
+</catalog>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+##############################################
+# Note this file is a template and should be #
+# updated with the actual content.           #
+##############################################
+-->
+<!-- ToDo - replace the following URIs with the actual URIs of the ontologies -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- Main ontology -->
+    <uri id="Main" name="http://informationexchangestandard.org/ont/ies#" uri="file://${PROJECT_ROOT}/core/src/ontology/ontology.ttl"/>
+
+    <!-- Core imported ontologies -->
+    <uri id="Imports" name="http://purl.obolibrary.org/obo/bfo.owl" uri="file:/imports/bfo.owl"/>
+    <uri id="Imports" name="http://xmlns.com/foaf/0.1/" uri="file:/imports/foaf.rdf"/>
+    <uri id="Imports" name="http://purl.org/dc/terms/" uri="file:/imports/dcterms.rdf"/>
+
+    <!-- Domain-specific imports -->
+    <uri id="Imports" name="http://www.w3.org/2004/02/skos/core" uri="file:/imports/skos.rdf"/>
+    <uri id="Imports" name="http://schema.org/" uri="file:/imports/schema.rdf"/>
+
+    <!-- Project-specific external ontologies -->
+    <uri id="Imports" name="http://example.org/external/domain-ontology" uri="file:/imports/domain-ontology.owl"/>
+
+    <!-- Validation shapes -->
+    <uri id="Imports" name="http://example.org/shapes/main-shapes" uri="file:/tests/validation/shapes/main-shapes.ttl"/>
+
+    <!-- Group URIs -->
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

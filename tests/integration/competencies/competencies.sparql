@@ -1,0 +1,36 @@
+##############################################
+# Note this file is a template and should be #
+# updated with the actual content.           #
+##############################################
+#################################################################
+# Competency Questions / Use Cases for IES [Domain] Ontology
+#################################################################
+
+# ToDo - replace [domain] with the actual domain name
+
+# CQ1: Find all entities of type X
+PREFIX domain: <http://ies.data.gov.uk/ontology/ies-domain#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?label
+WHERE {
+   ?entity a domain:ExampleClass ;
+           rdfs:label ?label .
+}
+
+# CQ2: Find relationships between entities
+PREFIX domain: <http://ies.data.gov.uk/ontology/ies-domain#>
+
+SELECT ?entity1 ?entity2
+WHERE {
+   ?entity1 domain:hasRelation ?entity2 .
+}
+
+# CQ3: Complex path query example
+PREFIX domain: <http://ies.data.gov.uk/ontology/ies-domain#>
+
+SELECT ?start ?middle ?end
+WHERE {
+   ?start domain:hasRelation+ ?middle .
+   ?middle domain:hasValue ?end .
+}

@@ -1,0 +1,234 @@
+name: Create New Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_type:
+        description: 'Type of issue'
+        required: true
+        type: choice
+        options:
+          - dev
+          - bugfix
+          - hotfix
+      title:
+        description: 'Issue title'
+        required: true
+        type: string
+      qa_branch:
+        description: 'QA branch name (leave empty to use issue title)'
+        required: false
+        type: string
+        default: ''
+      description:
+        description: 'Issue description'
+        required: true
+        type: string
+      acceptance:
+        description: 'Acceptance criteria'
+        required: true
+        type: string
+      priority:
+        description: 'Priority level'
+        required: true
+        type: choice
+        options:
+          - low
+          - medium
+          - high
+      size:
+        description: 'Size estimate'
+        required: true
+        type: choice
+        options:
+          - xs
+          - s
+          - m
+          - l
+          - xl
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PROJECT_ID: ${{ vars.PROJECT_ID }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate branch name safety
+        id: validate_branch
+        run: |
+          # Convert title to branch-safe format
+          SAFE_TITLE=$(echo "${{ inputs.title }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-zA-Z0-9]/-/g')
+          
+          # Test if it would make a valid branch name
+          TEST_BRANCH="${{ inputs.issue_type }}/$SAFE_TITLE-123"
+          
+          # Validate against pattern
+          if ! echo "$TEST_BRANCH" | grep -qE '^(dev|bugfix|hotfix)/[a-zA-Z0-9][-a-zA-Z0-9]*-[0-9]+$'; then
+            echo "Error: Title would result in invalid branch name"
+            echo "Branch names must:"
+            echo "- Start with dev/, bugfix/, or hotfix/"
+            echo "- Contain only letters, numbers, and hyphens"
+            echo "- Not start with a hyphen after the prefix"
+            echo "- End with an issue number"
+            exit 1
+          fi
+          
+          echo "safe_title=$SAFE_TITLE" >> $GITHUB_OUTPUT
+
+      - name: Setup required branches
+        id: setup_branches
+        if: inputs.issue_type != 'hotfix'
+        run: |
+          # Use qa_branch if provided, otherwise extract from title
+          if [ -n "${{ inputs.qa_branch }}" ]; then
+            BRANCH_SUFFIX=$(echo "${{ inputs.qa_branch }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-zA-Z0-9]/-/g')
+          else
+            # Extract feature name from title (without issue number if present)
+            # This regex removes only trailing dash followed by numbers, preserving all other hyphens
+            BRANCH_SUFFIX=$(echo "${{ steps.validate_branch.outputs.safe_title }}" | sed 's/-[0-9]\+$//')
+          fi
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Create qa branch if it doesn't exist
+          QA_BRANCH="qa/$BRANCH_SUFFIX"
+          if ! git show-ref --verify --quiet "refs/remotes/origin/$QA_BRANCH"; then
+            echo "Creating new qa branch: $QA_BRANCH"
+            git checkout -b "$QA_BRANCH"
+            git push origin "$QA_BRANCH"
+          fi
+          
+          echo "qa_branch=$QA_BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Create issue
+        id: create_issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const implementationText = context.payload.inputs.issue_type === 'hotfix'
+              ? '## Implementation\n🔄 Implementation branch will be created and linked to the issue.\n🔄 PRs should target `main` branch.'
+              : `## Implementation\n🔄 Implementation branch will be created and linked to the issue.\n🔄 PRs should target \`${process.env.QA_BRANCH}\` branch.`;
+            
+            const body = `## Description
+            ${context.payload.inputs.description}
+            
+            ## Acceptance Criteria
+            ${context.payload.inputs.acceptance}
+            
+            ## Type
+            ${context.payload.inputs.issue_type === 'dev' ? 'Development' : context.payload.inputs.issue_type === 'bugfix' ? 'Bugfix' : 'Hotfix'}
+            
+            ## Priority
+            ${context.payload.inputs.priority}
+            
+            ## Size
+            ${context.payload.inputs.size}
+            
+            ${implementationText}`;
+            
+            try {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: context.payload.inputs.title,
+                body: body,
+                labels: [
+                  context.payload.inputs.issue_type === 'dev' ? 'enhancement' : 'bug',
+                  `priority:${context.payload.inputs.priority}`,
+                  `size:${context.payload.inputs.size}`,
+                  context.payload.inputs.issue_type === 'hotfix' ? 'hotfix' : null
+                ].filter(Boolean)
+              });
+              
+              console.log(`Created issue #${issue.data.number}`);
+              return { issueNumber: issue.data.number };
+              
+            } catch (error) {
+              console.error('Error creating issue:', error);
+              core.setFailed(error.message);
+            }
+
+      - name: Add issue to project
+        if: success() && env.PROJECT_ID != ''
+        env:
+          ISSUE_ID: ${{ fromJSON(steps.create_issue.outputs.result).issueNumber }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.IES_ONTOLOGIES_PAT }}
+          script: |
+            try {
+              const getIssueId = await github.graphql(`
+                query($owner: String!, $repo: String!, $number: Int!) {
+                  repository(owner: $owner, name: $repo) {
+                    issue(number: $number) {
+                      id
+                    }
+                  }
+                }
+              `, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                number: parseInt(process.env.ISSUE_ID)
+              });
+              
+              const issueId = getIssueId.repository.issue.id;
+              
+              await github.graphql(`
+                mutation($projectId: ID!, $contentId: ID!) {
+                  addProjectV2ItemById(input: {
+                    projectId: $projectId
+                    contentId: $contentId
+                  }) {
+                    item {
+                      id
+                    }
+                  }
+                }
+              `, {
+                projectId: process.env.PROJECT_ID,
+                contentId: issueId
+              });
+              
+              console.log(`Added issue #${process.env.ISSUE_ID} to project ${process.env.PROJECT_ID}`);
+              
+            } catch (error) {
+              console.error('Error adding issue to project:', error);
+              core.setFailed(error.message);
+            }
+
+      - name: Create implementation branch
+        env:
+          ISSUE_NUMBER: ${{ fromJSON(steps.create_issue.outputs.result).issueNumber }}
+        run: |
+          # Get base branch based on issue type
+          if [ "${{ inputs.issue_type }}" = "hotfix" ]; then
+            BASE_BRANCH="main"
+          else
+            BASE_BRANCH="${{ steps.setup_branches.outputs.qa_branch }}"
+          fi
+          
+          # Create implementation branch name
+          IMPL_BRANCH="${{ inputs.issue_type }}/${{ steps.validate_branch.outputs.safe_title }}-${ISSUE_NUMBER}"
+          
+          # Create and link branch to issue using gh issue develop
+          gh issue develop ${ISSUE_NUMBER} \
+            --base "$BASE_BRANCH" \
+            --name "$IMPL_BRANCH" \
+            --checkout
+          
+          # Push the branch
+          git push origin "$IMPL_BRANCH"

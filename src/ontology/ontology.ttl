@@ -1,0 +1,84 @@
+@prefix ies: <http://ies.data.gov.uk/ontology/ies4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+# ToDo - replace [domain] with the actual domain name
+@prefix ies-domain: <http://ies.data.gov.uk/ontology/ies-domain#> .
+
+# Ontology Definition & Metadata
+# ToDo - replace [domain] with the actual domain name
+ies-domain: a owl:Ontology ;
+   dcterms:title "IES [Domain] Ontology"@en-GB ;
+   dcterms:description "Description of the [domain] ontology"@en-GB ;
+   dcterms:audience "Domain experts and data modelers"@en-GB ;
+   dcterms:coverage "Concepts and relations for the IES [domain] domain"@en-GB ;
+   dcterms:type "IES [Domain] Ontology"@en-GB ;
+   dcterms:created "2020"^^xsd:gYear ;
+   dcterms:modified "2024-12-16"^^xsd:date ;
+   dcterms:publisher "UK Department for Business and Trade"@en-GB ;
+   dcterms:language "en-GB" ;
+   dcterms:license <https://spdx.org/licenses/MIT.html> ;
+   dcterms:rights "Crown Copyright 2020-2024"@en-GB ;
+   dcterms:dateCopyrighted "2020"^^xsd:gYear ;
+   vann:preferredNamespacePrefix "ies-[domain]" ;
+   vann:preferredNamespaceUri "http://ies.data.gov.uk/ontology/ies-domain#" ;
+   owl:versionInfo "0.1.0" ;
+   owl:imports ies: .
+
+#########################
+# Class definitions.    #
+# in alphabetical order #
+# USE `rdfs:Class`      #
+#########################
+# Example:
+# domain:MyDomainEntity a rdfs:Class ;
+#     rdfs:label "Example domain Entity class extension"@en ;
+#     rdfs:comment "Description of the specialised Entity class"@en ;
+#     rdfs:subClassOf ies:Entity .
+
+#########################
+# Object properties     #
+# in alphabetical order #
+#########################
+# Example:
+# domain:hasRelation a owl:ObjectProperty ;
+#     rdfs:label "has relation"@en ;
+#     rdfs:comment "Description of the relation"@en ;
+#     rdfs:domain domain:MyDomainEntity ;
+#     rdfs:range domain:MyDomainEntity .
+
+#########################
+# Data properties       #
+# in alphabetical order #
+#########################
+# Example:
+# domain:hasValue a owl:DatatypeProperty ;
+#     rdfs:label "has value"@en ;
+#     rdfs:comment "Description of the value"@en ;
+#     rdfs:domain domain:MyDomainEntity ;
+#     rdfs:range xsd:string .
+
+#########################
+# Annotation properties #
+# in alphabetical order #
+#########################
+# Example:
+# domain:note a owl:AnnotationProperty ;
+#     rdfs:label "note"@en ;
+#     rdfs:comment "Additional notes about a resource"@en .
+
+#######################################################################
+# Individuals                                                         #
+# in alphabetical order                                               #
+# Note: Individuals should be used sparingly and only when necessary. #
+#  Typically, "data" individuals should be stored in                  #
+# `./src/data/data.ttl`                                               #
+#######################################################################
+# Individuals
+# Example:
+# domain:exampleInstance a domain:ExampleClass ;
+#     rdfs:label "Example Instance"@en ;
+#     domain:hasValue "Some value" .
