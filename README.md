@@ -1,8 +1,8 @@
-# IES [INSERT-NAME-HERE] Ontology
+# IES Core Ontology
 
 ![IES Logo](assets/images/IES-logo-dark.png)
 
-**Repository:** `IES [INSERT-NAME-HERE] Ontology`
+**Repository:** `IES Core Ontology`
 **Description:** `This repository contains the development artifacts for the IES [INSERT-NAME-HERE] ontology. It follows the standard IES ontology development repository structure and incorporates shared IES tools and GitHub workflows.`  
 **Repository Status:** `Private – NDTP InnerSource`  
 
@@ -16,7 +16,7 @@ This repository is part of the **National Digital Twin Programme (NDTP)**. It su
 > It is intended solely for collaboration among NDTP teams and authorised suppliers.  
 > It is **not open source** and must not be disclosed, redistributed, or published externally.
 
-This repository contains the development artifacts for the IES [INSERT-NAME-HERE] ontology. It follows the standard IES ontology development repository structure and incorporates shared IES tools and GitHub workflows.
+This repository contains the development artifacts for the IES Core ontology. It follows the standard IES ontology development repository structure and incorporates shared IES tools and GitHub workflows.
 
 --- 
 
