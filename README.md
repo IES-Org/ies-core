@@ -1,22 +1,16 @@
-# IES Core Ontology
+# IES Top Level Ontology (ToLO)
 
 ![IES Logo](assets/images/IES-logo-dark.png)
 
 **Repository:** `IES Core Ontology`
-**Description:** `This repository contains the development artifacts for the IES [INSERT-NAME-HERE] ontology. It follows the standard IES ontology development repository structure and incorporates shared IES tools and GitHub workflows.`  
-**Repository Status:** `Private – NDTP InnerSource`  
+**Description:** `This repository contains the development artifacts for the IES Core ontology.`  
+**Repository Status:** `Private`  
 
 ---
 
 ## Overview
 
-This repository is part of the **National Digital Twin Programme (NDTP)**. It supports the development of secure, modular, and standards-based ontologies for internal use across NDTP projects.
-
-> **This repository is private and governed by the NDTP InnerSource Licence – Version 1.0.**  
-> It is intended solely for collaboration among NDTP teams and authorised suppliers.  
-> It is **not open source** and must not be disclosed, redistributed, or published externally.
-
-This repository contains the development artifacts for the IES Core ontology. It follows the standard IES ontology development repository structure and incorporates shared IES tools and GitHub workflows.
+This repository contains the development artifacts for the IES Core Ontology.
 
 --- 
 
@@ -26,11 +20,6 @@ Please see [Contributing Guide][docs-contrib] for guidelines on how to contribut
 ## Licensing
 
 See [LICENSE.md][license] for full details.
-
-> ⚠️ This repository is **not open source**.  
-> Redistribution, disclosure, or publication of any part of this repository is prohibited without the **explicit, written approval** of the NDTP Management Team.
-
-All intellectual property rights are held by the **Department for Business and Trade (UK)** as the governing entity for the National Digital Twin Programme (NDTP).
 
 ### Attribution
 When using this ontology, you must include the attribution: [© Crown Copyright 2020-2024 (Department for Business and Trade)][copyright].
@@ -42,9 +31,9 @@ This project includes third party software and tools under different licenses. S
 This repository has benefited from collaboration with various organisations. For a list of acknowledgments, see [ACKNOWLEDGEMENTS.md][ack].  
 
 ## Support and Contact  
-For questions or support, check our Issues or contact the NDTP team on ndtp@businessandtrade.gov.uk.
+For questions or support, check our Issues or contact ... TBC.
 
-**Maintained by the National Digital Twin Programme (NDTP).**
+**Maintained by ... TBC**
 
 ## Changelog
 See [CHANGELOG][CHANGELOG] for a list of changes in each release.
