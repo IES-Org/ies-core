@@ -22,7 +22,7 @@ Please see [Contributing Guide][docs-contrib] for guidelines on how to contribut
 See [LICENSE][license] for full details.
 
 ### Attribution
-When using this ontology, you must include the attribution: [© Crown Copyright 2020-2024 (Department for Business and Trade)][copyright].
+When using this ontology, you must include the attribution: [© Crown Copyright 2020-2024][copyright].
 
 ### Third Party Components
 This project includes third party software and tools under different licenses. See individual dependency documentation for details.
