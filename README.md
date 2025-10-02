@@ -1,4 +1,4 @@
-# IES Top Level Ontology (ToLO)
+# IES Core Ontology
 
 ![IES Logo](assets/images/IES-logo-dark.png)
 
