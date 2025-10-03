@@ -4,7 +4,7 @@
 
 **Repository:** `IES Core Ontology`
 **Description:** `This repository contains the development artifacts for the IES Core ontology.`  
-**Repository Status:** `Private`  
+**Repository Status:** `Private - IES InnerSource`  
 
 ---
 
