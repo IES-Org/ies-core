@@ -242,5 +242,5 @@ poetry run gh-tools create-pr
 These scripts are licensed under the MIT License. See [LICENCE][LICENCE] for details.
 
 [create-repo]: ../../../.github/workflows/create-ontology-repo.yml
-[licence]: ../../../LICENSE
+[licence]: ../../../LICENCE
 [setup-labels]: ../../../.github/workflows/setup-labels.yml

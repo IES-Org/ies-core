@@ -166,4 +166,4 @@ ies-common:aCopyOfRangeShape a sh:NodeShape ;
 MIT - see [LICENCE][LICENSE]
 
 [ies-common-repo]: https://github.com/IES-Org/ies-common
-[LICENSE]: ../../../LICENSE
+[LICENSE]: ../../../LICENCE
