@@ -27,12 +27,9 @@ and this project adheres to [Semantic Versioning][semver].
 
 ## [0.1.0] - 2024-12-26
 ### Added
-- Initial ontology structure
-- Basic class hierarchy
-- Property definitions
-- Documentation templates
+- Initial ontology structure in RDF
+- ODM-UML Diagrams and descriptions
 
 [keep-change-log]: https://keepachangelog.com/en/1.0.0/
 [semver]: https://semver.org/spec/v2.0.0.html
-[Unreleased]: https://github.com/IES-Org/repository/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/IES-Org/repository/releases/tag/v0.1.0
