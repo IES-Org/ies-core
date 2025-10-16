@@ -1,5 +1,5 @@
 # Security Policy  
-**Repository:** `Information Exchange Standard (IES)`  
+**Repository:** `IES Core Ontology (ies-core)`  
 **Description:** `Details the responsible disclosure process for security vulnerabilities.`  
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->  
 
