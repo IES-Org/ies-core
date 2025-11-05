@@ -1,0 +1,5 @@
+@prefix ies_top: <http://ies.data.gov.uk/ontology/ies5/top#> .
+@prefix ies_core: <http://ies.data.gov.uk/ontology/ies5/core#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+ies_core:Person ies_top:powertype ies_core:SetOfPerson .

@@ -1,0 +1,12 @@
+@prefix ies_top: <http://purl.org/ies/top/v0/ont/> .
+@prefix ies_top_sh: <http://purl.org/ies/top/v0/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+ies_top_sh:IntermittentTimespanShape a sh:NodeShape ;
+    sh:targetClass ies_top:IntermittentTimespan ;
+    sh:property [
+        sh:path [ sh:inversePath ies_top:isPartOf ] ;
+        sh:class ies_top:TemporallyIntermittentState ;
+        sh:severity sh:Warning ;
+        sh:message "Any state which isPartOf of an instance of ies_top:IntermittentTimespan should also be of type ies_top:TemporallyIntermittentState." ;
+    ] .
