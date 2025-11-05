@@ -1,0 +1,30 @@
+@prefix ies_top: <http://ies.data.gov.uk/ontology/ies5/top#> .
+@prefix ies_core: <http://ies.data.gov.uk/ontology/ies5/core#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+# This makes sure that the URIs of ies_top:Powersets are minted inline with the consistent pattern of SetOf..., SetOfSetOf... etc.
+ies_top:PowerSetShape a sh:NodeShape ;
+    sh:targetSubjectsOf ies_top:powertype ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PowerSet URI must be of the form {subject_namespace}:SetOf{s}s or {subject_namespace}:SetOf{s}." ;
+        sh:select """
+            SELECT ?this
+            WHERE {
+                ?this ies_top:powertype ?ps .
+                BIND(STR(?this) AS ?this_str)
+
+                BIND(REPLACE(?this_str, "[^#/]*$", "") AS ?ns)
+                BIND(REPLACE(?this_str, "^.*[#/]", "") AS ?s_name)
+
+                BIND(STRSTARTS(?s_name, "SetOf") AS ?setOf_s_name)
+
+                BIND(IRI(CONCAT(
+                    ?ns,
+                    "SetOf",
+                    ?s_name,
+                    IF(?setOf_s_name, "", "s"))) AS ?expected_ps)
+                FILTER (?ps != ?expected_ps)
+                }
+            """ ;
+        ] .

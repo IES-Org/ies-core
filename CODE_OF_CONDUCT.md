@@ -1,5 +1,5 @@
 # Code of Conduct  
-**Repository:** `IES Core Ontology (ies-core)`
+**Repository:** `IES Core Ontology (ies-core)`<br>
 **Description:** `Defines expected behaviours, rules, and the enforcement process to ensure professional engagement.`  
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->  
 
