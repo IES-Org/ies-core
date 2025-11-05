@@ -1,7 +1,7 @@
 # <img src="./assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Core Ontology (ies-core)
 
 **Repository:** `IES Core Ontology (ies-core)`<br>
-**Description:** `A top level ontology grounded in Extensional Four-Dimensionalism`<br>
+**Description:** `A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`<br>
 **Repository Status:** `In development`
 
 ---
