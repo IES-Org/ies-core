@@ -1,0 +1,11 @@
+@prefix ies_core: <http://purl.org/ies/core/v0/ont/> .
+@prefix ies_core_sh: <http://purl.org/ies/core/v0/shapes/> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+ies_core_sh:hasSkillDomainShape a sh:NodeShape ;
+    sh:target ies_core_sh:PersonStateTarget ;
+    sh:targetSubjectsOf ies_core:hasSkill .
+
+ies_core_sh:hasSkillRangeShape a sh:NodeShape ;
+    sh:class ies_core:Skill ;
+    sh:targetObjectsOf ies_core:hasSkill .

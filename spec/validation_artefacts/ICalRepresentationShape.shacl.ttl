@@ -1,0 +1,30 @@
+@prefix ies_core: <http://purl.org/ies/core/v0/ont/> .
+@prefix ies_core_sh: <http://purl.org/ies/core/v0/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ical: <https://www.w3.org/2002/12/cal/ical#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ies_core_sh:ICalRepresentationShape
+    a sh:NodeShape ;
+    sh:targetClass ies_core:ICalRepresentation ;
+    # Focus on predicates with ies_core:ICalRepresentation as domain
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
+    sh:property [
+        sh:path ical:rrule 
+    ] ;
+    sh:property [
+        sh:path ical:dtstart ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])T([01]\\d|2[0-3]):[0-5]\\d:([0-5]\\d|60)(?:\\.\\d+)?(?:Z|\\+00:00|-00:00)?$" ;
+        sh:message "When ical:dtstart is used with ies_core:ICalRepresentation, the value must be an xsd:dateTime in UTC (e.g. no timezone specified, suffixed with 'Z' or suffixed with '+00:00')." ;
+    ] ;
+    sh:property [
+        sh:path ical:dtend ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])T([01]\\d|2[0-3]):[0-5]\\d:([0-5]\\d|60)(?:\\.\\d+)?(?:Z|\\+00:00|-00:00)?$" ;
+        sh:message "When ical:dtend is used with ies_core:ICalRepresentation, the value must be an xsd:dateTime in UTC (e.g. no timezone specified, suffixed with 'Z' or suffixed with '+00:00')." ;
+    ] .
