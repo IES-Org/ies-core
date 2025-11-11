@@ -1,0 +1,15 @@
+@prefix ies_core: <http://purl.org/ies/core/v0/ont/> .
+@prefix ical: <https://www.w3.org/2002/12/cal/ical#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:ical1 a ies_core:ICalRepresentation ;
+    ical:dtstart "2025-09-30T09:00:00Z"^^xsd:dateTime ;
+    ical:dtend   "2025-10-01T09:00:00+00:00"^^xsd:dateTime .
+
+_:ical2 a ies_core:ICalRepresentation ;
+    ical:dtstart "2025-09-30T09:00:00"^^xsd:dateTime ;
+    ical:dtend   "2025-10-01T09:00:00-00:00"^^xsd:dateTime .
+
+_:ical3 a ies_core:ICalRepresentation ;
+    ical:dtstart "2025-09-30"^^xsd:dateTime ;
+    ical:dtend   "2025-10-01"^^xsd:dateTime .

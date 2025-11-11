@@ -1,0 +1,13 @@
+@prefix ies_top: <http://ies.data.gov.uk/ontology/ies5/top#> .
+@prefix ies_core: <http://ies.data.gov.uk/ontology/ies5/core#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+
+ies_core:DeathStateShape
+    a                   sh:NodeShape ;
+    sh:targetClass      ies_core:DeathState ;
+    sh:property         [
+        sh:path     ies_top:isAEndOf ;
+        sh:class    ies_core:NaturalState ;
+    ] ;
+.
