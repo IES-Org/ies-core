@@ -1,7 +1,9 @@
-# `<img src="./assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle">` Information Exchange Standard (IES) - Core Ontology (ies-core)
+![IES Logo](assets/images/IES-logo-dark.png)
 
-**Repository:** `Information Exchange Standard (IES) Core Ontology`
-**Description:** `A mid-level ontology built upon ies-core providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`
+# Information Exchange Standard (IES) - Core Ontology (ies-core)
+
+**Repository:** `Information Exchange Standard (IES) Core Ontology`  
+**Description:** `A mid-level ontology built upon ies-core providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`  
 **Repository Status:** `In development`
 
 ---
@@ -117,9 +119,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for a list of changes in each release.
 
 ## References
 
-[1] [de Cesare, S., &amp; Partridge, C. (2016). *BORO as a Foundation to Enterprise Ontology.* *Journal of Information Systems*, 30(2), 83–112.](https://doi.org/10.2308/isys-51428)
-[2] [Florio, S., &amp; Linnebo, Ø. (2021). *The Many and the One: A Philosophical Study of Plural Logic.* Oxford University Press.](https://library.oapen.org/bitstream/handle/20.500.12657/50697/9780198791522.pdf)
-[3] [Partridge, C., de Cesare, S., Mitchell, A., Gailly, F., &amp; Khan, M. (2017). *Developing an Ontological Sandbox: Investigating Multi-Level Modelling’s Possible Metaphysical Structures.* *MODELS 2017*, 2019, 226–234.](http://ceur-ws.org/Vol-2019/multi_3.pdf)
-[4] [Florio, S., &amp; Linnebo, Ø. (2022). *Core Constructional Ontology: The Foundation for the Top-Level Ontology of the Information Management Framework.*](https://borosolutions.net/core-constructional-ontology)
+- [1] [de Cesare, S., &amp; Partridge, C. (2016). *BORO as a Foundation to Enterprise Ontology.* *Journal of Information Systems*, 30(2), 83–112.](https://doi.org/10.2308/isys-51428)
+- [2] [Florio, S., &amp; Linnebo, Ø. (2021). *The Many and the One: A Philosophical Study of Plural Logic.* Oxford University Press.](https://library.oapen.org/bitstream/handle/20.500.12657/50697/9780198791522.pdf)
+- [3] [Partridge, C., de Cesare, S., Mitchell, A., Gailly, F., &amp; Khan, M. (2017). *Developing an Ontological Sandbox: Investigating Multi-Level Modelling’s Possible Metaphysical Structures.* *MODELS 2017*, 2019, 226–234.](http://ceur-ws.org/Vol-2019/multi_3.pdf)
+- [4] [Florio, S., &amp; Linnebo, Ø. (2022). *Core Constructional Ontology: The Foundation for the Top-Level Ontology of the Information Management Framework.*](https://borosolutions.net/core-constructional-ontology)
 
 ---
