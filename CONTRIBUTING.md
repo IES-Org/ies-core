@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-**Repository:** `Information Exchange Standard (IES) Core Ontology`
+**Repository:** `Information Exchange Standard (IES) Core Ontology`  
 **Description:** `Guidelines for issue reporting, documentation suggestions, and the IES controlled contribution model.`
 
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->

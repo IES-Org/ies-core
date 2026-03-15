@@ -1,6 +1,6 @@
 # NOTICE
 
-**Repository:** `Information Exchange Standard (IES) Core Ontology`
+**Repository:** `Information Exchange Standard (IES) Core Ontology`  
 **Description:** `Attribution and legal notices related to the use of this repository, including acknowledgments of external contributions.`
 
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->

@@ -1,6 +1,6 @@
 # Acknowledgements
 
-**Repository:** `Information Exchange Standard (IES) - Core Ontology`
+**Repository:** `Information Exchange Standard (IES) - Core Ontology`  
 **Description:** `Recognises suppliers, partner organisations, and other contributors to the repository’s development.`
 
 The Information Exchange Standard (IES) initiative would like to acknowledge the contributions of various organisations and individuals
