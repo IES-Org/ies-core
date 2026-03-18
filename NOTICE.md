@@ -7,7 +7,7 @@
 
 This repository contains software and documentation developed as part of the Information Exchange Standard (IES).
 
-© Crown Copyright 2025. This work forms part of the Information Exchange Standard initiative and is currently under the custodianship of the
+© Crown Copyright 2026. This work forms part of the Information Exchange Standard initiative and is currently under the custodianship of the
 Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
 
 ## License
