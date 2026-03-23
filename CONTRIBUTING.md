@@ -44,6 +44,69 @@ For security-related concerns, do not submit a public issue. Follow our [Respons
 
 ---
 
+## Issue Workflow and Governance
+
+Technical issues relating to the IES Core Ontology should be raised as **GitHub Issues**. This ensures:
+
+- A single shared location for problem reporting
+- Transparent discussion history
+- Clear tracking and assignment
+- Visibility for the whole community
+
+GitHub is the starting point for all technical work on IES Core.
+
+### Core Maintenance Team
+
+The IES Core Maintenance Team is responsible for:
+
+- **Triaging** all issues raised that relate to the IES Core Model
+- **Categorising** issues (bug, enhancement, modelling question, clarification, etc.)
+- **Determining** whether the issue should stay within the Core Model space or be redirected to a domain working group
+- **Ensuring** that issues are progressed in a timely and organised manner
+
+This creates a clear point of responsibility for maintaining quality and consistency.
+
+### Issue Lifecycle
+
+The process for handling technical issues is as follows:
+
+1. An issue is raised on GitHub.
+2. The Core Maintenance Team triages the issue and assigns an appropriate **technical owner**.
+3. Technical discussion and development of options takes place primarily through **GitHub Issues and comment threads**, which act as the authoritative record for the issue.
+4. The issue may also be discussed at domain working groups. However:
+   - The appropriate technical owner remains responsible and must be informed about the discussions.
+   - Any technical outputs or conclusions from domain working group discussions must be **summarised and recorded on GitHub** in a timely manner so that GitHub remains the authoritative record.
+5. Once an agreed approach is reached by the technical community, the appropriate technical owner documents the **final proposal** on GitHub. This must include:
+   - The rationale for the proposed approach
+   - Any alternative options considered
+   - Relevant impacts, dependencies, or constraints
+6. Only when this work is complete should the Core Maintenance Team place the issue on the **IES Steering Group** agenda for formal agreement.
+7. Following IES Steering Group formal agreement shall a pull request (PR) be raised with the implementation of the solution.
+8. The PR must be approved by at least two IES Core Maintainers (who were neither the **Author** of the PR or the **Technical Owner**) before the PR can be merged into `main`.
+
+### Steering Group Submissions
+
+When an item reaches the IES Steering Group, the purpose must be explicitly stated. For example:
+
+- **Approval** of a proposed modelling pattern
+- **Endorsement** of a consistent approach
+- **Request for policy direction** where domain groups cannot reach consensus
+
+The Steering Group should not be expected to resolve raw or undeveloped technical questions that have not been first discussed by the wider technical community.
+
+---
+
+## Minimum Review Period
+
+New proposals and issues on GitHub should remain open for a clearly defined period (typically **3 to 4 weeks**) before they can be considered for the Steering Group agenda. This:
+
+- Gives contributors time to comment
+- Prevents proposals being escalated the day they are published
+- Improves the quality of technical discussion
+- Avoids rushed or uninformed decision making
+
+---
+
 ## Documentation Feedback
 
 If you find an error, need clarification, or have suggestions for improving documentation:
@@ -61,12 +124,6 @@ Documentation updates are prioritised based on user impact and strategic relevan
 - **All code is published under open-source licences.**
 - **Development is led by contributors from government and approved suppliers.**
 - **Feedback is welcome and helps shape ongoing development.**
-
----
-
-## Branching Strategy
-
-This repository contains released versions of IES only and development is managed in the IES development repository. Therefore, only the `main` branch is maintained in this repository and tags used to denote IES versions using the semantic versioning format `MAJOR.MINOR.PATCH`.
 
 ---
 

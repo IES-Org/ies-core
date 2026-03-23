@@ -32,9 +32,22 @@ The Information Exchange Standard does not accept public code contributions, but
 | --------- | ------------ | ------------------ | ---------------------------- |
 | Dave Dyke | Agilit Ltd   | Lead Maintainer    | https://github.com/aigora-de |
 | Dave Dyke | Agilit Ltd   | Security Contact   | https://github.com/aigora-de |
-| Dave Dyke | Agilit Ltd  | Documentation Lead | https://github.com/aigora-de |
+| Dave Dyke | Agilit Ltd   | Documentation Lead | https://github.com/aigora-de |
 
 For general issues, please **open a GitHub issue** rather than contacting maintainers directly.
+
+---
+
+## Core Maintenance Team
+
+In addition to individual maintainer roles, the **IES Core Maintenance Team** is collectively responsible for:
+
+- **Triaging** all GitHub Issues relating to the IES Core Model
+- **Categorising** issues and assigning appropriate technical owners
+- **Determining** whether issues belong in the Core Model space or should be redirected to a domain working group
+- **Managing escalation** to the IES Steering Group once technical discussion is complete
+
+For full details on the issue workflow and governance process, see [CONTRIBUTING.md](CONTRIBUTING.md#issue-workflow-and-governance).
 
 ---
 

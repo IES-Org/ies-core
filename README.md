@@ -109,7 +109,7 @@ We welcome:
 
 Please see:
 
-* [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines
+* [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines, including the formal issue workflow and governance process
 * [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for expected behaviour and reporting concerns
 * [MAINTAINERS.md](./MAINTAINERS.md) for maintainer contact information
 
