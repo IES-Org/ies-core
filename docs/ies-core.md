@@ -1,8 +1,9 @@
 [back to readme](README.md)
 
-# <img src="../assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> IES Core Ontology
-The Information Exchange Standard (IES) Core Ontology is a standardised mid-level ontology designed for enterprise-level information exchange. This documentation provides comprehensive guidance for understanding and using the IES Core Ontology.
+Crown Copyright (c) 2025
+# <img src="../assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Core
 
+#  version: 0.1.0 (RC1)
 ## Contents
 * Introduction Diagrams
     * [Core Overview](#9f186615-53a2-4a74-ac80-e53c1c9a001d)
@@ -1811,6 +1812,4 @@ A <a href="#675A5C23-0746-43d0-96D0-AF0DF72CD697"><font color="#0000ff"><u>Repre
 
 ### <a id="52d91440-7660-4e04-a9c9-91c5cb0f9957"></a>dcterms:source
 
----
 
-Crown Copyright (c) 2026
