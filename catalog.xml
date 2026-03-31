@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+    <!-- IES Core ontology: pinned to v0.1.0_RC1 -->
+    <uri name="http://purl.org/ies/top/v0/ont/"
+         uri="https://raw.githubusercontent.com/IES-Org/ies-core/refs/tags/v0.1.0_RC1/spec/ies-core.ttl"/>
+
+    <!-- Domain ontology: local file -->
+    <uri name="http://purl.org/ies/core/v0/ont/"
+         uri="file://${PROJECT_ROOT}/spec/ies-core.ttl"/>
+
+</catalog>
