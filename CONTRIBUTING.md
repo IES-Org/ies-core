@@ -90,7 +90,7 @@ Maintainers review issues, guide contributions, and ensure alignment with progra
 
 **Maintained as part of the Information Exchange Standard initiative.**
 
-© Crown Copyright 2025. This work is currently under the custodianship of the Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
+© Crown Copyright 2026. This work is currently under the custodianship of the Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
 Licensed under the Open Government Licence v3.0.
 
 For full licensing terms, see [OGL_LICENSE.md](OGL_LICENSE.md).

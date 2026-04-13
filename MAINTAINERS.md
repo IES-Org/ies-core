@@ -1,6 +1,6 @@
 # Maintainers
 
-**Repository:** `Information Exchange Standard (IES) Core Ontology`  
+**Repository:** `Information Exchange Standard (IES) - Core Ontology`  
 **Description:** `Lists maintainers responsible for reviewing issues, security, and documentation updates.`
 
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->

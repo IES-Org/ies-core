@@ -1,6 +1,6 @@
 # Open Government Licence v3.0
 
-**Repository:** `Information Exchange Standard (IES) Core Ontology`  
+**Repository:** `Information Exchange Standard (IES) - Core Ontology`  
 **Description:** `Covers all documentation files in this repository that are released under the Open Government Licence v3.0.`
 
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->
