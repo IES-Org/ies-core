@@ -74,9 +74,9 @@ IES-Core is built upon IES-Top providing a common foundational layer of patterns
 
 IES-Core extends IES-Top into 3 major ways.
 <ol>
-    <li>It extends <i>State</i> to allow us to talk about familiar tangible individuals -known as <i>Entities </i>in IES4. These include living individuals (<i>LivingOrganism</i>), human-made objects (<i>Artefact</i>), places (<i>Location</i>), individuals capable of conscious action or can effect change on the world (<i>Actor</i>) and individuals that symbolize or signify other individuals (<i>Sign</i>). These categories can naturally overlap, for example, a person is both a <i>LivingOrganism</i> and an <i>Actor</i>. IES-Core embraces such multiple inheritance, producing a flatter, more flexible hierarchy than IES4.</li>
-    <li>It extends <i>State</i> to provide mechanisms to describe how states combine (fuse) to form new states of interest: an <i>Activity</i> (<i>Event</i> in IES4), which is a fusion of temporal parts (<i>Participations</i>) of other states (e.g. participations of persons to make a <i>Meeting)</i>; <i>System, </i>which is the fusion of dependent states of which make up a system and which cannot exist without (e.g. a motorized road vehicle - made up of an engine, a chassis and wheels). Note, even seemingly tangible individuals can be treated as a <i>Systems</i> - e.g. <i>Vehicle</i>, is both an <i>Artefact</i> and a <i>System.</i> It is often useful with systems to see their parts as being <i>Installed</i> or removed but also call out the identity of dependent parts that endure. This persistence lets us refer to those parts even when they're temporarily uninstalled - for instance, the front-right wheel of a car, regardless of which actual wheel is installed at a given time. <i>ReplaceableLifespan</i> provides this timeless component but also can be used for other individuals that are replaceable outside systems e.g. the CEO of a company or the head of state of a nation.</li>
-    <li>Extends <i>Timespans</i> to represent timestamps, periods, durations, and recurrences in a 4D-faithful manner, while ensuring interoperability with common computer standards such as ISO 8601.</li>
+	<li>It extends <i>State</i> to allow us to talk about familiar tangible individuals -known as <i>Entities </i>in IES4. These include living individuals (<i>LivingOrganism</i>), human-made objects (<i>Artefact</i>), places (<i>Location</i>), individuals capable of conscious action or can effect change on the world (<i>Actor</i>) and individuals that symbolize or signify other individuals (<i>Sign</i>). These categories can naturally overlap, for example, a person is both a <i>LivingOrganism</i> and an <i>Actor</i>. IES-Core embraces such multiple inheritance, producing a flatter, more flexible hierarchy than IES4.</li>
+	<li>It extends <i>State</i> to provide mechanisms to describe how states combine (fuse) to form new states of interest: an <i>Activity</i> (<i>Event</i> in IES4), which is a fusion of temporal parts (<i>Participations</i>) of other states (e.g. participations of persons to make a <i>Meeting)</i>; <i>System, </i>which is the fusion of dependent states of which make up a system and which cannot exist without (e.g. a motorized road vehicle - made up of an engine, a chassis and wheels). Note, even seemingly tangible individuals can be treated as a <i>Systems</i> - e.g. <i>Vehicle</i>, is both an <i>Artefact</i> and a <i>System.</i> It is often useful with systems to see their parts as being <i>Installed</i> or removed but also call out the identity of dependent parts that endure. This persistence lets us refer to those parts even when they're temporarily uninstalled - for instance, the front-right wheel of a car, regardless of which actual wheel is installed at a given time. <i>ReplaceableLifespan</i> provides this timeless component but also can be used for other individuals that are replaceable outside systems e.g. the CEO of a company or the head of state of a nation.</li>
+	<li>Extends <i>Timespans</i> to represent timestamps, periods, durations, and recurrences in a 4D-faithful manner, while ensuring interoperability with common computer standards such as ISO 8601.</li>
 </ol>
 
 ## <a id="0413ea99-33f2-49f1-8418-3b75ee5ff050"></a>Where and When
@@ -237,11 +237,11 @@ Historically, most IES extensions have been purely <i>taxonomic</i> - adding nar
 To better support this common use case, IES-Core now adopts <b>SKOS</b> (Simple Knowledge Organization System) -a lightweight RDF-based standard for controlled vocabularies such as glossaries and taxonomies.
 SKOS will be used for extending IES in the following way:
 <ol>
-    <li><ol>
-    <li>Taxonomic extensions to IES are to be defined as instances of skos:Concept.</li>
-    <li>The skos:broader property is to be used to make a link from a skos:Concept to its parent IES class(es) (or another skos:Concept). skos:narrower shall not be used for links to IES classes - skos:broader already implies the inverse relationship and avoids extra handling for consumers.</li>
-    <li>Instances remain typed using rdf:type, whose range must always be an IES class - even when an extension concept is associated.</li>
-    <li>The ies:category - a property in the IES-Core ontology, shall be then used to link an instance of an IES class to a skos:Concept. This is what further defines it (taxonomically) as a new extension.</li>
+	<li><ol>
+	<li>Taxonomic extensions to IES are to be defined as instances of skos:Concept.</li>
+	<li>The skos:broader property is to be used to make a link from a skos:Concept to its parent IES class(es) (or another skos:Concept). skos:narrower shall not be used for links to IES classes - skos:broader already implies the inverse relationship and avoids extra handling for consumers.</li>
+	<li>Instances remain typed using rdf:type, whose range must always be an IES class - even when an extension concept is associated.</li>
+	<li>The ies:category - a property in the IES-Core ontology, shall be then used to link an instance of an IES class to a skos:Concept. This is what further defines it (taxonomically) as a new extension.</li>
 </ol>
 </li>
 </ol>
@@ -562,7 +562,7 @@ A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i
 * [hasEthnicity](#4495f6db-149a-4866-b2d3-ceed4324ff1d)
 * [Ethnicity](#ae3d9f2d-2616-4b33-bc0a-360a947bfefc)
 * [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConsituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
@@ -595,7 +595,7 @@ In IES-Core the associations of a <i>Person</i> to their nationality, religion o
 * [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConsituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
@@ -1541,7 +1541,7 @@ December 1944
 
 
 ### <a id="741940e7-e8c9-4ac5-84d5-587edf94316a"></a>PartNumber
-A unique Identifier for the a HumanMadeSystem. Note: this is different to a serial number which is unique to each HumanMadeSystem.
+A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HumanMadeSystem.
 
 ### <a id="22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5"></a>PartOfFacility
 A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is contained within a Facility - e.g. a room, laboratory, floor, etc.
@@ -1601,7 +1601,7 @@ ParticularPeriod of publication of the respective document.
 ### <a id="6b68585b-ab19-48a0-8254-1d6768f88833"></a>RecurringTimespan
 
 
-### <a id="de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3"></a>RegionalConsituency
+### <a id="de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3"></a>RegionalConstituency
 An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location.
 
 

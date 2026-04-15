@@ -42,7 +42,7 @@ ies_core: a owl:Ontology ;
    A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.
    """@en-GB ;
    dcterms:created "2025-09-30"^^xsd:date ;
-   dcterms:modified "2026-04-13"^^xsd:date ;
+   dcterms:modified "2026-04-15"^^xsd:date ;
    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
    dcterms:language "en-GB" ;
    dcterms:license <https://spdx.org/licenses/MIT.html> ;
@@ -745,7 +745,7 @@ ies_core:Nation rdf:type rdfs:Class .
 ies_core:Nation rdfs:label "Nation" . 
 ies_core:Nation dcterms:identifier "{8ADF110D-EF60-4f98-8D29-BDB92AC83537}" . 
 ies_core:Nation rdfs:comment "The people of a Country (or group of Countries recognised as a Nation).Note: this is distinct to a Country which is the land mass under control by the Nation, though ISO Country codes are regularly used to also identify Nations. " . 
-ies_core:Nation rdfs:subClassOf ies_core:RegionalConsituency . 
+ies_core:Nation rdfs:subClassOf ies_core:RegionalConstituency . 
 ies_core:Nickname rdf:type skos:Concept . 
 ies_core:Nickname rdfs:label "Nickname" . 
 ies_core:Nickname dcterms:identifier "{689655C6-D1ED-454a-AD88-CDDD7E34668C}" . 
@@ -814,7 +814,7 @@ ies_core:ParticularPeriod rdfs:subClassOf ies_top:Period .
 ies_core:PartNumber rdf:type skos:Concept . 
 ies_core:PartNumber rdfs:label "Part Number" . 
 ies_core:PartNumber dcterms:identifier "{741940E7-E8C9-4ac5-84D5-587EDF94316A}" . 
-ies_core:PartNumber rdfs:comment "A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HunanMadeSystem." . 
+ies_core:PartNumber rdfs:comment "A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HumanMadeSystem." . 
 ies_core:PartNumber skos:broader ies_core:Identifier . 
 ies_core:PartOfFacility rdf:type skos:Concept . 
 ies_core:PartOfFacility rdfs:label "Part Of Facility" . 
@@ -884,11 +884,11 @@ ies_core:RecurringTimespan rdf:type rdfs:Class .
 ies_core:RecurringTimespan rdfs:label "Recurring Timespan" . 
 ies_core:RecurringTimespan dcterms:identifier "{6B68585B-AB19-48a0-8254-1D6768F88833}" . 
 ies_core:RecurringTimespan rdfs:subClassOf ies_top:IntermittentTimespan . 
-ies_core:RegionalConsituency rdf:type rdfs:Class . 
-ies_core:RegionalConsituency rdfs:label "Regional Consituency" . 
-ies_core:RegionalConsituency dcterms:identifier "{DE6B8201-3FF0-4dba-9B2A-01BB02DC6EC3}" . 
-ies_core:RegionalConsituency rdfs:comment "An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location." . 
-ies_core:RegionalConsituency rdfs:subClassOf ies_core:Organization . 
+ies_core:RegionalConstituency rdf:type rdfs:Class . 
+ies_core:RegionalConstituency rdfs:label "Regional Constituency" . 
+ies_core:RegionalConstituency dcterms:identifier "{DE6B8201-3FF0-4dba-9B2A-01BB02DC6EC3}" . 
+ies_core:RegionalConstituency rdfs:comment "An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location." . 
+ies_core:RegionalConstituency rdfs:subClassOf ies_core:Organization . 
 ies_core:RegionOfCountry rdf:type skos:Concept . 
 ies_core:RegionOfCountry rdfs:label "Region Of Country" . 
 ies_core:RegionOfCountry dcterms:identifier "{EB604FC5-9503-4dcb-AA73-E88EAB5AAD0D}" . 
@@ -1047,7 +1047,7 @@ ies_core:spokenLanguage rdfs:label "spoken language" .
 ies_core:spokenLanguage dcterms:identifier "{4EFE40AC-08C0-40b7-BC68-B11D0306EE78}" . 
 ies_core:spokenLanguage rdfs:comment "The language in which someone is proficient" . 
 ies_core:spokenLanguage rdfs:range ies_core:Language . 
-ies_core:spokenLanguage rdfs:range ies_core:LanguageProficiency . 
+ies_core:spokenLanguage rdfs:domain ies_core:LanguageProficiency . 
 ies_core:spokenLanguage rdfs:subPropertyOf ies_top:couple . 
 ies_core:startBoundOfSet rdf:type rdf:Property . 
 ies_core:startBoundOfSet rdfs:label "start bound of set" . 
