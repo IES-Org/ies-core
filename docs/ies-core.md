@@ -1,9 +1,9 @@
 [back to readme](README.md)
 
-Crown Copyright (c) 2025
+Crown Copyright (c) 2026
 # <img src="../assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Core
 
-#  version: 0.1.0 (RC1)
+#  version: 0.1.1 (RC1)
 ## Contents
 * Introduction Diagrams
     * [Core Overview](#9f186615-53a2-4a74-ac80-e53c1c9a001d)
@@ -30,7 +30,7 @@ Crown Copyright (c) 2025
     * [Person](#4f034e11-1204-44ad-9aec-964a5606aed9)
     * [Organization](#ee1b43fc-5dc3-4d3e-89c5-823796afb292)
     * [Vehicle](#6bac87b0-55e0-4007-8ad3-581d71535af7)
-    * [InformationProcessingSystem](#b94dd74f-76c9-42dd-924f-a4ea6a67721a)
+    * [Information Processing System](#b94dd74f-76c9-42dd-924f-a4ea6a67721a)
 * [Activity](#Activity)
     * [Communication and Attendance](#5948de5e-2ae1-40d7-8e86-1b834b13c3f2)
     * [Account](#4a863e14-82df-4fa0-bc71-b827e830b362)
@@ -524,13 +524,14 @@ IES makes a clear distinction between a specific, individual copy of a document,
 
 ### IES elements in this diagram:
 
-* [Ticket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
+* [Ticket](#068b5b19-170e-4766-959d-2e00e412b568)
 * [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
+* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
 * [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
 
-A <i>Ticket </i>is an <i>IndividualDocument</i> that authorise access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket, either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few that grant access. As a result, this pattern recommends that the <i>WorkOfDocumention</i> associated to a <i>Ticket</i> is also articulated.
+A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
 
 
 ## <a id="{7782E49B-2F99-4ecd-9004-EDEE21511B5E}"></a>System
@@ -561,7 +562,7 @@ A <i>Ticket </i>is an <i>IndividualDocument</i> that authorise access to an <i>A
 * [hasEthnicity](#4495f6db-149a-4866-b2d3-ceed4324ff1d)
 * [Ethnicity](#ae3d9f2d-2616-4b33-bc0a-360a947bfefc)
 * [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConsituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
@@ -594,7 +595,7 @@ In IES-Core the associations of a <i>Person</i> to their nationality, religion o
 * [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConsituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
@@ -619,6 +620,7 @@ In IES-Core the associations of a <i>Person</i> to their nationality, religion o
 * [OrganizationName](#bcbeed33-5dd4-4af8-97d8-a5e784d3cd84)
 * [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
 * [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [Alliance](#1804b042-b78c-48b9-8d52-c872689ffdeb)
 
 In IES-Core, an <i>Organization</i> is a <i>HumanMadeSystem </i>which is a collection of person states. Because of this, an <i>Organization</i> is also an Actor.
 An organization can participate in an <i>Activity,</i> but the participation rarely involves the entire organization, i.e. it is not a temporal part of the organization which participates. Instead, it is just a part of the organization which participates.
@@ -637,11 +639,12 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 * [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
 * [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
 * [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
 
 <i>Vehicle</i> is a <i>HumanMadeSystem</i> that provides a means of transportation e.g. car, aircraft, ship.
 
-### <a id="b94dd74f-76c9-42dd-924f-a4ea6a67721a"></a>InformationProcessingSystem
-![InformationProcessingSystem Diagram](diagrams/UML_ID_B94DD74F_76C9_42dd_924F_A4EA6A67721A.png)
+### <a id="b94dd74f-76c9-42dd-924f-a4ea6a67721a"></a>Information Processing System
+![Information Processing System Diagram](diagrams/UML_ID_B94DD74F_76C9_42dd_924F_A4EA6A67721A.png)
 
 #### IES elements in this diagram:
 
@@ -652,6 +655,8 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
 * [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
 * [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [SetOfInformationProcessingSystems](#322b471c-b825-4862-b974-29a18c211f43)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 
 An <i>InformationProcessingSystem </i>is a <i>HumanMadeSystem and</i> an <i>Actor</i> which can transform or manipulate information.
@@ -757,7 +762,7 @@ In IES-Core, <i>CoLocation </i>is defined as a fusion of states that are deemed 
 * [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [RightGrantingArtefact](#a8b29c2f-f558-48ca-a3d4-7f05d067d384)
-* [Ticket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
+* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
 * [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
 * [Recognizer](#886997cb-23d6-4e9b-a432-769ba6ae0a95)
 
@@ -787,6 +792,7 @@ IES-Core deals with ownership by first dealing with rights, which is an activity
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [TransactionParticipant](#4cf340d7-474d-40d7-9416-102964083670)
 
 When goods or assets are bought or sold - whether exchanged for modern fiat currency or, as in earlier times, for livestock or shells, the same fundamental pattern occurs: a transfer of ownership. An exchange is a change in state of the right-to or ownership-of, all assets involved. For example, purchasing a car for $20,000 ends one party's ownership of the car and begins another's, while the seller's ownership of the $20,000 ends and the buyer's begins.
 In IES-Core, this process is represented by an <i>Exchange</i> activity, which consists of at least two <i>ExchangeMovement</i> activities. Each <i>ExchangeMovement</i> marks the conclusion of one entitlement and the creation of another. Because exchanges are typically preceded by related steps such as placing an order or negotiating a price, an <i>Exchange</i> is a form of <i>TransactionActivity</i>, which may be just one part of a broader <i>EndToEndTransaction</i>.
@@ -1005,6 +1011,10 @@ e.g. all London buses being red, all heavyweight boxers weighing more than 200lb
 ### <a id="b6ac8bf8-1060-4fea-b00b-8ad509df69e9"></a>allHaveDisposition
 
 
+### <a id="1804b042-b78c-48b9-8d52-c872689ffdeb"></a>Alliance
+An Organization made up of allies - these could be people or organizations, and the alliance may be quite loose.
+
+
 ### <a id="76f0e234-ca6e-40b7-905e-8d5c30f24209"></a>ArbitraryPeriod
 A <a href="#3FDFA898-C340-4279-8B3C-275359D5B02D"><font color="#0000ff"><u>PeriodOfTime</u></font></a> for which is not delineated by a particular clock period - e.g. not a year, not a month, not a day, not an hour, etc. Instead it is one which is most clearly specified in terms of start and end that are <a href="#2173F463-524C-457c-B106-51322F64F122"><font color="#0000ff"><u>ParticularPeriods</u></font></a>.
 
@@ -1133,8 +1143,7 @@ Example: Vehicles capable of Mach 2
 
 
 ### <a id="df65005d-f603-4d63-ac78-b8ac8b4b6d74"></a>documentedBy
-An <a href="#D106A0A9-55C4-454f-9E20-35BA54114036"><font color="#0000ff"><u>isRepresentedAs</u></font></a> <a href="#DCE662F5-7BDB-457e-AE7E-2E5FE43DBA1A"><font color="#0000ff"><u>relationship</u></font></a> that asserts a <a href="#F0B48978-D4E4-45a4-8238-091A5B714D82"><font color="#0000ff"><u>WorkOfDocumentation</u></font></a> is about a <a href="#485CBF1A-04FF-4741-8471-46A03D28C406"><font color="#0000ff"><u>Thing</u></font></a>
-
+An isRepresentedAs relationship that asserts a WorkOfDocumentation is about a Thing.
 
 ### <a id="000c5bd1-f02a-4350-a129-9574e3e9d8f3"></a>DocumentFormat
 A <a href="#CCC8FA06-CDA8-491d-BFFC-0A88D6A565B1"><font color="#0000ff"><u>ClassOfIndividualDocument</u></font></a> whose members are all of the same document <a href="#EF2C13D4-7106-4799-BB72-7CD47714F257"><font color="#0000ff"><u>format</u></font></a> - e.g.
@@ -1203,7 +1212,7 @@ The first line of the Address including the number of the dwelling and the stree
 
 
 ### <a id="1c20a1d0-4aed-4a17-8f5a-b6b88acf1677"></a>Forgery
-A <a href="#43E58528-16E4-48b3-8F13-10500879EA83"><font color="#0000ff"><u>CriminalActivity</u></font></a> and a Create activity that is the creation of fake artefacts.
+A Create activity that is the creation of fake artefacts.
 
 ### <a id="b7bc6bf3-ac03-49a7-8f2f-65f91d969c5b"></a>format
 The <a href="#EF2C13D4-7106-4799-BB72-7CD47714F257"><font color="#0000ff"><u>format</u></font></a> of the respective WorkOfDocumentation.
@@ -1240,7 +1249,7 @@ A Location that is a naturally occurring feature on the earth.
 
 
 ### <a id="10996e21-6210-474c-8ad9-a2a2e2302ccc"></a>GeoIdentity
-A unique Identifier attributed to the respective Location
+A unique Identifier attributed to the respective Location.
 
 
 ### <a id="80dce57a-8c3c-4e58-8a60-85ca21c4fb44"></a>GeoPoint
@@ -1262,7 +1271,7 @@ An Event related to democratic processes or party politics
 
 
 ### <a id="9c14da25-c1a8-456e-aea9-37ea1c6e01ac"></a>hasAssociatedRepresentation
-Use with care, this is meant to relate representations that are referred by or mentioned by a Thing but which they are not representation of that Thing
+Use with care, this is meant to relate representations that are referred by or mentioned by a Thing but which they are not representations of that Thing.
 
 ### <a id="b7999e75-fa09-441a-b62d-b9bc3a97cf85"></a>hasCharacteristic
 An <a href="#BBC06281-340F-458f-A057-82193F32C9DD"><font color="#0000ff"><u>rdf:type</u></font></a> <a href="#DCE662F5-7BDB-457e-AE7E-2E5FE43DBA1A"><font color="#0000ff"><u>relationship</u></font></a> that asserts an Element has a Characteristic or Measure
@@ -1313,9 +1322,6 @@ A system that is also an Artefact.
 ### <a id="fb6ffbda-2dac-4524-920f-16d6bd69e109"></a>ICalRepresentation
 
 
-### <a id="16f3c9bb-107e-4f0c-884a-282add9df0c8"></a>iCalRRuleRepresentation
-
-
 ### <a id="4357d08f-93d3-4e09-b816-df7226360339"></a>Identifier
 A <a href="#7D7CC966-56EB-4220-A650-A993E598F2E2"><font color="#0000ff"><u>Name</u></font></a> that is unique within the specified context.
 
@@ -1328,6 +1334,9 @@ Note: this is an individual document  - i.e. physical or (rarely) a specific ele
 ### <a id="83bc3d7e-2609-473c-8ab8-194c531031ab"></a>IndividualDocumentID
 An Identifier used to uniquely identify an <a href="#0F327324-6B4E-40b1-B96B-97A334BA5E4A"><font color="#0000ff"><u>IndividualDocument</u></font></a>
 
+
+
+### <a id="ae8d0d1f-ca26-427d-a09c-c76187aeb127"></a>IndividualTicket
 
 
 ### <a id="b0166f18-6edd-4ec3-bfe2-f19db449e5c1"></a>InformationProcessingSystem
@@ -1484,7 +1493,7 @@ The GeoIdentity that is a representation of the eastward componrnent of cartesia
 
 
 ### <a id="0c6d0460-64c1-4f18-9e40-6acf68eff05f"></a>Observation
-An <a href="#B376370E-F5E8-4287-A3EC-AC35532919B1"><font color="#0000ff"><u>Event</u></font></a> where an <a href="#97EDC90F-3B36-4da8-AE77-D5FDBDEA2B21"><font color="#0000ff"><u>Element</u></font></a> (Event or Entity) is observed by an <a href="#F4EDE167-6F5A-417d-9984-0221CCDF752C"><font color="#0000ff"><u>Entity</u></font></a> (i.e. a <a href="#5D5C5B9B-5E90-4100-8353-8EE9F3D772E2"><font color="#0000ff"><u>Person</u></font></a> or Device)
+An Event where a State is observed by another State (e.g. a Person or InformationProcessingSystem).
 
 
 ### <a id="6740ad35-e10e-4d52-97d0-1c13cee004d6"></a>Observed
@@ -1532,10 +1541,7 @@ December 1944
 
 
 ### <a id="741940e7-e8c9-4ac5-84d5-587edf94316a"></a>PartNumber
-A unique Identifier for the a ModelOfDevice
-
-Note:  this is different to a serial number which is unique to each <a href="#115F2F9B-21F3-4903-8EAA-AB3AEFE97461"><font color="#0000ff"><u>Device</u></font></a>
-
+A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HumanMadeSystem.
 
 ### <a id="22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5"></a>PartOfFacility
 A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is contained within a Facility - e.g. a room, laboratory, floor, etc.
@@ -1564,9 +1570,6 @@ A <a href="#F114F86C-3BA8-4be7-A686-A1D80002DF28"><font color="#0000ff"><u>Perso
 
 ### <a id="cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5"></a>PersonOrOrganization
 An Actor that exists as a spatiotemporally bounded state exhibiting coherent agency, either as a single agent (Person) or as an organized collection of agents (Organization).
-
-### <a id="dc093146-100b-4e65-a1a5-4040ac785213"></a>PersonState
-
 
 ### <a id="b42cfb5b-1501-4d8d-9a14-5e21286fc371"></a>PersonTitle
 The title associated with the name of the person.
@@ -1598,7 +1601,7 @@ ParticularPeriod of publication of the respective document.
 ### <a id="6b68585b-ab19-48a0-8254-1d6768f88833"></a>RecurringTimespan
 
 
-### <a id="de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3"></a>RegionalConsituency
+### <a id="de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3"></a>RegionalConstituency
 An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location.
 
 
@@ -1658,20 +1661,19 @@ The examplar text, number, etc. of a <a href="#675A5C23-0746-43d0-96D0-AF0DF72CD
 
 
 ### <a id="ae5d82ec-1024-4f49-ad0d-f7cf7486a296"></a>SerialNumber
-A unique Identifier for the a ModelOfDevice
+An Identifier for HumanMadeSystem that has been assigned at manufacture. Example Value: 123ABC456DEF.
 
-Note:  this is different to a serial number which is unique to each <a href="#115F2F9B-21F3-4903-8EAA-AB3AEFE97461"><font color="#0000ff"><u>Device</u></font></a>
 
 
 ### <a id="fec11cc7-b62f-42fc-806b-c45c2d026021"></a>SetOfCharacterStrings
 The powertype of InformationprocessingSystems
 
 ### <a id="a2c3a0dc-2f0d-46ec-9e7e-b7ad443397fc"></a>SetOfIndividualDocuments
-The <a href="#D4BD48E8-76B8-4d3c-AB83-E653DB89170D"><font color="#0000ff"><u>powertype</u></font></a> of <a href="#0F327324-6B4E-40b1-B96B-97A334BA5E4A"><font color="#0000ff"><u>IndividualDocument</u></font></a>.
+The powertype of IndividualDocument.
 
 
 ### <a id="322b471c-b825-4862-b974-29a18c211f43"></a>SetOfInformationProcessingSystems
-
+The powertype of InformationProcessingSystem whose instances are sets of InformationProcessingSystems.
 
 ### <a id="d2e0d19c-d606-4a06-8170-c680ec9734ce"></a>SetOfLivingOrganisms
 
@@ -1769,7 +1771,7 @@ Example: People who tend to violence
 ### <a id="ea37530e-a5c7-46d4-9a47-68dfb03e843c"></a>TerroristOrganization
 
 
-### <a id="ae8d0d1f-ca26-427d-a09c-c76187aeb127"></a>Ticket
+### <a id="068b5b19-170e-4766-959d-2e00e412b568"></a>Ticket
 
 
 ### <a id="53d0d18a-d2da-41fd-bd59-9092874411bd"></a>Title
@@ -1784,6 +1786,9 @@ Example: the <a href="#79D9049D-E63F-4c94-B348-49506A75B9F8"><font color="#0000f
 
 ### <a id="5bccfd0d-d48e-4765-83f6-7056d7cd89a2"></a>TransactionActivity
 
+
+### <a id="4cf340d7-474d-40d7-9416-102964083670"></a>TransactionParticipant
+The parties involves in the transaction. This normally is the same parties which as the RightsHolders to the items which are part of the transaction e.g. those that have the right to sell a set of goods and those that own the money to pay for them.
 
 ### <a id="2d2db9cc-7e06-45ca-b239-03603271cb32"></a>Usage
 A hasAccessTo relationship between a <a href="#D09EDE21-E862-4ec1-BC0F-045CCE5454A9"><font color="#0000ff"><u>ResponsibleActor</u></font></a> and an <a href="#40231334-5ACC-4dd4-A8C1-05012E2170E0"><font color="#0000ff"><u>Asset</u></font></a> they use.
@@ -1807,7 +1812,7 @@ A <a href="#F0B48978-D4E4-45a4-8238-091A5B714D82"><font color="#0000ff"><u>WorkO
 
 
 ### <a id="068fd872-409b-4565-8ea3-00d9a515ec60"></a>WorkOfDocumentation
-A <a href="#675A5C23-0746-43d0-96D0-AF0DF72CD697"><font color="#0000ff"><u>Representation</u></font></a> that is the general case of a document - i.e. "War and Peace" as opposed to "My copy of <a href="#D4F568F5-7BC4-489d-94BC-AE1305E5C0C2"><font color="#0000ff"><u>War</u></font></a> and Peace".
+A Representation that is the general case of a document - i.e. "War and Peace" as opposed to "My copy of War and Peace".
 
 
 ### <a id="52d91440-7660-4e04-a9c9-91c5cb0f9957"></a>dcterms:source

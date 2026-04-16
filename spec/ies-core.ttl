@@ -1,6 +1,6 @@
 # MIT License
 #
-# Crown Copyright (c) 2025
+# Crown Copyright (c) 2026
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal.
@@ -42,15 +42,15 @@ ies_core: a owl:Ontology ;
    A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.
    """@en-GB ;
    dcterms:created "2025-09-30"^^xsd:date ;
-   dcterms:modified "2025-09-30"^^xsd:date ;
+   dcterms:modified "2026-04-15"^^xsd:date ;
    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
    dcterms:language "en-GB" ;
    dcterms:license <https://spdx.org/licenses/MIT.html> ;
-   dcterms:rights "Crown Copyright 2020-2025"@en-GB ;
-   dcterms:dateCopyrighted "2025"^^xsd:gYear ;
+   dcterms:rights "Crown Copyright 2020-2026"@en-GB ;
+   dcterms:dateCopyrighted "2026"^^xsd:gYear ;
    vann:preferredNamespacePrefix "ies_core" ;
    vann:preferredNamespaceUri "http://purl.org/ies/core/v0/ont/" ;
-   owl:versionInfo "0.1.0 (RC1)" .
+   owl:versionInfo "0.1.1 (RC1)" .
 
 ies_core:Accent rdf:type skos:Concept . 
 ies_core:Accent rdfs:label "Accent" . 
@@ -156,6 +156,11 @@ ies_core:allHaveDisposition dcterms:identifier "{B6AC8BF8-1060-4fea-B00B-8AD509D
 ies_core:allHaveDisposition rdfs:subPropertyOf rdfs:subClassOf . 
 ies_core:allHaveDisposition rdfs:domain ies_top:SetOfStates . 
 ies_core:allHaveDisposition rdfs:range ies_core:Disposition . 
+ies_core:Alliance rdf:type skos:Concept . 
+ies_core:Alliance rdfs:label "Alliance" . 
+ies_core:Alliance dcterms:identifier "{1804B042-B78C-48b9-8D52-C872689FFDEB}" . 
+ies_core:Alliance rdfs:comment "An Organization made up of allies - these could be people or organizations, and the alliance may be quite loose." . 
+ies_core:Alliance skos:broader ies_core:Organization . 
 ies_core:ArbitraryPeriod rdf:type rdfs:Class . 
 ies_core:ArbitraryPeriod rdfs:label "Arbitrary Period" . 
 ies_core:ArbitraryPeriod dcterms:identifier "{76F0E234-CA6E-40b7-905E-8D5C30F24209}" . 
@@ -310,7 +315,7 @@ ies_core:Disposition rdfs:subClassOf ies_top:SetOfStates .
 ies_core:documentedBy rdf:type rdf:Property . 
 ies_core:documentedBy rdfs:label "documented by" . 
 ies_core:documentedBy dcterms:identifier "{DF65005D-F603-4d63-AC78-B8AC8B4B6D74}" . 
-ies_core:documentedBy rdfs:comment "An isRepresentedAs relationship that asserts a WorkOfDocumentation is about a Thing" . 
+ies_core:documentedBy rdfs:comment "An isRepresentedAs relationship that asserts a WorkOfDocumentation is about a Thing." . 
 ies_core:documentedBy rdfs:subPropertyOf ies_core:isRepresentedAs . 
 ies_core:documentedBy rdfs:range ies_core:WorkOfDocumentation . 
 ies_core:DocumentFormat rdf:type rdfs:Class . 
@@ -370,7 +375,7 @@ ies_core:Exchange rdfs:subClassOf ies_core:TransactionActivity .
 ies_core:ExchangeMovement rdf:type rdfs:Class . 
 ies_core:ExchangeMovement rdfs:label "Exchange Movement" . 
 ies_core:ExchangeMovement dcterms:identifier "{D8558615-B5B4-45e0-B8FC-5311A804F8EF}" . 
-ies_core:ExchangeMovement rdfs:subClassOf ies_core:Activity . 
+ies_core:ExchangeMovement rdfs:subClassOf ies_core:TransactionActivity . 
 ies_core:Facility rdf:type skos:Concept . 
 ies_core:Facility rdfs:label "Facility" . 
 ies_core:Facility dcterms:identifier "{84C679A1-D3D3-45f3-8764-46BA14B5F242}" . 
@@ -396,9 +401,8 @@ ies_core:FirstLineOfAddress skos:broader ies_core:LineOfAddress .
 ies_core:Forgery rdf:type skos:Concept . 
 ies_core:Forgery rdfs:label "Forgery" . 
 ies_core:Forgery dcterms:identifier "{1C20A1D0-4AED-4a17-8F5A-B6B88ACF1677}" . 
-ies_core:Forgery rdfs:comment "A CriminalActivity and a Create activity that is the creation of fake artefacts." . 
+ies_core:Forgery rdfs:comment "A Create activity that is the creation of fake artefacts." . 
 ies_core:Forgery skos:broader ies_core:Create . 
-ies_core:Forgery skos:broader ies_core:CriminalActivity . 
 ies_core:format rdf:type rdf:Property . 
 ies_core:format rdfs:label "format" . 
 ies_core:format dcterms:identifier "{B7BC6BF3-AC03-49a7-8F2F-65F91D969C5B}" . 
@@ -437,7 +441,7 @@ ies_core:GeographicFeature skos:broader ies_core:Location .
 ies_core:GeoIdentity rdf:type rdfs:Class . 
 ies_core:GeoIdentity rdfs:label "Geo Identity" . 
 ies_core:GeoIdentity dcterms:identifier "{10996E21-6210-474c-8AD9-A2A2E2302CCC}" . 
-ies_core:GeoIdentity rdfs:comment "A unique Identifier attributed to the respective Location" . 
+ies_core:GeoIdentity rdfs:comment "A unique Identifier attributed to the respective Location." . 
 ies_core:GeoIdentity rdfs:subClassOf ies_core:Identifier . 
 ies_core:GeoPoint rdf:type rdfs:Class . 
 ies_core:GeoPoint rdfs:label "Geo Point" . 
@@ -461,7 +465,7 @@ ies_core:GovernmentOrganization skos:broader ies_core:Organization .
 ies_core:hasAssociatedRepresentation rdf:type rdf:Property . 
 ies_core:hasAssociatedRepresentation rdfs:label "has associated representation" . 
 ies_core:hasAssociatedRepresentation dcterms:identifier "{9C14DA25-C1A8-456e-AEA9-37EA1C6E01AC}" . 
-ies_core:hasAssociatedRepresentation rdfs:comment "Use with care, this is meant to relate representations that are referred by or mentioned by a Thing but which they are not representation of that Thing" . 
+ies_core:hasAssociatedRepresentation rdfs:comment "Use with care, this is meant to relate representations that are referred by or mentioned by a Thing but which they are not representations of that Thing." . 
 ies_core:hasAssociatedRepresentation rdfs:subPropertyOf ies_top:couple . 
 ies_core:hasAssociatedRepresentation rdfs:range ies_core:Representation . 
 ies_core:hasCharacteristic rdf:type rdf:Property . 
@@ -497,7 +501,8 @@ ies_core:hasName rdfs:label "has name" .
 ies_core:hasName dcterms:identifier "{D6AE651C-2252-47ff-85B9-848D14A8AB26}" . 
 ies_core:hasName rdfs:range ies_core:Name . 
 ies_core:hasName rdfs:subPropertyOf ies_core:isRepresentedAs . 
-ies_core:hasQuantity rdf:type owl:ObjectProperty . 
+ies_core:hasQuantity rdf:type rdf:Property . 
+ies_core:hasQuantity rdfs:label "has quantity" . 
 ies_core:hasQuantity dcterms:identifier "{6F9353E2-2CFA-4017-A2AF-3359AD131039}" . 
 ies_core:hasQuantity rdfs:comment "An isRepresentedAs relationship that points to a qudt:Quantity which represents a MeasureNote: a given Measure may have more than quantity associated to it(e.g. 1kg or 2.2lbs) in different units of measure." . 
 ies_core:hasQuantity rdfs:domain ies_core:Measure . 
@@ -530,9 +535,6 @@ ies_core:ICalRepresentation rdf:type rdfs:Class .
 ies_core:ICalRepresentation rdfs:label "I Cal Representation" . 
 ies_core:ICalRepresentation dcterms:identifier "{FB6FFBDA-2DAC-4524-920F-16D6BD69E109}" . 
 ies_core:ICalRepresentation rdfs:subClassOf ies_core:Representation . 
-ies_core:iCalRRuleRepresentation rdf:type rdf:Property . 
-ies_core:iCalRRuleRepresentation rdfs:label "i cal r rule representation" . 
-ies_core:iCalRRuleRepresentation dcterms:identifier "{16F3C9BB-107E-4f0c-884A-282ADD9DF0C8}" . 
 ies_core:Identifier rdf:type rdfs:Class . 
 ies_core:Identifier rdfs:label "Identifier" . 
 ies_core:Identifier dcterms:identifier "{4357D08F-93D3-4e09-B816-DF7226360339}" . 
@@ -549,6 +551,10 @@ ies_core:IndividualDocumentID rdfs:label "Individual Document ID" .
 ies_core:IndividualDocumentID dcterms:identifier "{83BC3D7E-2609-473c-8AB8-194C531031AB}" . 
 ies_core:IndividualDocumentID rdfs:comment "An Identifier used to uniquely identify an IndividualDocument" . 
 ies_core:IndividualDocumentID skos:broader ies_core:Identifier . 
+ies_core:IndividualTicket rdf:type rdfs:Class . 
+ies_core:IndividualTicket rdfs:label "Individual Ticket" . 
+ies_core:IndividualTicket dcterms:identifier "{AE8D0D1F-CA26-427d-A09C-C76187AEB127}" . 
+ies_core:IndividualTicket rdfs:subClassOf ies_core:IndividualDocument . 
 ies_core:InformationProcessingSystem rdf:type rdfs:Class . 
 ies_core:InformationProcessingSystem rdfs:label "Information Processing System" . 
 ies_core:InformationProcessingSystem dcterms:identifier "{B0166F18-6EDD-4ec3-BFE2-F19DB449E5C1}" . 
@@ -739,7 +745,7 @@ ies_core:Nation rdf:type rdfs:Class .
 ies_core:Nation rdfs:label "Nation" . 
 ies_core:Nation dcterms:identifier "{8ADF110D-EF60-4f98-8D29-BDB92AC83537}" . 
 ies_core:Nation rdfs:comment "The people of a Country (or group of Countries recognised as a Nation).Note: this is distinct to a Country which is the land mass under control by the Nation, though ISO Country codes are regularly used to also identify Nations. " . 
-ies_core:Nation rdfs:subClassOf ies_core:RegionalConsituency . 
+ies_core:Nation rdfs:subClassOf ies_core:RegionalConstituency . 
 ies_core:Nickname rdf:type skos:Concept . 
 ies_core:Nickname rdfs:label "Nickname" . 
 ies_core:Nickname dcterms:identifier "{689655C6-D1ED-454a-AD88-CDDD7E34668C}" . 
@@ -757,7 +763,7 @@ ies_core:NotForProfitOrganization skos:broader ies_core:Organization .
 ies_core:Observation rdf:type rdfs:Class . 
 ies_core:Observation rdfs:label "Observation" . 
 ies_core:Observation dcterms:identifier "{0C6D0460-64C1-4f18-9E40-6ACF68EFF05F}" . 
-ies_core:Observation rdfs:comment "An Event where an Element (Event or Entity) is observed by an Entity (i.e. a Person or Device)" . 
+ies_core:Observation rdfs:comment "An Event where a State is observed by another State (e.g. a Person or InformationProcessingSystem)." . 
 ies_core:Observation rdfs:subClassOf ies_core:Activity . 
 ies_core:Observed rdf:type rdfs:Class . 
 ies_core:Observed rdfs:label "Observed" . 
@@ -808,7 +814,7 @@ ies_core:ParticularPeriod rdfs:subClassOf ies_top:Period .
 ies_core:PartNumber rdf:type skos:Concept . 
 ies_core:PartNumber rdfs:label "Part Number" . 
 ies_core:PartNumber dcterms:identifier "{741940E7-E8C9-4ac5-84D5-587EDF94316A}" . 
-ies_core:PartNumber rdfs:comment "A unique Identifier for the a ModelOfDeviceNote:  this is different to a serial number which is unique to each Device" . 
+ies_core:PartNumber rdfs:comment "A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HumanMadeSystem." . 
 ies_core:PartNumber skos:broader ies_core:Identifier . 
 ies_core:PartOfFacility rdf:type skos:Concept . 
 ies_core:PartOfFacility rdfs:label "Part Of Facility" . 
@@ -878,11 +884,11 @@ ies_core:RecurringTimespan rdf:type rdfs:Class .
 ies_core:RecurringTimespan rdfs:label "Recurring Timespan" . 
 ies_core:RecurringTimespan dcterms:identifier "{6B68585B-AB19-48a0-8254-1D6768F88833}" . 
 ies_core:RecurringTimespan rdfs:subClassOf ies_top:IntermittentTimespan . 
-ies_core:RegionalConsituency rdf:type rdfs:Class . 
-ies_core:RegionalConsituency rdfs:label "Regional Consituency" . 
-ies_core:RegionalConsituency dcterms:identifier "{DE6B8201-3FF0-4dba-9B2A-01BB02DC6EC3}" . 
-ies_core:RegionalConsituency rdfs:comment "An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location." . 
-ies_core:RegionalConsituency rdfs:subClassOf ies_core:Organization . 
+ies_core:RegionalConstituency rdf:type rdfs:Class . 
+ies_core:RegionalConstituency rdfs:label "Regional Constituency" . 
+ies_core:RegionalConstituency dcterms:identifier "{DE6B8201-3FF0-4dba-9B2A-01BB02DC6EC3}" . 
+ies_core:RegionalConstituency rdfs:comment "An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location." . 
+ies_core:RegionalConstituency rdfs:subClassOf ies_core:Organization . 
 ies_core:RegionOfCountry rdf:type skos:Concept . 
 ies_core:RegionOfCountry rdfs:label "Region Of Country" . 
 ies_core:RegionOfCountry dcterms:identifier "{EB604FC5-9503-4dcb-AA73-E88EAB5AAD0D}" . 
@@ -953,7 +959,7 @@ ies_core:schemeOwner rdfs:subPropertyOf ies_top:couple .
 ies_core:SerialNumber rdf:type skos:Concept . 
 ies_core:SerialNumber rdfs:label "Serial Number" . 
 ies_core:SerialNumber dcterms:identifier "{AE5D82EC-1024-4f49-AD0D-F7CF7486A296}" . 
-ies_core:SerialNumber rdfs:comment "A unique Identifier for the a ModelOfDeviceNote:  this is different to a serial number which is unique to each Device" . 
+ies_core:SerialNumber rdfs:comment "An Identifier for HumanMadeSystem that has been assigned at manufacture. Example Value: 123ABC456DEF." . 
 ies_core:SerialNumber skos:broader ies_core:Identifier . 
 ies_core:SetOfCharacterStrings rdf:type rdfs:Class . 
 ies_core:SetOfCharacterStrings rdfs:label "Set Of Character Strings" . 
@@ -968,6 +974,8 @@ ies_core:SetOfIndividualDocuments rdfs:subClassOf ies_core:Representation .
 ies_core:SetOfInformationProcessingSystems rdf:type rdfs:Class . 
 ies_core:SetOfInformationProcessingSystems rdfs:label "Set Of Information Processing Systems" . 
 ies_core:SetOfInformationProcessingSystems dcterms:identifier "{322B471C-B825-4862-B974-29A18C211F43}" . 
+ies_core:SetOfInformationProcessingSystems rdfs:comment "The powertype of InformationProcessingSystem whose instances are sets of InformationProcessingSystems." . 
+ies_core:SetOfInformationProcessingSystems rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfLivingOrganisms rdf:type rdfs:Class . 
 ies_core:SetOfLivingOrganisms rdfs:label "Set Of Living Organisms" . 
 ies_core:SetOfLivingOrganisms dcterms:identifier "{D2E0D19C-D606-4a06-8170-C680EC9734CE}" . 
@@ -1039,7 +1047,8 @@ ies_core:spokenLanguage rdfs:label "spoken language" .
 ies_core:spokenLanguage dcterms:identifier "{4EFE40AC-08C0-40b7-BC68-B11D0306EE78}" . 
 ies_core:spokenLanguage rdfs:comment "The language in which someone is proficient" . 
 ies_core:spokenLanguage rdfs:range ies_core:Language . 
-ies_core:spokenLanguage rdfs:range ies_core:LanguageProficiency . 
+ies_core:spokenLanguage rdfs:domain ies_core:LanguageProficiency . 
+ies_core:spokenLanguage rdfs:subPropertyOf ies_top:couple . 
 ies_core:startBoundOfSet rdf:type rdf:Property . 
 ies_core:startBoundOfSet rdfs:label "start bound of set" . 
 ies_core:startBoundOfSet dcterms:identifier "{8343BE41-469D-40b8-BFF2-1C3B78488D6F}" . 
@@ -1072,8 +1081,8 @@ ies_core:TerroristOrganization dcterms:identifier "{EA37530E-A5C7-46d4-9A47-68DF
 ies_core:TerroristOrganization skos:broader ies_core:Organization . 
 ies_core:Ticket rdf:type rdfs:Class . 
 ies_core:Ticket rdfs:label "Ticket" . 
-ies_core:Ticket dcterms:identifier "{AE8D0D1F-CA26-427d-A09C-C76187AEB127}" . 
-ies_core:Ticket rdfs:subClassOf ies_core:IndividualDocument . 
+ies_core:Ticket dcterms:identifier "{068B5B19-170E-4766-959D-2E00E412B568}" . 
+ies_core:Ticket rdfs:subClassOf ies_core:WorkOfDocumentation . 
 ies_core:Title rdf:type rdfs:Class . 
 ies_core:Title rdfs:label "Title" . 
 ies_core:Title dcterms:identifier "{53D0D18A-D2DA-41fd-BD59-9092874411BD}" . 
@@ -1088,6 +1097,11 @@ ies_core:TransactionActivity rdf:type rdfs:Class .
 ies_core:TransactionActivity rdfs:label "Transaction Activity" . 
 ies_core:TransactionActivity dcterms:identifier "{5BCCFD0D-D48E-4765-83F6-7056D7CD89A2}" . 
 ies_core:TransactionActivity rdfs:subClassOf ies_core:Activity . 
+ies_core:TransactionParticipant rdf:type rdfs:Class . 
+ies_core:TransactionParticipant rdfs:label "Transaction Participant" . 
+ies_core:TransactionParticipant dcterms:identifier "{4CF340D7-474D-40d7-9416-102964083670}" . 
+ies_core:TransactionParticipant rdfs:comment "The parties involves in the transaction. This normally is the same parties which as the RightsHolders to the items which are part of the transaction e.g. those that have the right to sell a set of goods and those that own the money to pay for them." . 
+ies_core:TransactionParticipant rdfs:subClassOf ies_core:Participation . 
 ies_core:Usage rdf:type skos:Concept . 
 ies_core:Usage rdfs:label "Usage" . 
 ies_core:Usage dcterms:identifier "{2D2DB9CC-7E06-45ca-B239-03603271CB32}" . 
