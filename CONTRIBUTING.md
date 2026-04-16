@@ -27,7 +27,7 @@ Public users and contributors are encouraged to engage in the following ways:
 
 All input is welcome and will be reviewed by maintainers, but prioritisation is subject to IES goals and delivery timelines.
 
-At this time, IES does not accept **public pull requests (PRs)** or **direct code contributions**. Code and ontology contributions are made by members of the **IES Technical Group (TG)** - who are made up of approved government contributors working under formal arrangements who have write access to this repository. For details on the TG's role and the issue lifecycle, see [Issue Workflow and Governance](#issue-workflow-and-governance). For maintainer contact details, refer to [MAINTAINERS.md](MAINTAINERS.md).
+At this time, IES does not accept **public pull requests (PRs)** or **direct code contributions**. Code and ontology contributions are made by members of the **IES Technical Group (TG)** - who are made up of approved contributors working under formal arrangements who have write access to this repository. For details on the TG's role and the issue lifecycle, see [Issue Workflow and Governance](#issue-workflow-and-governance). For maintainer contact details, refer to [MAINTAINERS.md](MAINTAINERS.md).
 
 ---
 
@@ -78,7 +78,7 @@ The process for handling technical issues is as follows:
    - The appropriate technical owner remains responsible and must be informed about the discussions.
    - Any technical outputs or conclusions from domain working group discussions must be **summarised and recorded on GitHub** in a timely manner so that GitHub remains the authoritative record.
 5. Once an agreed approach is reached by the technical community, the appropriate technical owner documents the **final proposal** on GitHub as a pull request (PR). This must include:
-   - The appropriate updates the UML model, RDF serialisation and documentation.
+   - Appropriate updates to the UML model, RDF serialisation, and documentation
    - The rationale for the proposed approach
    - Any alternative options considered
    - Relevant impacts, dependencies, or constraints
@@ -86,7 +86,7 @@ The process for handling technical issues is as follows:
 7. Only when this work is complete and the associated PR approved by at least two of the three **IES Core Maintainers** (who were neither the **Author** of the PR nor the **Technical Owner**), should the TG place the issue on the **IES Steering Group** agenda for formal agreement.
 8. Only following IES Steering Group formal agreement can the pull request (PR) then be merged into `main`.
 
-**Note:** For changes relating to governance (e.g. contribution policies, maintainer roles, decision-making processes), the same lifecycle applies, but such changes must be formally recommended by the TG and approved by the IES Steering Group before the associated pull request is raised.
+**Note:** For changes relating to governance (e.g. contribution policies, maintainer roles, decision-making processes), the same lifecycle applies, but such changes must first be formally recommended by the TG before the associated pull request is raised, and the PR must receive formal IES Steering Group approval before it can be merged.
 
 ### Steering Group Submissions
 
@@ -102,7 +102,7 @@ The Steering Group should not be expected to resolve raw or undeveloped technica
 
 ## Minimum Review Period
 
-New proposals and issues on GitHub should remain open for a clearly defined period (typically **3 to 4 weeks**) before they can be considered for the IES Steering Group agenda. This:
+New proposals and issues must remain open on GitHub for a clearly defined period (typically **3 to 4 weeks from the date they are raised**) before they can be placed on the IES Steering Group agenda. This:
 
 - Gives contributors time to comment
 - Prevents proposals being escalated the day they are published
