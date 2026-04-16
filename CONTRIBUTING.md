@@ -12,7 +12,7 @@ The Department for Business and Trade (DBT) is the current custodian of this rep
 
 IES follows an **open-source governance model**, where all code is **publicly available** under open-source licences, and collaboration is invited from **approved contributors**. While direct code contributions from the general public are not currently accepted, we **welcome feedback, issue reporting, and documentation suggestions**.
 
-To see a list of contributing organisations and individuals, refer to [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) and the GitHub contributor insights page at [Contributors](https://github.com/IES-Org/ies/graphs/contributors).
+To see a list of contributing organisations and individuals, refer to [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) and the GitHub contributor insights page at [Contributors](https://github.com/IES-Org/ies-core/graphs/contributors).
 
 ---
 
@@ -35,7 +35,7 @@ For contact details, refer to [MAINTAINERS.md](MAINTAINERS.md).
 
 If you encounter a bug, error, or inconsistency, please follow these steps:
 
-1. Check for an existing issue under [Issues](https://github.com/IES-Org/ies/issues).
+1. Check for an existing issue under [Issues](https://github.com/IES-Org/ies-core/issues).
 2. Open a new issue if none exists. Use one of the available templates.
 3. Provide a clear and detailed description, including steps to reproduce if applicable.
 4. Use labels (bug, documentation, enhancement, etc.) where appropriate.
@@ -147,7 +147,7 @@ Maintainers review issues, guide contributions, and ensure alignment with progra
 
 **Maintained as part of the Information Exchange Standard initiative.**
 
-© Crown Copyright 2025. This work is currently under the custodianship of the Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
+© Crown Copyright 2026. This work is currently under the custodianship of the Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
 Licensed under the Open Government Licence v3.0.
 
 For full licensing terms, see [OGL_LICENSE.md](OGL_LICENSE.md).

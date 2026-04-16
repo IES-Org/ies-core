@@ -1,8 +1,6 @@
-![IES Logo](assets/images/IES-logo-dark.png)
+# <img src="./assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Information Exchange Standard (IES) - Core Ontology (ies-core)
 
-# Information Exchange Standard (IES) - Core Ontology (ies-core)
-
-**Repository:** `Information Exchange Standard (IES) Core Ontology`  
+**Repository:** `Information Exchange Standard (IES) - Core Ontology`  
 **Description:** `A mid-level ontology built upon ies-core providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`  
 **Repository Status:** `In development`
 
