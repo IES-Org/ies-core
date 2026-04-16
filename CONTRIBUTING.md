@@ -5,8 +5,9 @@
 
 <!-- SPDX-License-Identifier: OGL-UK-3.0 -->
 
-Thank you for your interest in this repository.
-The Information Exchange Standard (IES) is developed and maintained as a cross-government initiative with contributions from various UK government organisations and technical support from approved suppliers and subject matter specialists.
+Thank you for your interest in this repository. The IES Core ontology is built upon [IES Top](https://github.com/IES-Org/ies-top), providing a shared common layer of patterns and concepts for representing information across multiple domains. In most cases, proposed changes will be more appropriately directed toward domain-specific, lower-level modules. Consequently, updates to the Core Ontology are expected only where requirements span many domains and justify inclusion at this level of the IES Ontology Stack.
+
+The Information Exchange Standard (IES) is developed and maintained as a cross-government initiative with contributions from various UK government organisations and technical support from approved contributors and subject matter specialists.
 
 The Department for Business and Trade (DBT) is the current custodian of this repository and the GitHub organisation, acting on behalf of a broader group of stakeholders.
 
@@ -26,8 +27,7 @@ Public users and contributors are encouraged to engage in the following ways:
 
 All input is welcome and will be reviewed by maintainers, but prioritisation is subject to IES goals and delivery timelines.
 
-At this time, IES does not accept **public pull requests (PRs)** or **direct code contributions**. Contributions are limited to **approved government contributors and suppliers** working under formal arrangements.
-For contact details, refer to [MAINTAINERS.md](MAINTAINERS.md).
+At this time, IES does not accept **public pull requests (PRs)** or **direct code contributions**. Code and ontology contributions are made by members of the **IES Technical Group (TG)** - who are made up of approved government contributors working under formal arrangements who have write access to this repository. For details on the TG's role and the issue lifecycle, see [Issue Workflow and Governance](#issue-workflow-and-governance). For maintainer contact details, refer to [MAINTAINERS.md](MAINTAINERS.md).
 
 ---
 
@@ -55,34 +55,38 @@ Technical issues relating to the IES Core Ontology should be raised as **GitHub 
 
 GitHub is the starting point for all technical work on IES Core.
 
-### Core Maintenance Team
+### IES Technical Group (TG)
 
-The IES Core Maintenance Team is responsible for:
+The **IES Technical Group (TG)** is responsible for leading the development of Ontology and/or RDF Implementation changes, which must be initiated using GitHub Issues. All TG members have write permissions to this repository. The TG is collectively responsible for:
 
-- **Triaging** all issues raised that relate to the IES Core Model
-- **Categorising** issues (bug, enhancement, modelling question, clarification, etc.)
-- **Determining** whether the issue should stay within the Core Model space or be redirected to a domain working group
-- **Ensuring** that issues are progressed in a timely and organised manner
+- **Triaging** all GitHub Issues relating to the IES Core Model
+- **Categorising** issues and assigning appropriate technical owners
+- **Determining** whether issues belong in the Core Model space or should be redirected to a domain working group
+- **Seeking Quality Assurance** from the IES Core Maintenance Team
+- **Managing escalation** to the IES Steering Group once technical discussion is complete
 
-This creates a clear point of responsibility for maintaining quality and consistency.
+For further details, see [Issue Lifecycle](#issue-lifecycle) below.
 
 ### Issue Lifecycle
 
 The process for handling technical issues is as follows:
 
 1. An issue is raised on GitHub.
-2. The Core Maintenance Team triages the issue and assigns an appropriate **technical owner**.
+2. The TG triages the issue and assigns an appropriate **technical owner**.
 3. Technical discussion and development of options takes place primarily through **GitHub Issues and comment threads**, which act as the authoritative record for the issue.
 4. The issue may also be discussed at domain working groups. However:
    - The appropriate technical owner remains responsible and must be informed about the discussions.
    - Any technical outputs or conclusions from domain working group discussions must be **summarised and recorded on GitHub** in a timely manner so that GitHub remains the authoritative record.
-5. Once an agreed approach is reached by the technical community, the appropriate technical owner documents the **final proposal** on GitHub. This must include:
+5. Once an agreed approach is reached by the technical community, the appropriate technical owner documents the **final proposal** on GitHub as a pull request (PR). This must include:
+   - The appropriate updates the UML model, RDF serialisation and documentation.
    - The rationale for the proposed approach
    - Any alternative options considered
    - Relevant impacts, dependencies, or constraints
-6. Only when this work is complete should the Core Maintenance Team place the issue on the **IES Steering Group** agenda for formal agreement.
-7. Following IES Steering Group formal agreement shall a pull request (PR) be raised with the implementation of the solution.
-8. The PR must be approved by at least two IES Core Maintainers (who were neither the **Author** of the PR or the **Technical Owner**) before the PR can be merged into `main`.
+6. The PR undergoes **quality assurance** by the IES Core Maintenance Team to ensure ontological rigour, correct RDF implementation, and alignment with cross-government requirements.
+7. Only when this work is complete and the associated PR approved by at least two of the three **IES Core Maintainers** (who were neither the **Author** of the PR nor the **Technical Owner**), should the TG place the issue on the **IES Steering Group** agenda for formal agreement.
+8. Only following IES Steering Group formal agreement can the pull request (PR) then be merged into `main`.
+
+**Note:** For changes relating to governance (e.g. contribution policies, maintainer roles, decision-making processes), the same lifecycle applies, but such changes must be formally recommended by the TG and approved by the IES Steering Group before the associated pull request is raised.
 
 ### Steering Group Submissions
 
@@ -98,12 +102,14 @@ The Steering Group should not be expected to resolve raw or undeveloped technica
 
 ## Minimum Review Period
 
-New proposals and issues on GitHub should remain open for a clearly defined period (typically **3 to 4 weeks**) before they can be considered for the Steering Group agenda. This:
+New proposals and issues on GitHub should remain open for a clearly defined period (typically **3 to 4 weeks**) before they can be considered for the IES Steering Group agenda. This:
 
 - Gives contributors time to comment
 - Prevents proposals being escalated the day they are published
 - Improves the quality of technical discussion
 - Avoids rushed or uninformed decision making
+
+Additionally, pull requests that propose changes to governance (e.g. contribution policies, maintainer roles, decision-making processes) must remain open for a minimum of 4 weeks to allow for comment from stakeholders.
 
 ---
 
@@ -122,8 +128,14 @@ Documentation updates are prioritised based on user impact and strategic relevan
 ## IES Approach to Open-Source Development
 
 - **All code is published under open-source licences.**
-- **Development is led by contributors from government and approved suppliers.**
+- **Development is led by contributors from government and approved contributors.**
 - **Feedback is welcome and helps shape ongoing development.**
+
+---
+
+## Branching Strategy
+
+Development work is carried out on feature branches created from `main`. Pull requests are used to propose changes back into `main`, and must follow the approval process described in the [Issue Lifecycle](#issue-lifecycle). Releases are tagged using the semantic versioning format `MAJOR.MINOR.PATCH`.
 
 ---
 
