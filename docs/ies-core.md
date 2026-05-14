@@ -43,7 +43,7 @@ Crown Copyright (c) 2026
     * [Assessment](#9871bdeb-c2f2-4e9f-bd30-b476fca46bf0)
     * [Access](#230d023f-7c2e-48ab-9de5-4788e484dba1)
     * [Lifecycle](#bcfbc5c8-7d3d-47d8-a13a-d810975bbf3d)
-* [ies_core](#ies_core)
+* [All Resources](#ies_core)
 ## <a id="9f186615-53a2-4a74-ac80-e53c1c9a001d"></a>Core Overview
 ![Core Overview Diagram](diagrams/UML_ID_9F186615_53A2_4a74_AC80_E53C1C9A001D.png)
 
@@ -84,7 +84,6 @@ IES-Core extends IES-Top into 3 major ways.
 
 ### IES elements in this diagram:
 
-* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
@@ -97,6 +96,7 @@ IES-Core extends IES-Top into 3 major ways.
 * [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
 * [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
 
 Because IES is a 4D ontology, it treats time and space - in fact, spacetime - in a unified way. If something happens entirely within a location, it is part of that location. If a person walks through a location, there is a temporal chunk of them that is part of that location. Similarly, if something happens in a particular period of time, it is part of that period of time. Everything we describe about physical entities use <i>State</i>, whether referring to properties that span an entire lifetime (e.g., a person's ethnicity) or to a brief interval (e.g., the color of their hair when they dyed it in teenhood). In IES-Core we call out whole-life states using specific subtypes of <i>State</i> like <i>Person</i> and <i>Vehicle</i>. They themselves are made up of many states, each representing a temporal part of the whole. 
 In the example presented here, we articulate three different locations in Fred's life. These are three temporal parts of Fred - i.e. a different point in his life. The complete, lifelong Fred is represented by an instance of <i>Person</i>, while his three temporal parts are represented by <i>States</i>. In IES4 these would have been instances of <i>PersonState</i>, but IES-Core simplifies this: the relationship to the whole (a Person, in this case) implies the specific type of state (PersonState).
@@ -136,7 +136,7 @@ The use of the <i>isAStartOf</i> and <i>isAFinishOf</i> relations in combination
 * [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
 * [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
 * [hasICalRepresentation](#f624db5f-59ec-437f-97b2-e52a0306e074)
@@ -202,7 +202,7 @@ For querying, the attribute <i>iso8601DurationRepresentation </i>must also be pr
 * [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
 * [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
 * [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
@@ -224,12 +224,10 @@ In IES-Core, we instantiate this enduring, replaceable lifespan as both a <i>Rep
 
 ### IES elements in this diagram:
 
-* [RoadVehicle](#fe0b01e3-c6cf-4dd8-9763-6fd4af05ed9c)
-* [DoubleDeckerBus](#79a3ad5a-c0f0-4c7c-9779-874527861ffd)
-* [Bus](#6a365d36-53bb-41aa-ac1f-548dd95fa9b9)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 * [category](#fb9df2ee-cbeb-4bf5-abd4-34405dc3bc52)
+* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
+* [RoadVehicle](#fe0b01e3-c6cf-4dd8-9763-6fd4af05ed9c)
 
 As with the previous version of IES, IES-Core allows the model to be extended to incorporate new concepts. IES4 allowed the extension of the ontology using RDF Schema which saw users add new classes or properties using subtypes of those found in IES4. The drawback of this approach was that data consumers needed to know the specification of each custom extension or, the data producer was obliged to instantiate instances as both a class/property in IES4 and a class in their extension.
 While RDF Schema extensions are still possible in IES-Core they shall only be used when the extension introduces new semantics -for example, when a new class is required to capture relationships or attributes not in IES-Core or IES-Top. 
@@ -254,32 +252,32 @@ This regime minimizes the burden on data consumers - regardless of any custom SK
 
 ### IES elements in this diagram:
 
-* [SetOfSetOfStates](#44a34647-ea2f-4635-8dd4-9e48008a85af)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
-* [CharacterString](#f3b474cb-755e-4062-a714-f55b01e54924)
-* [SetOfSigns](#4e054f55-b874-4f4d-b5f3-30963d987a3e)
-* [SetOfSetOfSpatiotemporalExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
 * [Set](#059b5013-017b-496f-b104-ea82b69b8792)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
+* [SetOfSetOfSpatiotemporalExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
+* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SetOfSigns](#4e054f55-b874-4f4d-b5f3-30963d987a3e)
+* [CharacterString](#f3b474cb-755e-4062-a714-f55b01e54924)
+* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
+* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
+* [SetOfSetOfStates](#44a34647-ea2f-4635-8dd4-9e48008a85af)
+* [SetOfSetOfSigns](#bb9fd5e2-98d1-4690-b8c8-08796fdae208)
 * [hasAssociatedRepresentation](#9c14da25-c1a8-456e-aea9-37ea1c6e01ac)
 * [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
-* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
-* [SetOfSetOfSigns](#bb9fd5e2-98d1-4690-b8c8-08796fdae208)
-* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [inLanguage](#9881a5a7-ec98-461f-a1a3-b7e2b2cfbd7d)
+* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
 * [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
-* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
+* [inLanguage](#9881a5a7-ec98-461f-a1a3-b7e2b2cfbd7d)
 
-<i>Signs</i> are <i>States</i> that symbolize or refer to other <i>Things</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
+<i>Signs</i> are <i>States</i> that symbolize or refer to other <i>Things</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetofSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
 Sometimes it is important to establish arbitrary categories of Representation - such as "pictures of kittens" or "educational films". A <i>SetOfRepresentations</i> can be used to collect together all Representations of similar content.
 
 ## <a id="f9eac7d7-f1dd-422b-a80e-fb97ace0a84b"></a>Names and Identifiers
@@ -287,7 +285,6 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 
 ### IES elements in this diagram:
 
-* [schemeMasteredIn](#08f7bc6a-0df3-4bae-8cd9-5eb21e3f6ff1)
 * [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
 * [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
@@ -303,10 +300,11 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 * [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [isIdentifiedBy](#53f6c6c7-1dab-408b-98f3-162e7c72f95a)
 * [schemeOwner](#20d7d2a7-0b41-417a-afab-9ecb97dc710e)
+* [schemeMasteredIn](#08f7bc6a-0df3-4bae-8cd9-5eb21e3f6ff1)
 * [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 
@@ -319,18 +317,18 @@ Names and Identifiers belong to <i>NamingSchemes</i> - this allows us to give co
 
 ### IES elements in this diagram:
 
-* [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
-* [hasCharacteristic](#b7999e75-fa09-441a-b62d-b9bc3a97cf85)
-* [allHaveCharacteristic](#c17aaa45-7699-42c1-86d3-2ad01d0209ba)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
-* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
+* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [allHaveCharacteristic](#c17aaa45-7699-42c1-86d3-2ad01d0209ba)
+* [hasCharacteristic](#b7999e75-fa09-441a-b62d-b9bc3a97cf85)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
 
 Characteristics are used to articulate properties of a <i>SpatiotemporalExtent</i> that are qualitative or quantitative, the latter being a <i>Measure</i>. IES-Core adopts the QUDT ontology to model specific measures, measure ranges and associated units. 
 Because QUDT is highly flexible, IES-Core mandates a more explicit modelling pattern in which the property being measured (<i>qudt:Quantity </i>and its<i> qudt:QuantityKind</i>) is separate from its value (<i>qudt:QuantityValue</i>). This allows for the same measure to have more than one value with different units of measure (e.g. 1kg and 2.2lbs).
@@ -362,7 +360,7 @@ Dispositions are managed in IES-Core using <i>Disposition</i> -a set that collec
 ### IES elements in this diagram:
 
 * [Stuff](#0f8a7a2e-896c-4b09-afde-f63807bdc767)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [FiniteSetOfSpatiotemporalExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
 * [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
@@ -425,13 +423,13 @@ Finally,<b><i> </i></b><i>Representations</i> themselves can be organized into l
 
 ### IES elements in this diagram:
 
-* [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
-* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
-* [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
+* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
+* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
+* [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
 * [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
 * [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
-* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
 
 A <i>LivingOrganism</i> is a state made up of cells, which uses genes and chemistry to sustain itself, requires energy, and evolves over time. The spatiotemporal extent of an instance of a living organism is bound from its <i>BirthState</i> to its <i>DeathState</i>. These states can be used to indicate the location and time of birth and death of a <i>LivingOrganism </i>respectively.
 
@@ -527,14 +525,15 @@ IES makes a clear distinction between a specific, individual copy of a document,
 
 ### IES elements in this diagram:
 
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
-* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
 * [Ticket](#068b5b19-170e-4766-959d-2e00e412b568)
-* [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
+* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
+* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
+* [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
 
-A <i>Ticket </i>is an <i>WorkOfDocumentation </i>that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
+A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
+
 
 ## <a id="{7782E49B-2F99-4ecd-9004-EDEE21511B5E}"></a>System
 
@@ -560,13 +559,16 @@ A <i>Ticket </i>is an <i>WorkOfDocumentation </i>that authorises access to an <i
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [SetOfPersons](#a368032e-957e-46de-adba-535d9062b8e2)
+* [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
 * [hasEthnicity](#4495f6db-149a-4866-b2d3-ceed4324ff1d)
 * [Ethnicity](#ae3d9f2d-2616-4b33-bc0a-360a947bfefc)
 * [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
 * [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
+* [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
 * [Skill](#90de0c27-8ee7-4e15-92a5-031319613db5)
+* [LanguageProficiency](#72dabead-12c8-459f-bfba-7dc588c8dfea)
 * [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
 * [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
 * [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
@@ -574,15 +576,11 @@ A <i>Ticket </i>is an <i>WorkOfDocumentation </i>that authorises access to an <i
 * [Surname](#ee38c8df-437f-46cc-92f5-45bd93724afe)
 * [GivenName](#499125cc-b0fa-4f75-983e-bfdf36942efb)
 * [Nickname](#689655c6-d1ed-454a-ad88-cddd7e34668c)
+* [PersonTitle](#b42cfb5b-1501-4d8d-9a14-5e21286fc371)
 * [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
+* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
 * [spokenLanguage](#4efe40ac-08c0-40b7-bc68-b11d0306ee78)
 * [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
-* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
-* [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
-* [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
-* [PersonTitle](#b42cfb5b-1501-4d8d-9a14-5e21286fc371)
-* [LanguageProficiency](#72dabead-12c8-459f-bfba-7dc588c8dfea)
-* [SetOfPersonStates](#c181ad76-467d-4341-a27e-417e6c15bac6)
 
 This diagram covers people, and people pretending to be other people (aliases). Most personal attributes belong to a temporal part of a <i>Person</i>, as they are things that can change throughout the person's life. There are properties that cannot change e.g. their <i>Ethnicity</i> and their <i>Sex</i>. 
 Like all <i>LivingOrganisms, t</i>wo special states are identified - <i>BirthState</i> and <i>DeathState</i> which bound the lifespan of a person and can be used to identify the location and date of birth as well as location and date of death.
@@ -593,37 +591,37 @@ In IES-Core the associations of a <i>Person</i> to their nationality, religion o
 
 #### IES elements in this diagram:
 
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
+* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [InternationalCoalition](#c3881149-3b9c-4a78-85fc-17f57e070c1c)
-* [CriminalOrganization](#c35e510d-2e2e-411b-93d3-82330560e729)
-* [Department](#92961cef-34e6-4bcd-a024-1400a08cc003)
-* [GovernmentOrganization](#72015c19-d922-47a8-b0a5-d744690f338a)
-* [Team](#1ee0fdbc-cd86-4bc7-bc55-8c7840593bff)
-* [EducationalOrganization](#1d46d575-3ac3-4793-917c-b06ae53e628a)
-* [CommercialOrganization](#40afb1ba-d0a5-4690-b877-809437f28819)
-* [ReligiousOrganization](#3435e326-9a16-4cde-b691-b998f89ba6e0)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 * [Religion](#25fc7fb1-c913-4aa5-a195-79851bd26149)
-* [OrganizationName](#bcbeed33-5dd4-4af8-97d8-a5e784d3cd84)
-* [OrganizationIdentifier](#8ac8c943-9449-4a10-839b-107b3e5d712f)
-* [TerroristOrganization](#ea37530e-a5c7-46d4-9a47-68dfb03e843c)
+* [ReligiousOrganization](#3435e326-9a16-4cde-b691-b998f89ba6e0)
+* [CommercialOrganization](#40afb1ba-d0a5-4690-b877-809437f28819)
+* [EducationalOrganization](#1d46d575-3ac3-4793-917c-b06ae53e628a)
+* [GovernmentOrganization](#72015c19-d922-47a8-b0a5-d744690f338a)
+* [Department](#92961cef-34e6-4bcd-a024-1400a08cc003)
+* [Team](#1ee0fdbc-cd86-4bc7-bc55-8c7840593bff)
+* [CriminalOrganization](#c35e510d-2e2e-411b-93d3-82330560e729)
+* [InternationalCoalition](#c3881149-3b9c-4a78-85fc-17f57e070c1c)
+* [LawEnforcementOrganization](#ceb757c2-dfa7-441b-8168-1414ecd7ee0d)
+* [IntelligenceAgency](#dad686c5-7e5c-4458-994c-851f93b720bb)
+* [MilitaryOrganization](#f70fd007-984d-4f91-9e0e-3b5ee8279a19)
 * [NotForProfitOrganization](#614ee53a-7d7e-4ec3-adfe-717993b33ff6)
+* [TerroristOrganization](#ea37530e-a5c7-46d4-9a47-68dfb03e843c)
+* [OrganizationIdentifier](#8ac8c943-9449-4a10-839b-107b3e5d712f)
+* [OrganizationName](#bcbeed33-5dd4-4af8-97d8-a5e784d3cd84)
 * [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
 * [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
 * [Alliance](#1804b042-b78c-48b9-8d52-c872689ffdeb)
-* [MilitaryOrganization](#f70fd007-984d-4f91-9e0e-3b5ee8279a19)
-* [IntelligenceAgency](#dad686c5-7e5c-4458-994c-851f93b720bb)
-* [LawEnforcementOrganization](#ceb757c2-dfa7-441b-8168-1414ecd7ee0d)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
 
 In IES-Core, an <i>Organization</i> is a <i>HumanMadeSystem </i>which is a collection of person states. Because of this, an <i>Organization</i> is also an Actor.
 An organization can participate in an <i>Activity,</i> but the participation rarely involves the entire organization, i.e. it is not a temporal part of the organization which participates. Instead, it is just a part of the organization which participates.
@@ -633,16 +631,16 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 
 #### IES elements in this diagram:
 
-* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
 
 <i>Vehicle</i> is a <i>HumanMadeSystem</i> that provides a means of transportation e.g. car, aircraft, ship.
 
@@ -651,21 +649,18 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 
 #### IES elements in this diagram:
 
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
-* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
 * [SetOfInformationProcessingSystems](#322b471c-b825-4862-b974-29a18c211f43)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 
 An <i>InformationProcessingSystem </i>is a <i>HumanMadeSystem and</i> an <i>Actor</i> which can transform or manipulate information.
-
-
-### <a id="c181ad76-467d-4341-a27e-417e6c15bac6"></a>SetOfPersonStates
 
 
 ## <a id="{F3F615F8-6A4E-40c2-877F-64CB00106225}"></a>Activity
@@ -718,7 +713,7 @@ The <i>Communication</i> activity can be used for communication that happens in 
 * [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Provision](#d5618a34-72b6-4b6f-a139-e89520ab8d05)
 * [AccountOpening](#a97c14c5-3c4a-4935-9b59-ca5612001f53)
 * [AccountClosure](#9693758b-a11c-493d-84ce-c80e47ecf18c)
@@ -781,23 +776,23 @@ IES-Core deals with ownership by first dealing with rights, which is an activity
 
 #### IES elements in this diagram:
 
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [RightTo](#9e747a74-553d-4d62-b0f5-e66afd9679f2)
-* [RightHolder](#71f225ee-0dae-4363-9d8e-bc5b34db62f3)
-* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
-* [ExchangeMovement](#d8558615-b5b4-45e0-b8fc-5311a804f8ef)
-* [Exchange](#73b56915-088d-4e49-a34f-503dbc510fae)
-* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
 * [EndToEndTransaction](#e04564db-50fb-467c-8971-d9b4ecdf9586)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
+* [Exchange](#73b56915-088d-4e49-a34f-503dbc510fae)
+* [ExchangeMovement](#d8558615-b5b4-45e0-b8fc-5311a804f8ef)
+* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
+* [RightHolder](#71f225ee-0dae-4363-9d8e-bc5b34db62f3)
+* [RightTo](#9e747a74-553d-4d62-b0f5-e66afd9679f2)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [TransactionActivity](#5bccfd0d-d48e-4765-83f6-7056d7cd89a2)
-* [OwnedLegally](#d4a2871b-b281-42a1-aa43-b3de9f5123c9)
 * [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [LegalOwner](#844d3dfd-ded3-4e8b-918f-9807f6c2e047)
+* [OwnedLegally](#d4a2871b-b281-42a1-aa43-b3de9f5123c9)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [TransactionParticipant](#4cf340d7-474d-40d7-9416-102964083670)
 
 When goods or assets are bought or sold - whether exchanged for modern fiat currency or, as in earlier times, for livestock or shells, the same fundamental pattern occurs: a transfer of ownership. An exchange is a change in state of the right-to or ownership-of, all assets involved. For example, purchasing a car for $20,000 ends one party's ownership of the car and begins another's, while the seller's ownership of the $20,000 ends and the buyer's begins.
@@ -878,7 +873,7 @@ An <i>Observation</i> is an activity which involves an <i>Actor</i>(s) participa
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
-* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 
@@ -1637,7 +1632,7 @@ A SetOfSigns whose instances are not mearly characterstring symbolize or refer t
 * a document (though not an individual copy of a document)
 <i>
 </i><i>
-</i><i>Signs</i> are <i>States</i> that symbolize or refer to other <i>States</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
+</i><i>Signs</i> are <i>States</i> that symbolize or refer to other <i>States</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetofSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
 Sometimes it is important to establish arbitrary categories of Representation - such as "pictures of kittens" or "educational films". A <i>SetOfRepresentations</i> can be used to collect together all Representations of similar content.
 
 
