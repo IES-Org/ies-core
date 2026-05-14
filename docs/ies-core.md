@@ -1627,7 +1627,7 @@ Regions of the world may sometimes be spatially separated (e.g. economic areas)
 A fusion of integral parts that can be installed and uninstalled with its identity  persisting throughout any period of installation or uninstallation. Replaceable lifespans are not inherently integral or dependants of a whole.
 
 ### <a id="a4a8f4f5-edc5-48a9-a926-024a25801f5f"></a>Representation
-A SetOfSigns that symbolizes or refers to other <i>Things.</i> Examples: 
+A SetOfSigns that symbolize or refer to other <i>Things.</i> Examples: 
 (1) an identifier used for a Person; 
 (2) an photograph of a vehicle; 
 (3) a document (though not an individual copy of a document) 
