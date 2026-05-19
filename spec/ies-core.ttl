@@ -42,7 +42,7 @@ ies_core: a owl:Ontology ;
    A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.
    """@en-GB ;
    dcterms:created "2025-09-30"^^xsd:date ;
-   dcterms:modified "2026-04-15"^^xsd:date ;
+   dcterms:modified "2026-05-14"^^xsd:date ;
    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
    dcterms:language "en-GB" ;
    dcterms:license <https://spdx.org/licenses/MIT.html> ;
@@ -50,7 +50,7 @@ ies_core: a owl:Ontology ;
    dcterms:dateCopyrighted "2026"^^xsd:gYear ;
    vann:preferredNamespacePrefix "ies_core" ;
    vann:preferredNamespaceUri "http://purl.org/ies/core/v0/ont/" ;
-   owl:versionInfo "0.1.1 (RC1)" .
+   owl:versionInfo "0.1.2 (RC1)" .
 
 ies_core:Accent rdf:type skos:Concept . 
 ies_core:Accent rdfs:label "Accent" . 
@@ -215,7 +215,7 @@ ies_core:Capability rdfs:subClassOf ies_core:Disposition .
 ies_core:category rdf:type rdf:Property . 
 ies_core:category rdfs:label "category" . 
 ies_core:category dcterms:identifier "{FB9DF2EE-CBEB-4bf5-ABD4-34405DC3BC52}" . 
-ies_core:category rdfs:domain ies_top:SpatiotemporalExtent . 
+ies_core:category rdfs:domain ies_top:Thing . 
 ies_core:category rdfs:range skos:Concept . 
 ies_core:Characteristic rdf:type rdfs:Class . 
 ies_core:Characteristic rdfs:label "Characteristic" . 
@@ -391,7 +391,7 @@ ies_core:finiteMembershipCount rdfs:range xsd:integer .
 ies_core:FiniteSetOfSpatiotemporalExtents rdf:type rdfs:Class . 
 ies_core:FiniteSetOfSpatiotemporalExtents rdfs:label "Finite Set Of Spatiotemporal Extents" . 
 ies_core:FiniteSetOfSpatiotemporalExtents dcterms:identifier "{8DF90785-8066-4e37-A8FF-64D4232CF266}" . 
-ies_core:FiniteSetOfSpatiotemporalExtents rdfs:comment "A ClassOfElement whose instances are classes with finite, fixed  membership of Elements." . 
+ies_core:FiniteSetOfSpatiotemporalExtents rdfs:comment "A SetOfSpatiotemporalExtents whose instances are sets with finite, fixed membership of spatio-temporal extents." . 
 ies_core:FiniteSetOfSpatiotemporalExtents rdfs:subClassOf ies_top:SetOfSpatiotemporalExtents . 
 ies_core:FirstLineOfAddress rdf:type skos:Concept . 
 ies_core:FirstLineOfAddress rdfs:label "First Line Of Address" . 
@@ -407,7 +407,7 @@ ies_core:format rdf:type rdf:Property .
 ies_core:format rdfs:label "format" . 
 ies_core:format dcterms:identifier "{B7BC6BF3-AC03-49a7-8F2F-65F91D969C5B}" . 
 ies_core:format rdfs:comment "The format of the respective WorkOfDocumentation.Examples:PDFMS Word" . 
-ies_core:format rdfs:subPropertyOf rdfs:subPropertyOf . 
+ies_core:format rdfs:subPropertyOf rdfs:subClassOf . 
 ies_core:format rdfs:domain ies_core:WorkOfDocumentation . 
 ies_core:format rdfs:range ies_core:DocumentFormat . 
 ies_core:formatOfIndividualDocument rdf:type rdf:Property . 
@@ -432,7 +432,6 @@ ies_core:Gender rdfs:label "Gender" .
 ies_core:Gender dcterms:identifier "{DBE3554A-C118-4520-8966-7A1658F8DA01}" . 
 ies_core:Gender rdfs:comment "A ClassOfPerson whose members all share the same identified gender" . 
 ies_core:Gender rdfs:subClassOf ies_core:SetOfPersons . 
-ies_core:Gender rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:GeographicFeature rdf:type skos:Concept . 
 ies_core:GeographicFeature rdfs:label "Geographic Feature" . 
 ies_core:GeographicFeature dcterms:identifier "{5794C9D0-2074-4b6c-91E8-AE1C647B866F}" . 
@@ -511,7 +510,7 @@ ies_core:hasQuantity rdfs:subPropertyOf ies_core:isRepresentedAs .
 ies_core:hasSex rdf:type rdf:Property . 
 ies_core:hasSex rdfs:label "has sex" . 
 ies_core:hasSex dcterms:identifier "{D2C21F1C-52D8-401f-AA8F-369231968235}" . 
-ies_core:hasSex rdfs:domain ies_core:Person . 
+ies_core:hasSex rdfs:domain ies_core:LivingOrganism . 
 ies_core:hasSex rdfs:range ies_core:Sex . 
 ies_core:hasSex rdfs:subPropertyOf rdf:type . 
 ies_core:hasSkill rdf:type rdf:Property . 
@@ -683,6 +682,7 @@ ies_core:LivingOrganism rdfs:label "Living Organism" .
 ies_core:LivingOrganism dcterms:identifier "{A2C20353-F683-4d31-A7DD-455813527F4B}" . 
 ies_core:LivingOrganism rdfs:comment "A State that is a self-sustaining, cellular, and genetically organized spatiotemporal extent capable of metabolism, adaptation, and reproduction. " . 
 ies_core:LivingOrganism rdfs:subClassOf ies_top:State . 
+ies_core:LivingOrganism ies_top:powertype ies_core:SetOfLivingOrganisms . 
 ies_core:LivingSystem rdf:type rdfs:Class . 
 ies_core:LivingSystem rdfs:label "Living System" . 
 ies_core:LivingSystem dcterms:identifier "{35CA2C27-E7A2-465a-B529-AB9AFBB1B25C}" . 
@@ -832,6 +832,7 @@ ies_core:Person dcterms:identifier "{673A1DA9-3A5D-4310-9752-F0899F31DE5D}" .
 ies_core:Person rdfs:comment "A human Living Organism and Actor with a spatiotemporally bounded existence from birth to death." . 
 ies_core:Person rdfs:subClassOf ies_core:LivingSystem . 
 ies_core:Person rdfs:subClassOf ies_core:PersonOrOrganization . 
+ies_core:Person ies_top:powertype ies_core:SetOfPersons . 
 ies_core:PersonInCommunication rdf:type rdfs:Class . 
 ies_core:PersonInCommunication rdfs:label "Person In Communication" . 
 ies_core:PersonInCommunication dcterms:identifier "{2FC68AB4-C9CA-4f8b-AECF-9C400C43AD1A}" . 
@@ -915,7 +916,7 @@ ies_core:ReplaceableLifespan rdfs:subClassOf ies_core:FusionOfIntegralParts .
 ies_core:Representation rdf:type rdfs:Class . 
 ies_core:Representation rdfs:label "Representation" . 
 ies_core:Representation dcterms:identifier "{A4A8F4F5-EDC5-48a9-A926-024A25801F5F}" . 
-ies_core:Representation rdfs:comment "A SetOfSigns whose instances are not mearly characterstring symbolize or refer to other Things. Examples:* an identifier used for a Person* a document (though not an individual copy of a document)Signs are States that symbolize or refer to other States. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word IES in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetofSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).Sometimes it is important to establish arbitrary categories of Representation - such as pictures of kittens or educational films. A SetOfRepresentations can be used to collect together all Representations of similar content." . 
+ies_core:Representation rdfs:comment "A SetOfSigns that symbolize or refer to other Things. Examples: (1) an identifier used for a Person; (2) an photograph of a vehicle; (3) a document (though not an individual copy of a document). Signs are States that symbolize or refer to other States. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word IES in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).Sometimes it is important to establish arbitrary categories of Representation - such as pictures of kittens or educational films. A SetOfRepresentations can be used to collect together all Representations of similar content." . 
 ies_core:Representation rdfs:subClassOf ies_core:SetOfSigns . 
 ies_core:Representation ies_top:powertype ies_core:SetOfRepresentations . 
 ies_core:RepresentationScheme rdf:type rdfs:Class . 
@@ -964,42 +965,47 @@ ies_core:SerialNumber skos:broader ies_core:Identifier .
 ies_core:SetOfCharacterStrings rdf:type rdfs:Class . 
 ies_core:SetOfCharacterStrings rdfs:label "Set Of Character Strings" . 
 ies_core:SetOfCharacterStrings dcterms:identifier "{FEC11CC7-B62F-42fc-806B-C45C2D026021}" . 
-ies_core:SetOfCharacterStrings rdfs:comment "The powertype of InformationprocessingSystems" . 
+ies_core:SetOfCharacterStrings rdfs:comment "The powertype of CharacterString. An instance of this is a set that contains character strings." . 
 ies_core:SetOfCharacterStrings rdfs:subClassOf ies_core:SetOfSigns . 
 ies_core:SetOfIndividualDocuments rdf:type rdfs:Class . 
 ies_core:SetOfIndividualDocuments rdfs:label "Set Of Individual Documents" . 
 ies_core:SetOfIndividualDocuments dcterms:identifier "{A2C3A0DC-2F0D-46ec-9E7E-B7AD443397FC}" . 
-ies_core:SetOfIndividualDocuments rdfs:comment "The powertype of IndividualDocument." . 
+ies_core:SetOfIndividualDocuments rdfs:comment "The powertype of IndividualDocument. An instance of this is a set that contains individual documents." . 
 ies_core:SetOfIndividualDocuments rdfs:subClassOf ies_core:Representation . 
 ies_core:SetOfInformationProcessingSystems rdf:type rdfs:Class . 
 ies_core:SetOfInformationProcessingSystems rdfs:label "Set Of Information Processing Systems" . 
 ies_core:SetOfInformationProcessingSystems dcterms:identifier "{322B471C-B825-4862-B974-29A18C211F43}" . 
-ies_core:SetOfInformationProcessingSystems rdfs:comment "The powertype of InformationProcessingSystem whose instances are sets of InformationProcessingSystems." . 
+ies_core:SetOfInformationProcessingSystems rdfs:comment "The powertype of InformationProcessingSystem. An instance of this is a set that contains information processing systems." . 
 ies_core:SetOfInformationProcessingSystems rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfLivingOrganisms rdf:type rdfs:Class . 
 ies_core:SetOfLivingOrganisms rdfs:label "Set Of Living Organisms" . 
 ies_core:SetOfLivingOrganisms dcterms:identifier "{D2E0D19C-D606-4a06-8170-C680EC9734CE}" . 
+ies_core:SetOfLivingOrganisms rdfs:comment "The powertype of LivingOrganism. An instance of this is a set that contains living organisms." . 
 ies_core:SetOfLivingOrganisms rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfNames rdf:type rdfs:Class . 
 ies_core:SetOfNames rdfs:label "Set Of Names" . 
 ies_core:SetOfNames dcterms:identifier "{49585484-74E3-4ce1-98E3-12CC89379A35}" . 
+ies_core:SetOfNames rdfs:comment "The powertype of Name. An instance of this is a set of Names. Note that Name itself is a set of character strings." . 
 ies_core:SetOfNames rdfs:subClassOf ies_core:SetOfRepresentations . 
 ies_core:SetOfPersons rdf:type rdfs:Class . 
 ies_core:SetOfPersons rdfs:label "Set Of Persons" . 
 ies_core:SetOfPersons dcterms:identifier "{A368032E-957E-46de-ADBA-535D9062B8E2}" . 
+ies_core:SetOfPersons rdfs:comment "The powertype of Person. An instance of this is a set that contains persons." . 
 ies_core:SetOfPersons rdfs:subClassOf ies_core:SetOfLivingOrganisms . 
 ies_core:SetOfRepresentations rdf:type rdfs:Class . 
 ies_core:SetOfRepresentations rdfs:label "Set Of Representations" . 
 ies_core:SetOfRepresentations dcterms:identifier "{7814F7F3-B1F9-4bee-A35D-82EFF80D1F3C}" . 
-ies_core:SetOfRepresentations rdfs:comment "The powertype of Representation" . 
+ies_core:SetOfRepresentations rdfs:comment "The powertype of Representation. An instance of this is a set of Representations. Note that Representation itself is a set of signs." . 
 ies_core:SetOfRepresentations rdfs:subClassOf ies_core:SetOfSetOfSigns . 
 ies_core:SetOfSetOfSigns rdf:type rdfs:Class . 
 ies_core:SetOfSetOfSigns rdfs:label "Set Of Set Of Signs" . 
 ies_core:SetOfSetOfSigns dcterms:identifier "{BB9FD5E2-98D1-4690-B8C8-08796FDAE208}" . 
+ies_core:SetOfSetOfSigns rdfs:comment "The powertype of SetOfSigns. An instance of this is a set that contains sets of signs." . 
 ies_core:SetOfSetOfSigns rdfs:subClassOf ies_top:SetOfSetOfStates . 
 ies_core:SetOfSigns rdf:type rdfs:Class . 
 ies_core:SetOfSigns rdfs:label "Set Of Signs" . 
 ies_core:SetOfSigns dcterms:identifier "{4E054F55-B874-4f4d-B5F3-30963D987A3E}" . 
+ies_core:SetOfSigns rdfs:comment "The powertype of Sign. An instance of this is a set that contains signs." . 
 ies_core:SetOfSigns rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfSigns ies_top:powertype ies_core:SetOfSetOfSigns . 
 ies_core:SetOfStatesWithParticularDuration rdf:type rdfs:Class . 
@@ -1019,7 +1025,7 @@ ies_core:SetOfUniverseMates rdfs:subClassOf ies_top:SetOfStates .
 ies_core:Sex rdf:type rdfs:Class . 
 ies_core:Sex rdfs:label "Sex" . 
 ies_core:Sex dcterms:identifier "{310EDD2B-0086-4fc7-BA59-46AC001B0EBF}" . 
-ies_core:Sex rdfs:comment "A ClassOfPerson whose members all share the same sex" . 
+ies_core:Sex rdfs:comment "An instance of this is a set of living organisms which share the same sex." . 
 ies_core:Sex rdfs:subClassOf ies_core:SetOfLivingOrganisms . 
 ies_core:Sign rdf:type rdfs:Class . 
 ies_core:Sign rdfs:label "Sign" . 
@@ -1120,7 +1126,7 @@ ies_core:versionOf rdf:type rdf:Property .
 ies_core:versionOf rdfs:label "version of" . 
 ies_core:versionOf dcterms:identifier "{3F57B7AC-28B9-445d-BB0B-FE4405A6C933}" . 
 ies_core:versionOf rdfs:comment "A relationship between a VersionOfDocument and the WorkOfDocumentation it is a version of." . 
-ies_core:versionOf rdfs:subPropertyOf rdfs:subPropertyOf . 
+ies_core:versionOf rdfs:subPropertyOf rdfs:subClassOf . 
 ies_core:versionOf rdfs:domain ies_core:VersionOfDocument . 
 ies_core:versionOf rdfs:range ies_core:WorkOfDocumentation . 
 ies_core:VersionOfDocument rdf:type rdfs:Class . 

@@ -224,11 +224,9 @@ In IES-Core, we instantiate this enduring, replaceable lifespan as both a <i>Rep
 
 ### IES elements in this diagram:
 
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [category](#fb9df2ee-cbeb-4bf5-abd4-34405dc3bc52)
 * [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
-* [Bus](#6a365d36-53bb-41aa-ac1f-548dd95fa9b9)
-* [DoubleDeckerBus](#79a3ad5a-c0f0-4c7c-9779-874527861ffd)
 * [RoadVehicle](#fe0b01e3-c6cf-4dd8-9763-6fd4af05ed9c)
 
 As with the previous version of IES, IES-Core allows the model to be extended to incorporate new concepts. IES4 allowed the extension of the ontology using RDF Schema which saw users add new classes or properties using subtypes of those found in IES4. The drawback of this approach was that data consumers needed to know the specification of each custom extension or, the data producer was obliged to instantiate instances as both a class/property in IES4 and a class in their extension.
@@ -279,7 +277,7 @@ This regime minimizes the burden on data consumers - regardless of any custom SK
 * [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
 * [inLanguage](#9881a5a7-ec98-461f-a1a3-b7e2b2cfbd7d)
 
-<i>Signs</i> are <i>States</i> that symbolize or refer to other <i>Things</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetofSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
+<i>Signs</i> are <i>States</i> that symbolize or refer to other <i>Things</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
 Sometimes it is important to establish arbitrary categories of Representation - such as "pictures of kittens" or "educational films". A <i>SetOfRepresentations</i> can be used to collect together all Representations of similar content.
 
 ## <a id="f9eac7d7-f1dd-422b-a80e-fb97ace0a84b"></a>Names and Identifiers
@@ -429,6 +427,9 @@ Finally,<b><i> </i></b><i>Representations</i> themselves can be organized into l
 * [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
 * [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
+* [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
+* [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
+* [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
 
 A <i>LivingOrganism</i> is a state made up of cells, which uses genes and chemistry to sustain itself, requires energy, and evolves over time. The spatiotemporal extent of an instance of a living organism is bound from its <i>BirthState</i> to its <i>DeathState</i>. These states can be used to indicate the location and time of birth and death of a <i>LivingOrganism </i>respectively.
 
@@ -1204,7 +1205,7 @@ An integer count of members of a FiniteClassOfElement.
 
 
 ### <a id="8df90785-8066-4e37-a8ff-64d4232cf266"></a>FiniteSetOfSpatiotemporalExtents
-A ClassOfElement whose instances are classes with finite, fixed  membership of Elements.
+A SetOfSpatiotemporalExtents whose instances are sets with finite, fixed membership of spatio-temporal extents.
 
 
 ### <a id="97d37b17-3e40-457b-94d8-2528697b3064"></a>FirstLineOfAddress
@@ -1626,12 +1627,12 @@ Regions of the world may sometimes be spatially separated (e.g. economic areas)
 A fusion of integral parts that can be installed and uninstalled with its identity  persisting throughout any period of installation or uninstallation. Replaceable lifespans are not inherently integral or dependants of a whole.
 
 ### <a id="a4a8f4f5-edc5-48a9-a926-024a25801f5f"></a>Representation
-A SetOfSigns whose instances are not mearly characterstring symbolize or refer to other <i>Things.</i> Examples:
-* an identifier used for a Person
-* a document (though not an individual copy of a document)
+A SetOfSigns that symbolize or refer to other <i>Things.</i> Examples: 
+(1) an identifier used for a Person; 
+(2) an photograph of a vehicle; 
+(3) a document (though not an individual copy of a document) 
 <i>
-</i><i>
-</i><i>Signs</i> are <i>States</i> that symbolize or refer to other <i>States</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetofSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
+</i><i>Signs</i> are <i>States</i> that symbolize or refer to other <i>States</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
 Sometimes it is important to establish arbitrary categories of Representation - such as "pictures of kittens" or "educational films". A <i>SetOfRepresentations</i> can be used to collect together all Representations of similar content.
 
 
@@ -1666,32 +1667,34 @@ An Identifier for HumanMadeSystem that has been assigned at manufacture. Example
 
 
 ### <a id="fec11cc7-b62f-42fc-806b-c45c2d026021"></a>SetOfCharacterStrings
-The powertype of InformationprocessingSystems
+The powertype of CharacterString. An instance of this is a set that contains character strings.
+
 
 ### <a id="a2c3a0dc-2f0d-46ec-9e7e-b7ad443397fc"></a>SetOfIndividualDocuments
-The powertype of IndividualDocument.
+The powertype of IndividualDocument. An instance of this is a set that contains individual documents.
 
 
 ### <a id="322b471c-b825-4862-b974-29a18c211f43"></a>SetOfInformationProcessingSystems
-The powertype of InformationProcessingSystem whose instances are sets of InformationProcessingSystems.
+The powertype of InformationProcessingSystem. An instance of this is a set that contains information processing systems.
 
 ### <a id="d2e0d19c-d606-4a06-8170-c680ec9734ce"></a>SetOfLivingOrganisms
-
+The powertype of LivingOrganism. An instance of this is a set that contains living organisms.
 
 ### <a id="49585484-74e3-4ce1-98e3-12cc89379a35"></a>SetOfNames
-
+The powertype of Name. An instance of this is a set of Names. Note that Name itself is a set of character strings.
 
 ### <a id="a368032e-957e-46de-adba-535d9062b8e2"></a>SetOfPersons
-
+The powertype of Person. An instance of this is a set that contains persons.
 
 ### <a id="7814f7f3-b1f9-4bee-a35d-82eff80d1f3c"></a>SetOfRepresentations
-The <a href="#D4BD48E8-76B8-4d3c-AB83-E653DB89170D"><font color="#0000ff"><u>powertype</u></font></a> of <a href="#675A5C23-0746-43d0-96D0-AF0DF72CD697"><font color="#0000ff"><u>Representation</u></font></a>
+The powertype of Representation. An instance of this is a set of Representations. Note that Representation itself is a set of signs.
+
 
 ### <a id="bb9fd5e2-98d1-4690-b8c8-08796fdae208"></a>SetOfSetOfSigns
-
+The powertype of SetOfSigns. An instance of this is a set that contains sets of signs.
 
 ### <a id="4e054f55-b874-4f4d-b5f3-30963d987a3e"></a>SetOfSigns
-
+The powertype of Sign. An instance of this is a set that contains signs.
 
 ### <a id="0dea64c8-e003-488f-b9e6-a8178fc65be7"></a>SetOfStatesWithParticularDuration
 A SetOfStates where all members are states with the same temporal duration e.g. all states that are 2 hours and 30 minutes long in duration.
@@ -1724,7 +1727,7 @@ Everything that began and ended in the year 1900 - this would include all activi
 
 
 ### <a id="310edd2b-0086-4fc7-ba59-46ac001b0ebf"></a>Sex
-A ClassOfPerson whose members all share the same sex
+An instance of this is a set of living organisms which share the same sex.
 
 
 ### <a id="0600cef2-32e9-4cbd-899a-1319379aebab"></a>Sign
