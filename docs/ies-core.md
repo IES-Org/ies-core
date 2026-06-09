@@ -49,26 +49,26 @@ Crown Copyright (c) 2026
 
 ### IES elements in this diagram:
 
-* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
-* [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
-* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
-* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
-* [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
 * [IntermittentTimespan](#ed41858d-a919-4e57-9c60-e2333556c826)
+* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
+* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
+* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
+* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
 * [RecurringTimespan](#6b68585b-ab19-48a0-8254-1d6768f88833)
+* [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
+* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
+* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
 
 IES-Core is built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains. Patterns such as Activities, Systems, Characteristics and Representations. This also includes lower-level concepts like Persons, Locations etc. Core is the mid-level ontology which will be the replacement of the top layers of IES4. Domain specific ontologies are expected to be built upon IES-Core.
 
@@ -84,19 +84,19 @@ IES-Core extends IES-Top into 3 major ways.
 
 ### IES elements in this diagram:
 
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
-* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
-* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
+* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
+* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
 
 Because IES is a 4D ontology, it treats time and space - in fact, spacetime - in a unified way. If something happens entirely within a location, it is part of that location. If a person walks through a location, there is a temporal chunk of them that is part of that location. Similarly, if something happens in a particular period of time, it is part of that period of time. Everything we describe about physical entities use <i>State</i>, whether referring to properties that span an entire lifetime (e.g., a person's ethnicity) or to a brief interval (e.g., the color of their hair when they dyed it in teenhood). In IES-Core we call out whole-life states using specific subtypes of <i>State</i> like <i>Person</i> and <i>Vehicle</i>. They themselves are made up of many states, each representing a temporal part of the whole. 
 In the example presented here, we articulate three different locations in Fred's life. These are three temporal parts of Fred - i.e. a different point in his life. The complete, lifelong Fred is represented by an instance of <i>Person</i>, while his three temporal parts are represented by <i>States</i>. In IES4 these would have been instances of <i>PersonState</i>, but IES-Core simplifies this: the relationship to the whole (a Person, in this case) implies the specific type of state (PersonState).
@@ -107,21 +107,21 @@ In the example presented here, we articulate three different locations in Fred's
 
 ### IES elements in this diagram:
 
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
+* [Arrival](#93ed6955-f6b9-4d4e-b174-10550153761a)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
+* [Departure](#9d283645-51ed-46ad-8cc5-284c372fcf12)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [isAFinishOf](#291c902a-0cac-467e-9c3a-ad8ee537cb3d)
+* [isAStartOf](#c939a967-d8a7-4a4b-bac3-ca1631a54b82)
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
-* [isAStartOf](#c939a967-d8a7-4a4b-bac3-ca1631a54b82)
-* [isAFinishOf](#291c902a-0cac-467e-9c3a-ad8ee537cb3d)
-* [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
-* [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
-* [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [Departure](#9d283645-51ed-46ad-8cc5-284c372fcf12)
-* [Arrival](#93ed6955-f6b9-4d4e-b174-10550153761a)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 The starts and ends of an individual are special temporal parts of that individual. They are the portions of that individual that exist at its start and at its finish. These are temporal parts that relate to the whole using special forms of the <i>isTemporalPartOf</i> property - <i>isAStartOf</i> or and <i>isAFinishOf</i>. The naming of these relations - implying that they are one of many, is deliberate. From a 4D perspective a single entity can have multiple intervals that mark its beginning - for example Birth and Childhood are well understood starts of a person. Likewise, same goes for ends. While a person's life is considered at its end at death, we may also speak of an ending in terms of adulthood but equally or, sadly, in some cases, childhood or even at birth.
 Generally, the temporal part which is either the start or end of a state is itself an instance of <i>State</i>, however there are special start states and end states we call out. They include <i>BirthState</i> and <i>DeathState</i> for <i>LivingOrganisms</i> like <i>Person</i>; <i>Departure</i> and <i>Arrival</i> for bounding the start and end of a moving individual (see Movement for more details) and; <i>Created</i> and <i>Destroyed</i> which is common for human-made individuals (<i>Artefacts</i>). <i>Created</i> and <i>Destroyed</i> states also are complimented by the Activities of <i>Create</i> and <i>Destroy</i> and allows the articulation of who was involved in the creation or destruction (see Lifecycle for more details).
@@ -132,35 +132,35 @@ The use of the <i>isAStartOf</i> and <i>isAFinishOf</i> relations in combination
 
 ### IES elements in this diagram:
 
-* [endBoundOfSet](#20732e8a-a42b-4cf5-be38-c005a2be6b46)
-* [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
-* [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [hasICalRepresentation](#f624db5f-59ec-437f-97b2-e52a0306e074)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [ICalRepresentation](#fb6ffbda-2dac-4524-920f-16d6bd69e109)
-* [isAStartOf](#c939a967-d8a7-4a4b-bac3-ca1631a54b82)
-* [isAFinishOf](#291c902a-0cac-467e-9c3a-ad8ee537cb3d)
-* [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
-* [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
-* [RecurringTimespan](#6b68585b-ab19-48a0-8254-1d6768f88833)
 * [ArbitraryPeriod](#76f0e234-ca6e-40b7-905e-8d5c30f24209)
-* [iso8601PeriodRepresentation](#75dbf1ee-2c1f-4131-95e2-1d476a1eae31)
-* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
-* [IntermittentTimespan](#ed41858d-a919-4e57-9c60-e2333556c826)
-* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
-* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
-* [TemporallyIntermittentState](#54795bb4-0a44-4837-ad45-2e51ede3dd2f)
-* [TemporallyContinuousState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [SetOfStatesWithParticularDuration](#0dea64c8-e003-488f-b9e6-a8178fc65be7)
-* [duration](#482f061e-4262-40f8-87b9-b099d9ac7f7b)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [duration](#482f061e-4262-40f8-87b9-b099d9ac7f7b)
+* [endBoundOfSet](#20732e8a-a42b-4cf5-be38-c005a2be6b46)
+* [hasICalRepresentation](#f624db5f-59ec-437f-97b2-e52a0306e074)
+* [ICalRepresentation](#fb6ffbda-2dac-4524-920f-16d6bd69e109)
+* [IntermittentTimespan](#ed41858d-a919-4e57-9c60-e2333556c826)
+* [isAFinishOf](#291c902a-0cac-467e-9c3a-ad8ee537cb3d)
+* [isAStartOf](#c939a967-d8a7-4a4b-bac3-ca1631a54b82)
 * [iso8601DurationRepresentation](#098e6261-4d32-475c-8de1-33daa558d478)
+* [iso8601PeriodRepresentation](#75dbf1ee-2c1f-4131-95e2-1d476a1eae31)
+* [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
+* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
+* [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
+* [RecurringTimespan](#6b68585b-ab19-48a0-8254-1d6768f88833)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [SetOfStatesWithParticularDuration](#0dea64c8-e003-488f-b9e6-a8178fc65be7)
+* [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [TemporallyContinuousState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
+* [TemporallyIntermittentState](#54795bb4-0a44-4837-ad45-2e51ede3dd2f)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
 
 The big advantage to a 4D ontology is that time is treated the same way as space. This allows complex temporal logic information to be expressed using very simple constructs. <i>Timespans </i>are treated like any other state -e.g. assembled with <i>isPartOf </i>relationships. Technically, <i>Timespans </i>only differ from other states in that they are all of the universe during a time interval, or put another way, temporal parts of the universe.
 <i>Timespans </i>come in two major forms, continuous, uninterrupted stretches of time known as <i>Periods</i> and interrupted or gappy timespans which are known as <i>IntermittentTimespans</i>.
@@ -194,23 +194,23 @@ For querying, the attribute <i>iso8601DurationRepresentation </i>must also be pr
 ### IES elements in this diagram:
 
 * [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
-* [hasTheme](#e6fd0971-b0ef-48ec-a6a0-d0edb0e0c3ab)
+* [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
-* [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
-* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
+* [hasTheme](#e6fd0971-b0ef-48ec-a6a0-d0edb0e0c3ab)
 * [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
+* [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
-* [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
+* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
 * [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Activities and systems are treated in IES-Core as fusions (or the sum of) other states (<i>FusionOfIntegralParts</i>). 
 In the case of <i>Activity </i>(<i>Event</i> in IES4), these are incidents in the world that are of interest e.g. business meetings, telephone calls, acts of war. They are the sum of temporal parts participating in the <i>Activity</i>, which we call out as a special form of <i>State</i> called <i>Participation</i>.
@@ -224,10 +224,10 @@ In IES-Core, we instantiate this enduring, replaceable lifespan as both a <i>Rep
 
 ### IES elements in this diagram:
 
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [category](#fb9df2ee-cbeb-4bf5-abd4-34405dc3bc52)
-* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 * [RoadVehicle](#fe0b01e3-c6cf-4dd8-9763-6fd4af05ed9c)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 
 As with the previous version of IES, IES-Core allows the model to be extended to incorporate new concepts. IES4 allowed the extension of the ontology using RDF Schema which saw users add new classes or properties using subtypes of those found in IES4. The drawback of this approach was that data consumers needed to know the specification of each custom extension or, the data producer was obliged to instantiate instances as both a class/property in IES4 and a class in their extension.
 While RDF Schema extensions are still possible in IES-Core they shall only be used when the extension introduces new semantics -for example, when a new class is required to capture relationships or attributes not in IES-Core or IES-Top. 
@@ -252,30 +252,30 @@ This regime minimizes the burden on data consumers - regardless of any custom SK
 
 ### IES elements in this diagram:
 
-* [Set](#059b5013-017b-496f-b104-ea82b69b8792)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [SetOfSetOfSpatiotemporalExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
-* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [SetOfSigns](#4e054f55-b874-4f4d-b5f3-30963d987a3e)
-* [CharacterString](#f3b474cb-755e-4062-a714-f55b01e54924)
-* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
-* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
-* [SetOfSetOfStates](#44a34647-ea2f-4635-8dd4-9e48008a85af)
-* [SetOfSetOfSigns](#bb9fd5e2-98d1-4690-b8c8-08796fdae208)
-* [hasAssociatedRepresentation](#9c14da25-c1a8-456e-aea9-37ea1c6e01ac)
-* [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
-* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
-* [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
+* [CharacterString](#f3b474cb-755e-4062-a714-f55b01e54924)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [hasAssociatedRepresentation](#9c14da25-c1a8-456e-aea9-37ea1c6e01ac)
 * [inLanguage](#9881a5a7-ec98-461f-a1a3-b7e2b2cfbd7d)
+* [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
+* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
+* [Set](#059b5013-017b-496f-b104-ea82b69b8792)
+* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
+* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
+* [SetOfSetOfSigns](#bb9fd5e2-98d1-4690-b8c8-08796fdae208)
+* [SetOfSetOfSpatiotemporalExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
+* [SetOfSetOfStates](#44a34647-ea2f-4635-8dd4-9e48008a85af)
+* [SetOfSigns](#4e054f55-b874-4f4d-b5f3-30963d987a3e)
+* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 <i>Signs</i> are <i>States</i> that symbolize or refer to other <i>Things</i>. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word "IES" in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).
 Sometimes it is important to establish arbitrary categories of Representation - such as "pictures of kittens" or "educational films". A <i>SetOfRepresentations</i> can be used to collect together all Representations of similar content.
@@ -285,28 +285,28 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 
 ### IES elements in this diagram:
 
-* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
-* [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
-* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
-* [NamingScheme](#a8c23395-92c8-4f26-9b16-e4103d40656c)
-* [SetOfNames](#49585484-74e3-4ce1-98e3-12cc89379a35)
-* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
-* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [hasName](#d6ae651c-2252-47ff-85b9-848d14a8ab26)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [hasName](#d6ae651c-2252-47ff-85b9-848d14a8ab26)
+* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
+* [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
+* [isIdentifiedBy](#53f6c6c7-1dab-408b-98f3-162e7c72f95a)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
 * [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
+* [NamingScheme](#a8c23395-92c8-4f26-9b16-e4103d40656c)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
+* [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
+* [schemeMasteredIn](#08f7bc6a-0df3-4bae-8cd9-5eb21e3f6ff1)
+* [schemeOwner](#20d7d2a7-0b41-417a-afab-9ecb97dc710e)
+* [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
+* [SetOfNames](#49585484-74e3-4ce1-98e3-12cc89379a35)
+* [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
 * [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [isIdentifiedBy](#53f6c6c7-1dab-408b-98f3-162e7c72f95a)
-* [schemeOwner](#20d7d2a7-0b41-417a-afab-9ecb97dc710e)
-* [schemeMasteredIn](#08f7bc6a-0df3-4bae-8cd9-5eb21e3f6ff1)
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 One of the most common uses of <i>Representations</i> in the world are <i>Names</i> and <i>Identifiers</i>. IES allows for multiple Names and Identifiers to be assigned to any given <i>Thing</i>.
 Names and Identifiers belong to <i>NamingSchemes</i> - this allows us to give context when a <i>Thing </i>has more than one <i>Name</i> or <i>Identifier</i>.
@@ -317,18 +317,18 @@ Names and Identifiers belong to <i>NamingSchemes</i> - this allows us to give co
 
 ### IES elements in this diagram:
 
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
-* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
 * [allHaveCharacteristic](#c17aaa45-7699-42c1-86d3-2ad01d0209ba)
-* [hasCharacteristic](#b7999e75-fa09-441a-b62d-b9bc3a97cf85)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [hasCharacteristic](#b7999e75-fa09-441a-b62d-b9bc3a97cf85)
+* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Characteristics are used to articulate properties of a <i>SpatiotemporalExtent</i> that are qualitative or quantitative, the latter being a <i>Measure</i>. IES-Core adopts the QUDT ontology to model specific measures, measure ranges and associated units. 
 Because QUDT is highly flexible, IES-Core mandates a more explicit modelling pattern in which the property being measured (<i>qudt:Quantity </i>and its<i> qudt:QuantityKind</i>) is separate from its value (<i>qudt:QuantityValue</i>). This allows for the same measure to have more than one value with different units of measure (e.g. 1kg and 2.2lbs).
@@ -340,16 +340,16 @@ Characteristics and measures can be applied to a <i>SpatiotemporalExtent</i> and
 
 ### IES elements in this diagram:
 
-* [Disposition](#3a8d029d-e43d-4a16-a220-ee8b4b802aa4)
-* [Capability](#36f517d6-27ea-47f0-a8aa-4f92deffd333)
-* [Tendency](#6580ef28-1512-4ed7-b321-75e5ecea670a)
-* [isDisposedTo](#6cedcd94-0f0c-4407-a2d0-cb7a0bc91ea2)
 * [allHaveDisposition](#b6ac8bf8-1060-4fea-b00b-8ad509df69e9)
-* [Skill](#90de0c27-8ee7-4e15-92a5-031319613db5)
+* [Capability](#36f517d6-27ea-47f0-a8aa-4f92deffd333)
+* [Disposition](#3a8d029d-e43d-4a16-a220-ee8b4b802aa4)
+* [isDisposedTo](#6cedcd94-0f0c-4407-a2d0-cb7a0bc91ea2)
 * [LanguageProficiency](#72dabead-12c8-459f-bfba-7dc588c8dfea)
 * [SetOfPersons](#a368032e-957e-46de-adba-535d9062b8e2)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [Skill](#90de0c27-8ee7-4e15-92a5-031319613db5)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Tendency](#6580ef28-1512-4ed7-b321-75e5ecea670a)
 
 A disposition is about a state's capability or tendency to do something or to exhibit a property. It may be that the state has never actually done the thing it is capable of (<i>Capability</i>) - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast. Similarly, a person may have a <i>Tendency</i> towards violence based just on what they say and threaten to do but may not have been violent.
 Dispositions are managed in IES-Core using <i>Disposition</i> -a set that collects all states that share the same disposition (e.g. all aircraft capable of Mach 2).
@@ -359,14 +359,14 @@ Dispositions are managed in IES-Core using <i>Disposition</i> -a set that collec
 
 ### IES elements in this diagram:
 
-* [Stuff](#0f8a7a2e-896c-4b09-afde-f63807bdc767)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [FiniteSetOfSpatiotemporalExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
 * [finiteMembershipCount](#e2e5cdbf-f48f-4f53-b277-9563af930d3f)
-* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
+* [FiniteSetOfSpatiotemporalExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
 * [FiniteSetOfSpatiotemporalExtents](#ad58b5e3-152f-92fe-9135-f46140af932c)
+* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [Stuff](#0f8a7a2e-896c-4b09-afde-f63807bdc767)
+* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 
 There are times where we want to talk about sets of spatiotemporal extents without having to instantiate every individual extent as an instance. Instead, we want to just provide a count of the members of the set e.g. the number of cars in the set parked at Acacia Avenue. Such sets are instances of <i>FiniteSetOfSpatiotemporalExtents</i> where the count is provided using the attribute <i>finiteMembershipCount.</i>
 In the illustrated example, to get the set of vehicles parked at Acacia Avenue, we create a subClassOf of the set of Vehicle. This gives us a specific subset of vehicles parked at Acacia Avenue at a time. This subclass is also an instance of <i>FiniteSetOfSpatiotemporalExtents</i> allowing us to assign <i>57</i> as its <i>finiteMembershipCount</i>.
@@ -379,12 +379,12 @@ There are physical things in the world that are difficult to call out as separat
 ### IES elements in this diagram:
 
 * [isImproperPartOf](#a46e9e64-6238-42d3-96ab-e0ab6c532636)
-* [SimilarUniverseMates](#7a24f038-9167-45b3-91c5-7f4ac9729d53)
-* [similarState](#d145d3ef-5d69-4ecd-97ba-47dabd663bb5)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [SetOfUniverseMates](#3f29e849-d48b-43ad-8d3c-0dfd553e7625)
+* [similarState](#d145d3ef-5d69-4ecd-97ba-47dabd663bb5)
+* [SimilarUniverseMates](#7a24f038-9167-45b3-91c5-7f4ac9729d53)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 Most of the time with non-4D approaches, things that are deemed to be the same, are often, in a 4D-sense, just two states of the same whole-life individual or just two identifiers for the same individual. 
 The 4D (extensional) approach gives us a criterion for identifying if two things are genuinely the same - if they occupy precisely the same space at the same time (the same spacetime), they are the SAME THING. Ideally this is reflected in our data, if two things are the same, there should only be one instance. That said, in rare circumstances (usually when data arrives from more than one place), if two things genuinely are the same in a 4D-sense, then, if possible, these should be merged into one, and their original identifiers kept. If not, and when all other approaches are not possible, then the <i>isImproperPartOf</i> property may be used. This relationship is also used when a part is exactly the same as the whole. E.g. A <i>Meeting </i>with a single <i>Attendance </i>part - the attendee's participation is the full spatiotemporal extent of the meeting.
@@ -396,8 +396,8 @@ The 4D (extensional) approach gives us a criterion for identifying if two things
 
 ### IES elements in this diagram:
 
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Attributes can be applied to any <i>Thing</i>.
 Attributes are RDF properties whose range is an RDF literal. In almost all cases, these literals will be typed by any XML Schema simple datatype - e.g. xsd:string, xsd:double, xsd:dateTime, etc. (refer to W3C XML Schema specification for the complete list).<ins> </ins>
@@ -409,9 +409,9 @@ Attributes are used sparingly in IES-Core and generally serve as convenient shor
 
 ### IES elements in this diagram:
 
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 At times it is important to identify the source of information about a <i>Thing</i> in our data. The key relationship here is <i>isRepresentedAs</i>, from the Representation pattern, which asserts that a <i>Representation</i> (e.g., a document, video, or image) conveys something about a <i>Thing</i>.
@@ -423,13 +423,13 @@ Finally,<b><i> </i></b><i>Representations</i> themselves can be organized into l
 
 ### IES elements in this diagram:
 
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
 * [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
+* [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
 * [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
 * [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
-* [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 A <i>LivingOrganism</i> is a state made up of cells, which uses genes and chemistry to sustain itself, requires energy, and evolves over time. The spatiotemporal extent of an instance of a living organism is bound from its <i>BirthState</i> to its <i>DeathState</i>. These states can be used to indicate the location and time of birth and death of a <i>LivingOrganism </i>respectively.
 
@@ -439,17 +439,17 @@ A <i>LivingOrganism</i> is a state made up of cells, which uses genes and chemis
 ### IES elements in this diagram:
 
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
 * [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [PartNumber](#741940e7-e8c9-4ac5-84d5-587edf94316a)
-* [SerialNumber](#ae5d82ec-1024-4f49-ad0d-f7cf7486a296)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 * [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
 * [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [PartNumber](#741940e7-e8c9-4ac5-84d5-587edf94316a)
+* [SerialNumber](#ae5d82ec-1024-4f49-ad0d-f7cf7486a296)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 An <i>Artefact</i> is a human-made state. The activities of their lifecycle from creation to destruction can be articulated using <i>LifecycleActivity</i> (see the Lifecycle pattern). This is useful to articulate the creator(s) or manufacturer(s) of an <i>Artefact</i>.
 
@@ -459,28 +459,28 @@ An <i>Artefact</i> is a human-made state. The activities of their lifecycle from
 
 ### IES elements in this diagram:
 
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
-* [GeoPoint](#80dce57a-8c3c-4e58-8a60-85ca21c4fb44)
-* [Country](#4df30ff1-e3cd-4029-82bd-7c826529bada)
-* [GeoIdentity](#10996e21-6210-474c-8ad9-a2a2e2302ccc)
-* [Longitude](#01997102-4aba-48a7-8cd0-bc3003dbdb30)
-* [Latitude](#c21f71b2-d803-4b01-8fc8-75fac81b9fe4)
-* [Easting](#8342f87e-ccef-4c4b-871d-143a778257ae)
-* [Northing](#aa03b814-d494-4175-afb7-54fa78934989)
-* [ISO3166_1Alpha_3](#64a956ae-f567-458a-b64c-9204311970ea)
-* [RegionOfCountry](#eb604fc5-9503-4dcb-aa73-e88eab5aad0d)
-* [RealEstate](#3d107859-1c19-4568-9d2f-2a4f2a9e4650)
-* [Facility](#84c679a1-d3d3-45f3-8764-46ba14b5f242)
 * [Address](#b03bbd70-d5f4-48e6-84f2-cb5bbfe1c6ed)
-* [PartOfFacility](#22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5)
-* [GeographicFeature](#5794c9d0-2074-4b6c-91e8-ae1c647b866f)
-* [TOID](#36d10e0e-9301-4295-ad6d-16ef5f9ea82a)
-* [LineOfAddress](#e26d69e3-1586-4e97-8ba7-bf38db8283ce)
+* [Country](#4df30ff1-e3cd-4029-82bd-7c826529bada)
+* [Easting](#8342f87e-ccef-4c4b-871d-143a778257ae)
+* [Facility](#84c679a1-d3d3-45f3-8764-46ba14b5f242)
 * [FirstLineOfAddress](#97d37b17-3e40-457b-94d8-2528697b3064)
-* [PostalCode](#5aa9b0b5-3219-4d62-b41a-9f3452c8b831)
-* [RoomNumber](#327f0797-a422-4456-806c-5aaa1e954f29)
+* [GeographicFeature](#5794c9d0-2074-4b6c-91e8-ae1c647b866f)
+* [GeoIdentity](#10996e21-6210-474c-8ad9-a2a2e2302ccc)
+* [GeoPoint](#80dce57a-8c3c-4e58-8a60-85ca21c4fb44)
+* [ISO3166_1Alpha_3](#64a956ae-f567-458a-b64c-9204311970ea)
+* [Latitude](#c21f71b2-d803-4b01-8fc8-75fac81b9fe4)
+* [LineOfAddress](#e26d69e3-1586-4e97-8ba7-bf38db8283ce)
+* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [Longitude](#01997102-4aba-48a7-8cd0-bc3003dbdb30)
+* [Northing](#aa03b814-d494-4175-afb7-54fa78934989)
 * [OSGridReference](#72710367-542e-48c1-bf36-e3552f80d6fe)
+* [PartOfFacility](#22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5)
+* [PostalCode](#5aa9b0b5-3219-4d62-b41a-9f3452c8b831)
+* [RealEstate](#3d107859-1c19-4568-9d2f-2a4f2a9e4650)
+* [RegionOfCountry](#eb604fc5-9503-4dcb-aa73-e88eab5aad0d)
 * [RegionOfEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
+* [RoomNumber](#327f0797-a422-4456-806c-5aaa1e954f29)
+* [TOID](#36d10e0e-9301-4295-ad6d-16ef5f9ea82a)
 
 THIS PATTERN IS STILL IN DEVELOPMENT AND SUBJECT TO CHANGE IN RELEASE CANDIDATE 2.
 
@@ -489,34 +489,34 @@ THIS PATTERN IS STILL IN DEVELOPMENT AND SUBJECT TO CHANGE IN RELEASE CANDIDATE 
 
 ### IES elements in this diagram:
 
-* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
-* [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [SetOfIndividualDocuments](#a2c3a0dc-2f0d-46ec-9e7e-b7ad443397fc)
-* [DocumentFormat](#000c5bd1-f02a-4350-a129-9574e3e9d8f3)
+* [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
 * [documentedBy](#df65005d-f603-4d63-ac78-b8ac8b4b6d74)
-* [published](#ddef4a69-71a5-490f-98ce-6e55f8298feb)
-* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
-* [VersionOfDocument](#c49821cb-0b40-4cbd-835e-557fdd018663)
-* [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
-* [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
+* [DocumentFormat](#000c5bd1-f02a-4350-a129-9574e3e9d8f3)
+* [DocumentSection](#33903533-ff0f-4421-95cc-b57f8508c07e)
 * [endBoundOfSet](#20732e8a-a42b-4cf5-be38-c005a2be6b46)
-* [versionOf](#3f57b7ac-28b9-445d-bb0b-fe4405a6c933)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
-* [Title](#53d0d18a-d2da-41fd-bd59-9092874411bd)
-* [VersionNumber](#b9acf20b-311c-4be0-bfd4-a86912c80692)
 * [format](#b7bc6bf3-ac03-49a7-8f2f-65f91d969c5b)
 * [formatOfIndividualDocument](#f727b70f-3339-4eaa-a048-9bf9b73434b0)
-* [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
+* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
 * [IndividualDocumentID](#83bc3d7e-2609-473c-8ab8-194c531031ab)
-* [DocumentSection](#33903533-ff0f-4421-95cc-b57f8508c07e)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
+* [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [published](#ddef4a69-71a5-490f-98ce-6e55f8298feb)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SetOfIndividualDocuments](#a2c3a0dc-2f0d-46ec-9e7e-b7ad443397fc)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
+* [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [Title](#53d0d18a-d2da-41fd-bd59-9092874411bd)
+* [VersionNumber](#b9acf20b-311c-4be0-bfd4-a86912c80692)
+* [versionOf](#3f57b7ac-28b9-445d-bb0b-fe4405a6c933)
+* [VersionOfDocument](#c49821cb-0b40-4cbd-835e-557fdd018663)
+* [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
 
 IES makes a clear distinction between a specific, individual copy of a document, or just the document in general (of which there may be many copies, written, printed, digitally stored etc.). For example, without this distinction it can be unclear whether "War and Peace" refers to the literary work itself or to a particular personal copy of the book. <i>WorkOfDocumentation </i>provides the general case set of documents of a certain form and <i>IndividualDocument</i> supports the particular instance of a document. In most cases, WorkOfDocumentation will be used. However, when the focus is on a particular instance (e.g. forensics, evidence, or historical interest), IndividualDocument should be used. The <i>IndividualDocument</i> can be linked to the <i>WorkOfDocumentation</i> it is an instance of using the <i>aCopyOf</i> property. IES-Core uses the Dublin Core Terms properties <i>creator</i> and <i>publisher</i> to specify the author and publisher of <i>WorkOfDocumentation</i>.
 
@@ -525,12 +525,12 @@ IES makes a clear distinction between a specific, individual copy of a document,
 
 ### IES elements in this diagram:
 
-* [Ticket](#068b5b19-170e-4766-959d-2e00e412b568)
-* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
-* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
 * [aCopyOf](#afb98a78-7f58-4a5a-9cc0-f140811bccd5)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
+* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
+* [Ticket](#068b5b19-170e-4766-959d-2e00e412b568)
+* [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
 
 A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
 
@@ -543,44 +543,44 @@ A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i
 
 #### IES elements in this diagram:
 
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
-* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
-* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
-* [PersonState](#dc093146-100b-4e65-a1a5-4040ac785213)
-* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [PersonName](#7f24585b-f372-4e3b-86c8-c15c702252d7)
-* [Gender](#dbe3554a-c118-4520-8966-7a1658f8da01)
-* [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
-* [hasIdentifiedGender](#0c0a078a-70ef-4f0d-9841-3a3a6a7171e2)
-* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [SetOfPersons](#a368032e-957e-46de-adba-535d9062b8e2)
-* [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
-* [hasEthnicity](#4495f6db-149a-4866-b2d3-ceed4324ff1d)
-* [Ethnicity](#ae3d9f2d-2616-4b33-bc0a-360a947bfefc)
-* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
-* [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
-* [Skill](#90de0c27-8ee7-4e15-92a5-031319613db5)
-* [LanguageProficiency](#72dabead-12c8-459f-bfba-7dc588c8dfea)
-* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
-* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
-* [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
 * [Accent](#f07caca3-30f9-45ac-b35a-d53854355196)
-* [Surname](#ee38c8df-437f-46cc-92f5-45bd93724afe)
-* [GivenName](#499125cc-b0fa-4f75-983e-bfdf36942efb)
-* [Nickname](#689655c6-d1ed-454a-ad88-cddd7e34668c)
-* [PersonTitle](#b42cfb5b-1501-4d8d-9a14-5e21286fc371)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [BirthState](#63855454-6ab8-44fb-b61e-83d442b44fd0)
+* [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [DeathState](#31b164c8-443c-4457-a4d3-eabed321fd93)
-* [spokenLanguage](#4efe40ac-08c0-40b7-bc68-b11d0306ee78)
+* [Ethnicity](#ae3d9f2d-2616-4b33-bc0a-360a947bfefc)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [Gender](#dbe3554a-c118-4520-8966-7a1658f8da01)
+* [GivenName](#499125cc-b0fa-4f75-983e-bfdf36942efb)
+* [hasEthnicity](#4495f6db-149a-4866-b2d3-ceed4324ff1d)
+* [hasIdentifiedGender](#0c0a078a-70ef-4f0d-9841-3a3a6a7171e2)
+* [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
+* [hasSex](#d2c21f1c-52d8-401f-aa8f-369231968235)
+* [hasSkill](#ee39e108-9618-4d52-9e32-e4b4382aef4a)
 * [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
+* [LanguageProficiency](#72dabead-12c8-459f-bfba-7dc588c8dfea)
+* [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
+* [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
+* [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
+* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
+* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
+* [Nickname](#689655c6-d1ed-454a-ad88-cddd7e34668c)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonName](#7f24585b-f372-4e3b-86c8-c15c702252d7)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [PersonState](#dc093146-100b-4e65-a1a5-4040ac785213)
+* [PersonTitle](#b42cfb5b-1501-4d8d-9a14-5e21286fc371)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [SetOfLivingOrganisms](#d2e0d19c-d606-4a06-8170-c680ec9734ce)
+* [SetOfPersons](#a368032e-957e-46de-adba-535d9062b8e2)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [Sex](#310edd2b-0086-4fc7-ba59-46ac001b0ebf)
+* [Skill](#90de0c27-8ee7-4e15-92a5-031319613db5)
+* [spokenLanguage](#4efe40ac-08c0-40b7-bc68-b11d0306ee78)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Surname](#ee38c8df-437f-46cc-92f5-45bd93724afe)
+* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
 
 This diagram covers people, and people pretending to be other people (aliases). Most personal attributes belong to a temporal part of a <i>Person</i>, as they are things that can change throughout the person's life. There are properties that cannot change e.g. their <i>Ethnicity</i> and their <i>Sex</i>. 
 Like all <i>LivingOrganisms, t</i>wo special states are identified - <i>BirthState</i> and <i>DeathState</i> which bound the lifespan of a person and can be used to identify the location and date of birth as well as location and date of death.
@@ -591,37 +591,37 @@ In IES-Core the associations of a <i>Person</i> to their nationality, religion o
 
 #### IES elements in this diagram:
 
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
-* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
-* [Religion](#25fc7fb1-c913-4aa5-a195-79851bd26149)
-* [ReligiousOrganization](#3435e326-9a16-4cde-b691-b998f89ba6e0)
+* [Alliance](#1804b042-b78c-48b9-8d52-c872689ffdeb)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [CommercialOrganization](#40afb1ba-d0a5-4690-b877-809437f28819)
+* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [CriminalOrganization](#c35e510d-2e2e-411b-93d3-82330560e729)
+* [Department](#92961cef-34e6-4bcd-a024-1400a08cc003)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 * [EducationalOrganization](#1d46d575-3ac3-4793-917c-b06ae53e628a)
 * [GovernmentOrganization](#72015c19-d922-47a8-b0a5-d744690f338a)
-* [Department](#92961cef-34e6-4bcd-a024-1400a08cc003)
-* [Team](#1ee0fdbc-cd86-4bc7-bc55-8c7840593bff)
-* [CriminalOrganization](#c35e510d-2e2e-411b-93d3-82330560e729)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [IntelligenceAgency](#dad686c5-7e5c-4458-994c-851f93b720bb)
 * [InternationalCoalition](#c3881149-3b9c-4a78-85fc-17f57e070c1c)
 * [LawEnforcementOrganization](#ceb757c2-dfa7-441b-8168-1414ecd7ee0d)
-* [IntelligenceAgency](#dad686c5-7e5c-4458-994c-851f93b720bb)
 * [MilitaryOrganization](#f70fd007-984d-4f91-9e0e-3b5ee8279a19)
+* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
+* [Nation](#8adf110d-ef60-4f98-8d29-bdb92ac83537)
 * [NotForProfitOrganization](#614ee53a-7d7e-4ec3-adfe-717993b33ff6)
-* [TerroristOrganization](#ea37530e-a5c7-46d4-9a47-68dfb03e843c)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [OrganizationIdentifier](#8ac8c943-9449-4a10-839b-107b3e5d712f)
 * [OrganizationName](#bcbeed33-5dd4-4af8-97d8-a5e784d3cd84)
-* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
-* [Alliance](#1804b042-b78c-48b9-8d52-c872689ffdeb)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [RegionalConstituency](#de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3)
+* [Religion](#25fc7fb1-c913-4aa5-a195-79851bd26149)
+* [ReligiousOrganization](#3435e326-9a16-4cde-b691-b998f89ba6e0)
+* [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
+* [Team](#1ee0fdbc-cd86-4bc7-bc55-8c7840593bff)
+* [TerroristOrganization](#ea37530e-a5c7-46d4-9a47-68dfb03e843c)
 
 In IES-Core, an <i>Organization</i> is a <i>HumanMadeSystem </i>which is a collection of person states. Because of this, an <i>Organization</i> is also an Actor.
 An organization can participate in an <i>Activity,</i> but the participation rarely involves the entire organization, i.e. it is not a temporal part of the organization which participates. Instead, it is just a part of the organization which participates.
@@ -632,15 +632,15 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 #### IES elements in this diagram:
 
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
-* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 * [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
+* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 
 <i>Vehicle</i> is a <i>HumanMadeSystem</i> that provides a means of transportation e.g. car, aircraft, ship.
 
@@ -650,15 +650,15 @@ An organization can participate in an <i>Activity,</i> but the participation rar
 #### IES elements in this diagram:
 
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
 * [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
 * [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [SetOfInformationProcessingSystems](#322b471c-b825-4862-b974-29a18c211f43)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
 
 An <i>InformationProcessingSystem </i>is a <i>HumanMadeSystem and</i> an <i>Actor</i> which can transform or manipulate information.
 
@@ -671,24 +671,24 @@ An <i>InformationProcessingSystem </i>is a <i>HumanMadeSystem and</i> an <i>Acto
 
 #### IES elements in this diagram:
 
-* [Communication](#7357099c-e2dc-4b87-b970-24df2fabac06)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [PartyInCommunication](#0b6c41d7-1cbe-4e4d-bf97-71ef8ecc088d)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
-* [PersonInCommunication](#2fc68ab4-c9ca-4f8b-aecf-9c400c43ad1a)
-* [InformationProcessingSystemInCommunication](#90e234ad-cc9b-4591-9add-565065c2698d)
 * [Account](#7d2bc61d-67e3-423f-9cc1-ab4c6fec8551)
-* [AccountProvider](#6ab883d4-3230-48f6-8543-b458e9ec714b)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
-* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
 * [AccountInCommunication](#5d631dcc-d745-4ddc-9e6b-9efa0b07da3e)
-* [Meeting](#d3b045b1-2135-4cec-9a1f-2986d9038ee7)
+* [AccountProvider](#6ab883d4-3230-48f6-8543-b458e9ec714b)
+* [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [Attendance](#ee89f97e-f3a5-4ef3-a73e-646e0db70684)
+* [Communication](#7357099c-e2dc-4b87-b970-24df2fabac06)
+* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
+* [InformationProcessingSystemInCommunication](#90e234ad-cc9b-4591-9add-565065c2698d)
+* [Meeting](#d3b045b1-2135-4cec-9a1f-2986d9038ee7)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [PartyInCommunication](#0b6c41d7-1cbe-4e4d-bf97-71ef8ecc088d)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonInCommunication](#2fc68ab4-c9ca-4f8b-aecf-9c400c43ad1a)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 
 The <i>Communication</i> activity can be used for communication that happens in the same space i.e. a <i>Meeting</i> or across space e.g. a phone call, correspondence using email or a physical letter. The latter type sometimes requires additional structure to group together information about the roles in the communication. This is achieved with a <i>Communication</i> consisting of two or more <i>PartyInCommunication</i> activities - which each represent those roles e.g. caller, callee, sender, recipient, teleconference host etc. A <i>PartyInCommunication</i> may involve the participation of people, accounts or devices (<i>InformationProcessingSystems</i>).
 
@@ -697,34 +697,34 @@ The <i>Communication</i> activity can be used for communication that happens in 
 
 #### IES elements in this diagram:
 
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [Account](#7d2bc61d-67e3-423f-9cc1-ab4c6fec8551)
+* [AccountAdminActivity](#f0a99e8e-b116-4925-a50e-0a024d29fccc)
+* [AccountClosure](#9693758b-a11c-493d-84ce-c80e47ecf18c)
+* [AccountDetails](#f3b91341-7a4c-4fb0-b21a-7b3333ecbed3)
 * [AccountHolder](#e682fbfe-6589-4f3e-af50-1bdc3344e4f1)
+* [AccountInCommunication](#5d631dcc-d745-4ddc-9e6b-9efa0b07da3e)
+* [AccountNumber](#7d21d4f3-bd4a-4e7b-a34d-6865fa1ec024)
+* [AccountOpening](#a97c14c5-3c4a-4935-9b59-ca5612001f53)
 * [AccountProvider](#6ab883d4-3230-48f6-8543-b458e9ec714b)
+* [AccountUpdate](#5703251e-4516-4888-8d90-3a8336c44ce0)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
+* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
-* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [AccountDetails](#f3b91341-7a4c-4fb0-b21a-7b3333ecbed3)
-* [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
-* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Provision](#d5618a34-72b6-4b6f-a139-e89520ab8d05)
-* [AccountOpening](#a97c14c5-3c4a-4935-9b59-ca5612001f53)
-* [AccountClosure](#9693758b-a11c-493d-84ce-c80e47ecf18c)
-* [AccountUpdate](#5703251e-4516-4888-8d90-3a8336c44ce0)
-* [AccountAdminActivity](#f0a99e8e-b116-4925-a50e-0a024d29fccc)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [AccountNumber](#7d21d4f3-bd4a-4e7b-a34d-6865fa1ec024)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
-* [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [AccountInCommunication](#5d631dcc-d745-4ddc-9e6b-9efa0b07da3e)
+* [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Accounts are ways to collect together activities which occur in the act of providing a service. The provider of that service is captured by the participation of an <i>AccountProvider</i> and the customer by an <i>AccountHolder</i>. The Exchange pattern can be used alongside <i>Account</i> to articulate what is being exchanged as part of the service e.g. the exchange of a monthly amount of water as part of a monthly billed provision of water to a home. There are also times when an <i>Artefact</i> participates in the provision of a service e.g. a bank card in relation to banking services or a WiFi router for the provision of internet.
 
@@ -733,12 +733,12 @@ Accounts are ways to collect together activities which occur in the act of provi
 
 #### IES elements in this diagram:
 
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 In a 4D ontology, the co-location of two or more individuals is expressed through all those individuals being a part of a location at a given time. However, there are cases where it is useful to explicitly call out co-location for the purpose of querying. This pattern offers a pragmatic solution while remaining consistent with a 4D approach.
 In IES-Core, <i>CoLocation </i>is defined as a fusion of states that are deemed to be co-located. A <i>CoLocation </i>instance must contain at least two fused states - each a part of it<i>. </i>Additionally, the instance must be associated with at least one location. More specific locations can be added later if greater precision is needed.
@@ -748,24 +748,24 @@ In IES-Core, <i>CoLocation </i>is defined as a fusion of states that are deemed 
 
 #### IES elements in this diagram:
 
-* [RightTo](#9e747a74-553d-4d62-b0f5-e66afd9679f2)
-* [RightHolder](#71f225ee-0dae-4363-9d8e-bc5b34db62f3)
-* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
+* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
+* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
 * [LegalOwner](#844d3dfd-ded3-4e8b-918f-9807f6c2e047)
+* [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [OwnedLegally](#d4a2871b-b281-42a1-aa43-b3de9f5123c9)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [RightGrantingArtefact](#a8b29c2f-f558-48ca-a3d4-7f05d067d384)
-* [IndividualTicket](#ae8d0d1f-ca26-427d-a09c-c76187aeb127)
-* [IndividualDocument](#54a8e3be-4b61-4362-92f2-3fb021dcd970)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Recognizer](#886997cb-23d6-4e9b-a432-769ba6ae0a95)
+* [RightGrantingArtefact](#a8b29c2f-f558-48ca-a3d4-7f05d067d384)
+* [RightHolder](#71f225ee-0dae-4363-9d8e-bc5b34db62f3)
+* [RightTo](#9e747a74-553d-4d62-b0f5-e66afd9679f2)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 Expressing the ownership of things is a common use case but it a complex topic.
 Strictly speaking, the property or assets of a person or organization is a question of rights. No-one actually owns something; they have a legal right to that thing. 
@@ -776,23 +776,23 @@ IES-Core deals with ownership by first dealing with rights, which is an activity
 
 #### IES elements in this diagram:
 
-* [EndToEndTransaction](#e04564db-50fb-467c-8971-d9b4ecdf9586)
 * [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
+* [EndToEndTransaction](#e04564db-50fb-467c-8971-d9b4ecdf9586)
+* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
 * [Exchange](#73b56915-088d-4e49-a34f-503dbc510fae)
 * [ExchangeMovement](#d8558615-b5b4-45e0-b8fc-5311a804f8ef)
-* [Entitlement](#13ca075a-f03a-44b6-acd4-077875503204)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [LegalOwner](#844d3dfd-ded3-4e8b-918f-9807f6c2e047)
+* [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
+* [OwnedLegally](#d4a2871b-b281-42a1-aa43-b3de9f5123c9)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [RightHolder](#71f225ee-0dae-4363-9d8e-bc5b34db62f3)
 * [RightTo](#9e747a74-553d-4d62-b0f5-e66afd9679f2)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [TransactionActivity](#5bccfd0d-d48e-4765-83f6-7056d7cd89a2)
-* [LegalOwnership](#eec532c6-eee0-4e16-a988-00d73ee51c3d)
-* [LegalOwner](#844d3dfd-ded3-4e8b-918f-9807f6c2e047)
-* [OwnedLegally](#d4a2871b-b281-42a1-aa43-b3de9f5123c9)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [TransactionActivity](#5bccfd0d-d48e-4765-83f6-7056d7cd89a2)
 * [TransactionParticipant](#4cf340d7-474d-40d7-9416-102964083670)
 
 When goods or assets are bought or sold - whether exchanged for modern fiat currency or, as in earlier times, for livestock or shells, the same fundamental pattern occurs: a transfer of ownership. An exchange is a change in state of the right-to or ownership-of, all assets involved. For example, purchasing a car for $20,000 ends one party's ownership of the car and begins another's, while the seller's ownership of the $20,000 ends and the buyer's begins.
@@ -804,14 +804,14 @@ In IES-Core, this process is represented by an <i>Exchange</i> activity, which c
 #### IES elements in this diagram:
 
 * [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
-* [Movement](#5d61d503-bf44-4069-a8e1-0f9cea34ea91)
-* [Journey](#52e9683f-dea0-4845-b75c-d2b218f5bb49)
-* [Departure](#9d283645-51ed-46ad-8cc5-284c372fcf12)
 * [Arrival](#93ed6955-f6b9-4d4e-b174-10550153761a)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [Departure](#9d283645-51ed-46ad-8cc5-284c372fcf12)
+* [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [Journey](#52e9683f-dea0-4845-b75c-d2b218f5bb49)
+* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
+* [Movement](#5d61d503-bf44-4069-a8e1-0f9cea34ea91)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 The travel or movement of a single individual (person or otherwise) from one place to another is articulated using a temporal part (a <i>State</i>) of that individual. This temporal part begins with a <i>Departure</i> state and concludes with an <i>Arrive</i> state. The time and place of where it moves from and time and place where it moves to, can then be asserted by the <i>Location</i> and <i>Period</i> they are part of.
 Sometimes we need to describe the coordinated movement of multiple individuals. In such cases, we combine the all the "moving" states into a collective <i>Movement</i> activity.
@@ -823,13 +823,13 @@ We can sometime refer to travel as consisting multiple "legs". For example, a tr
 #### IES elements in this diagram:
 
 * [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [GovernanceActivity](#f39d718a-7d3a-462f-b1ea-8d25ac70901c)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [ParticipationInGoverance](#20bba6fa-cd95-4232-837e-c49564401315)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 
 <i>GovernanceActivities</i> are activities that take place in local or national government, or in intergovernmental interactions.
 
@@ -839,19 +839,19 @@ We can sometime refer to travel as consisting multiple "legs". For example, a tr
 
 #### IES elements in this diagram:
 
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [Observation](#0c6d0460-64c1-4f18-9e40-6acf68eff05f)
-* [Observer](#df9f0577-950b-4768-87a6-c9f651c0ebf7)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [Observed](#6740ad35-e10e-4d52-97d0-1c13cee004d6)
 * [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
+* [Observation](#0c6d0460-64c1-4f18-9e40-6acf68eff05f)
+* [Observed](#6740ad35-e10e-4d52-97d0-1c13cee004d6)
+* [Observer](#df9f0577-950b-4768-87a6-c9f651c0ebf7)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 An <i>Observation</i> is an activity which involves an <i>Actor</i>(s) participating as an <i>Observer(s)</i> of any other <i>State(s) </i>(the <i>Observed), which can include other activities.</i> Note that the locations of <i>Observer</i> and <i>Observed</i>, can be different.
 
@@ -860,22 +860,22 @@ An <i>Observation</i> is an activity which involves an <i>Actor</i>(s) participa
 
 #### IES elements in this diagram:
 
-* [Assessment](#6a1b89bd-af2f-4493-b15c-69fbcca5b702)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [assessed](#f20f37cf-d03d-4f41-bd19-1fecf02d153d)
-* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
-* [Assessor](#b9f63b51-abdf-4aac-998e-ecc78c8df9fa)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [assessed](#f20f37cf-d03d-4f41-bd19-1fecf02d153d)
+* [Assessment](#6a1b89bd-af2f-4493-b15c-69fbcca5b702)
+* [Assessor](#b9f63b51-abdf-4aac-998e-ecc78c8df9fa)
+* [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
+* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 In IES-Core, <i>Assessment</i> is an activity in which an <i>Assessor</i> makes some subjective judgement against a thing. This can be a judgement of belief in a thing's possibility, categorization or other qualitative aspect. The thing being assessed can be anything including the intangible e.g. a set or relationship. As a result, it isn't necessarily a participation and therefore it is modelled as a property of the <i>Assessment</i> called <i>assessed</i>.
 This pattern shall be extended using SKOS taxonomies to satisfy requirements for the different sorts of assessments users might need.
@@ -885,22 +885,22 @@ This pattern shall be extended using SKOS taxonomies to satisfy requirements for
 
 #### IES elements in this diagram:
 
-* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
 * [Access](#9c157ce3-5a00-47e1-a35d-6784bcf9b107)
 * [Accessed](#85c92cb5-05de-46e4-a29a-21f24765f447)
 * [Accessor](#c258cf5f-a167-4864-aff9-cb9d680ef826)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
+* [ContinuousAccess](#fb6c0026-742a-461b-a00e-08ef5e662a9d)
+* [IntermittentAccess](#ba6ae5da-ab80-41f2-8ca6-d39fcb0f3a86)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [Possession](#9da639df-9d82-42c6-85e6-153790f6bdb1)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [TemporallyContinuousState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
 * [TemporallyIntermittentState](#54795bb4-0a44-4837-ad45-2e51ede3dd2f)
 * [Usage](#2d2db9cc-7e06-45ca-b239-03603271cb32)
-* [Possession](#9da639df-9d82-42c6-85e6-153790f6bdb1)
-* [ContinuousAccess](#fb6c0026-742a-461b-a00e-08ef5e662a9d)
-* [IntermittentAccess](#ba6ae5da-ab80-41f2-8ca6-d39fcb0f3a86)
 
 Access is an activity in IES-Core which is used for material access to something and not the right to access something - see Entitlement and Ownership pattern for that. Moreover, access is separate to ownership of a thing. The <i>Accessor</i> may well be the legal owner (again, see Entitlement and Ownership pattern) but may also be a result of borrowing, temporary custodianship or even unauthorized access or theft.
 In most cases, assess can be identified as either the activity of <i>ContinuousAccess</i> (the one-off use of a computer at a library) or <i>IntermittentAccess</i> (occasional use of the neighbour's lawnmower). The superclass, <i>Access</i> shall only be used in the rare cases where the temporal nature of the access is unknown.
@@ -911,25 +911,25 @@ In most cases, assess can be identified as either the activity of <i>ContinuousA
 
 #### IES elements in this diagram:
 
-* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
-* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
-* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
-* [Destroyer](#c05d2239-7ffb-4d27-918d-954da01a1d78)
-* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [LifecycleActivity](#f5d9e309-de5b-4a21-806c-5e1fc24e2304)
-* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
-* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
-* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
-* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
-* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
-* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
-* [Modifier](#c34720c0-a432-485d-a44d-19bfae953a9a)
 * [ActiveParticipation](#b3358483-a264-4412-9d00-ba82e3752cd7)
-* [Modify](#f2955095-992d-4356-8f56-c48422011985)
-* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
-* [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [FoundOrganization](#cfba30c1-9012-43c0-b2c9-4d90a4f5f359)
+* [Activity](#443e9eac-efa7-4a34-8299-27822a193d5d)
+* [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
+* [Create](#45077eab-0722-43ab-a74b-3f5266739752)
+* [Created](#0ab30909-6d5a-4ff0-8456-888c7204054e)
+* [Creator](#4d497045-7245-4ab9-8b9a-3c315cc98211)
+* [Destroy](#848b8a17-00e1-4b76-8246-cb03ad1763bd)
+* [Destroyed](#a9ee8f29-2561-4b09-aec0-142de9beb778)
+* [Destroyer](#c05d2239-7ffb-4d27-918d-954da01a1d78)
 * [Forgery](#1c20a1d0-4aed-4a17-8f5a-b6b88acf1677)
+* [FoundOrganization](#cfba30c1-9012-43c0-b2c9-4d90a4f5f359)
+* [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [LifecycleActivity](#f5d9e309-de5b-4a21-806c-5e1fc24e2304)
+* [Modifier](#c34720c0-a432-485d-a44d-19bfae953a9a)
+* [Modify](#f2955095-992d-4356-8f56-c48422011985)
+* [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
+* [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 <i>LifecycleActivity</i> covers the creation, modification and destruction of individual specifically<i> Artefacts</i>. The lifespans of <i>Artefacts</i> are tied to <i>Create</i> and <i>Destroy</i> activities.
 
