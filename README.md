@@ -1,7 +1,7 @@
 # <img src="./assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Information Exchange Standard (IES) - Core Ontology (ies-core)
 
 **Repository:** `Information Exchange Standard (IES) - Core Ontology`  
-**Description:** `A mid-level ontology built upon ies-core providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`  
+**Description:** `A mid-level ontology built upon ies-top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.`  
 **Repository Status:** `In development`
 
 ---
@@ -21,7 +21,7 @@
 
 ## Overview
 
-A RDF mid-level ontology built upon ies-core providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains. Patterns such as Activities, Replaceable Parts, Characteristics and Representations. This also includes lower-level concepts like Persons, Locations etc. Core replaces the top layers of IES4. Domain specific ontologies are expected to be built upon IES-Core.
+An RDF mid-level ontology built upon [ies-top](https://github.com/IES-Org/ies-top/) providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains. Patterns such as Activities, Replaceable Parts, Characteristics and Representations. This also includes lower-level concepts like Persons, Locations etc. Core replaces the top layers of IES4. Domain specific ontologies are expected to be built upon IES-Core.
 
 ### Important Artefacts
 
@@ -107,7 +107,7 @@ We welcome:
 
 Please see:
 
-* [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines
+* [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines, including the formal issue workflow and governance process
 * [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for expected behaviour and reporting concerns
 * [MAINTAINERS.md](./MAINTAINERS.md) for maintainer contact information
 
