@@ -37,11 +37,11 @@ Ensures the quality, correctness, and consistency of the RDF serialisation of th
 
 ## Current IES Core Maintenance Team
 
-| Role | Name | Organisation | Contact |
-| ---- | ---- | ------------ | ------- |
-| Cross-Government Representative | Nigel D | HM Government | https://github.com/nigel81562 |
-| Foundational Ontology SME | [TBD] | [TBD] | [TBD] |
-| RDF Ontology Implementation Maintainer | [TBD] | [TBD] | [TBD] |
+| Name | Organisation | Contact |
+| ---- | ------------ | ------- |
+| Paul C | HM Government | https://github.com/paulc-dstl |
+| Helena B | Telicent Ltd | https://github.com/helena-telicent |
+| David D | Agilit Ltd | https://github.com/aigora-de |
 
 ---
 
