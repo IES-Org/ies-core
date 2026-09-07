@@ -1,6 +1,6 @@
 # Acknowledgements
 
-**Repository:** `Information Exchange Standard (IES) - Core Ontology`
+**Repository:** `Information Exchange Standard (IES) - Core Ontology`  
 **Description:** `Recognises suppliers, partner organisations, and other contributors to the repository’s development.`
 
 The Information Exchange Standard (IES) initiative would like to acknowledge the contributions of various organisations and individuals
@@ -27,11 +27,12 @@ This work builds upon an IES repository originally released by DSTL. For access 
 
 ---
 
-**Note:** This acknowledgment does not confer any legal rights, ownership, or imply ongoing involvement by any of the named organisations or individuals.
-All contributions are made in accordance with the repository’s licensing terms.
+**Note:** This acknowledgment does not confer any legal rights, ownership, or imply ongoing involvement by any of the named organisations or individuals. All contributions are made in accordance with the repository’s licensing terms.
 
-© Crown Copyright 2026. This work forms part of the Information Exchange Standard initiative and is currently under the custodianship of the Department for Business and Trade (UK), acting on behalf of a cross-government group of stakeholders.
+**Maintained as part of the Information Exchange Standard initiative.**
 
+© Crown Copyright. This work forms part of the Information Exchange Standard initiative and is currently under the custodianship of the UK's Department for Business, Innovation, Science and Trade (BIST), acting on behalf of a cross-government group of stakeholders.
+  
 Licensed under the Open Government Licence v3.0.
 
 For full licensing terms, see [OGL_LICENSE.md](OGL_LICENSE.md).

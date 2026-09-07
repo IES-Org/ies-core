@@ -123,3 +123,11 @@ See [CHANGELOG.md](./CHANGELOG.md) for a list of changes in each release.
 - [4] [Florio, S., &amp; Linnebo, Ø. (2022). *Core Constructional Ontology: The Foundation for the Top-Level Ontology of the Information Management Framework.*](https://borosolutions.net/core-constructional-ontology)
 
 ---
+
+**Maintained as part of the Information Exchange Standard initiative.**
+
+© Crown Copyright. This work forms part of the Information Exchange Standard initiative and is currently under the custodianship of the UK's Department for Business, Innovation, Science and Trade (BIST), acting on behalf of a cross-government group of stakeholders.
+  
+Licensed under the Open Government Licence v3.0.
+
+For full licensing terms, see [OGL_LICENSE.md](OGL_LICENSE.md).
