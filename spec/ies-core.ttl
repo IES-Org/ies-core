@@ -1139,3 +1139,5 @@ ies_core:WorkOfDocumentation dcterms:identifier "{068FD872-409B-4565-8EA3-00D9A5
 ies_core:WorkOfDocumentation rdfs:comment "A Representation that is the general case of a document - i.e. War and Peace as opposed to My copy of War and Peace." . 
 ies_core:WorkOfDocumentation rdfs:subClassOf ies_core:SetOfIndividualDocuments . 
 dcterms:source rdfs:subPropertyOf ies_core:isRepresentedAs . 
+geo:Geometry rdfs:subClassOf ies_core:GeodeticPlace . 
+geo:hasGeometry rdfs:subPropertyOf ies_core:hasGeodeticCounterpart . 
