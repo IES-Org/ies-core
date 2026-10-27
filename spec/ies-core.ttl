@@ -6,8 +6,12 @@
 # of this software and associated documentation files (the "Software"), to deal.
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is# furnished to do so, subject to the following conditions:#
-# The above copyright notice and this permission notice shall be included in all# copies or substantial portions of the Software.#
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,17 +36,16 @@
 @prefix ies_top: <http://purl.org/ies/top/v0/ont/> .
 @prefix ies_core: <http://purl.org/ies/core/v0/ont/> .
 
-<http://purl.org/ies/core/v0/ont> rdf:type owl:Ontology . 
 
 # Ontology Definition & Metadata
-ies_core: a owl:Ontology ;
+<http://purl.org/ies/core/v0/ont> a owl:Ontology ;
    dcterms:title "ies-core"@en-GB ;
    dcterms:description
    """
    A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.
    """@en-GB ;
    dcterms:created "2025-09-30"^^xsd:date ;
-   dcterms:modified "2026-05-14"^^xsd:date ;
+   dcterms:modified "2026-10-27"^^xsd:date ;
    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
    dcterms:language "en-GB" ;
    dcterms:license <https://spdx.org/licenses/MIT.html> ;
@@ -50,7 +53,7 @@ ies_core: a owl:Ontology ;
    dcterms:dateCopyrighted "2026"^^xsd:gYear ;
    vann:preferredNamespacePrefix "ies_core" ;
    vann:preferredNamespaceUri "http://purl.org/ies/core/v0/ont/" ;
-   owl:versionInfo "0.1.2 (RC1)" .
+   owl:versionInfo "0.2.0 (RC2)" .
 
 ies_core:Accent rdf:type skos:Concept . 
 ies_core:Accent rdfs:label "Accent" . 
@@ -141,14 +144,14 @@ ies_core:Actor rdfs:subClassOf ies_top:State .
 ies_core:Address rdf:type skos:Concept . 
 ies_core:Address rdfs:label "Address" . 
 ies_core:Address dcterms:identifier "{B03BBD70-D5F4-48e6-84F2-CB5BBFE1C6ED}" . 
-ies_core:Address rdfs:comment "A Location that can be specified by a postal address" . 
+ies_core:Address rdfs:comment "RealEstate that can be specified by a postal address." . 
 ies_core:Address skos:broader ies_core:RealEstate . 
 ies_core:allHaveCharacteristic rdf:type rdf:Property . 
 ies_core:allHaveCharacteristic rdfs:label "all have characteristic" . 
 ies_core:allHaveCharacteristic dcterms:identifier "{C17AAA45-7699-42c1-86D3-2AD01D0209BA}" . 
-ies_core:allHaveCharacteristic rdfs:comment "An rdfs:subClassOf relationship that asserts that all instances of a ClassOfElement share a particular Characteristic or Measuree.g. all London buses being red, all heavyweight boxers weighing more than 200lbs" . 
+ies_core:allHaveCharacteristic rdfs:comment "An rdfs:subClassOf relationship that asserts that all instances of a SetOfRegularSpacetimeExtents share a particular Characteristic.e.g. all London buses being red, all heavyweight boxers weighing more than 200lbs" . 
 ies_core:allHaveCharacteristic rdfs:subPropertyOf rdfs:subClassOf . 
-ies_core:allHaveCharacteristic rdfs:domain ies_top:SetOfSpatiotemporalExtents . 
+ies_core:allHaveCharacteristic rdfs:domain ies_top:SetOfRegularSpacetimeExtents . 
 ies_core:allHaveCharacteristic rdfs:range ies_core:Characteristic . 
 ies_core:allHaveDisposition rdf:type rdf:Property . 
 ies_core:allHaveDisposition rdfs:label "all have disposition" . 
@@ -220,8 +223,8 @@ ies_core:category rdfs:range skos:Concept .
 ies_core:Characteristic rdf:type rdfs:Class . 
 ies_core:Characteristic rdfs:label "Characteristic" . 
 ies_core:Characteristic dcterms:identifier "{2085EE5C-09CE-4467-BC60-5BB5C7AF4F02}" . 
-ies_core:Characteristic rdfs:comment "A SetOfSpatiotemporalExtents whose instances all share a common property - e.g. they are all the same color, mass, etc. " . 
-ies_core:Characteristic rdfs:subClassOf ies_top:SetOfSpatiotemporalExtents . 
+ies_core:Characteristic rdfs:comment "A SetOfRegularSpacetimeExtents whose instances all share a common property - e.g. they are all the same color, mass, etc. " . 
+ies_core:Characteristic rdfs:subClassOf ies_top:SetOfRegularSpacetimeExtents . 
 ies_core:CharacterString rdf:type rdfs:Class . 
 ies_core:CharacterString rdfs:label "Character String" . 
 ies_core:CharacterString dcterms:identifier "{F3B474CB-755E-4062-A714-F55B01E54924}" . 
@@ -250,7 +253,7 @@ ies_core:ContinuousAccess rdf:type rdfs:Class .
 ies_core:ContinuousAccess rdfs:label "Continuous Access" . 
 ies_core:ContinuousAccess dcterms:identifier "{FB6C0026-742A-461b-A00E-08EF5E662A9D}" . 
 ies_core:ContinuousAccess rdfs:subClassOf ies_core:Access . 
-ies_core:ContinuousAccess rdfs:subClassOf ies_top:TemporallyContinuousState . 
+ies_core:ContinuousAccess rdfs:subClassOf ies_top:TemporallyUninterruptedState . 
 ies_core:Contract rdf:type rdfs:Class . 
 ies_core:Contract rdfs:label "Contract" . 
 ies_core:Contract dcterms:identifier "{E11FF809-6AB4-45f3-9C5A-4BC56B0F06F4}" . 
@@ -258,8 +261,8 @@ ies_core:Contract rdfs:subClassOf ies_core:Artefact .
 ies_core:Country rdf:type rdfs:Class . 
 ies_core:Country rdfs:label "Country" . 
 ies_core:Country dcterms:identifier "{4DF30FF1-E3CD-4029-82BD-7C826529BADA}" . 
-ies_core:Country rdfs:comment "A Location whose land extent / borders are recognised as a Country by the International Standards Organisation (ISO)Note: this is simply the land, any buildings on it, and the airspace and ground beneath as recognised by the ISO definition. It does not include the nationals of the Country, its Government, etc. " . 
-ies_core:Country rdfs:subClassOf ies_core:Location . 
+ies_core:Country rdfs:comment "A PlaceOnEarth whose land extent / borders are recognised as a Country by the International Organization for Standardization (ISO)Note: this is simply the land, any buildings on it, and the airspace and ground beneath as recognised by the ISO definition. It does not include the nationals of the Country, its Government, etc. " . 
+ies_core:Country rdfs:subClassOf ies_core:PlaceOnEarth . 
 ies_core:Create rdf:type rdfs:Class . 
 ies_core:Create rdfs:label "Create" . 
 ies_core:Create dcterms:identifier "{45077EAB-0722-43ab-A74B-3F5266739752}" . 
@@ -334,11 +337,6 @@ ies_core:duration dcterms:identifier "{482F061E-4262-40f8-87B9-B099D9AC7F7B}" .
 ies_core:duration rdfs:range ies_core:SetOfStatesWithParticularDuration . 
 ies_core:duration rdfs:domain ies_top:State . 
 ies_core:duration rdfs:subPropertyOf rdf:type . 
-ies_core:Easting rdf:type rdfs:Class . 
-ies_core:Easting rdfs:label "Easting" . 
-ies_core:Easting dcterms:identifier "{8342F87E-CCEF-4c4b-871D-143A778257AE}" . 
-ies_core:Easting rdfs:comment "The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection." . 
-ies_core:Easting rdfs:subClassOf ies_core:GeoIdentity . 
 ies_core:EducationalOrganization rdf:type skos:Concept . 
 ies_core:EducationalOrganization rdfs:label "Educational Organization" . 
 ies_core:EducationalOrganization dcterms:identifier "{1D46D575-3AC3-4793-917C-B06AE53E628A}" . 
@@ -379,20 +377,20 @@ ies_core:ExchangeMovement rdfs:subClassOf ies_core:TransactionActivity .
 ies_core:Facility rdf:type skos:Concept . 
 ies_core:Facility rdfs:label "Facility" . 
 ies_core:Facility dcterms:identifier "{84C679A1-D3D3-45f3-8764-46BA14B5F242}" . 
-ies_core:Facility rdfs:comment "A Location that is man-made, but is typically larger than an Address (i.e. it may have more than one postal address)Examples:Military camps, factories, sports facilities, airports, etc." . 
+ies_core:Facility rdfs:comment "RealEstate that is man-made. Examples include: Military camps, factories, sports facilities, airports, etc." . 
 ies_core:Facility skos:broader ies_core:RealEstate . 
 ies_core:finiteMembershipCount rdf:type rdf:Property . 
 ies_core:finiteMembershipCount rdfs:label "finite membership count" . 
 ies_core:finiteMembershipCount dcterms:identifier "{E2E5CDBF-F48F-4f53-B277-9563AF930D3F}" . 
 ies_core:finiteMembershipCount rdfs:comment "An integer count of members of a FiniteClassOfElement. " . 
 ies_core:finiteMembershipCount rdfs:subPropertyOf ies_core:attribute . 
-ies_core:finiteMembershipCount rdfs:domain ies_core:FiniteSetOfSpatiotemporalExtents . 
+ies_core:finiteMembershipCount rdfs:domain ies_core:FiniteSetOfExtents . 
 ies_core:finiteMembershipCount rdfs:range xsd:integer . 
-ies_core:FiniteSetOfSpatiotemporalExtents rdf:type rdfs:Class . 
-ies_core:FiniteSetOfSpatiotemporalExtents rdfs:label "Finite Set Of Spatiotemporal Extents" . 
-ies_core:FiniteSetOfSpatiotemporalExtents dcterms:identifier "{8DF90785-8066-4e37-A8FF-64D4232CF266}" . 
-ies_core:FiniteSetOfSpatiotemporalExtents rdfs:comment "A SetOfSpatiotemporalExtents whose instances are sets with finite, fixed membership of spatio-temporal extents." . 
-ies_core:FiniteSetOfSpatiotemporalExtents rdfs:subClassOf ies_top:SetOfSpatiotemporalExtents . 
+ies_core:FiniteSetOfExtents rdf:type rdfs:Class . 
+ies_core:FiniteSetOfExtents rdfs:label "Finite Set Of Extents" . 
+ies_core:FiniteSetOfExtents dcterms:identifier "{8DF90785-8066-4e37-A8FF-64D4232CF266}" . 
+ies_core:FiniteSetOfExtents rdfs:comment "A SetOfExtents whose instances are sets with finite, fixed membership of extents." . 
+ies_core:FiniteSetOfExtents rdfs:subClassOf ies_top:SetOfExtents . 
 ies_core:FirstLineOfAddress rdf:type skos:Concept . 
 ies_core:FirstLineOfAddress rdfs:label "First Line Of Address" . 
 ies_core:FirstLineOfAddress dcterms:identifier "{97D37B17-3E40-457b-94D8-2528697B3064}" . 
@@ -432,21 +430,22 @@ ies_core:Gender rdfs:label "Gender" .
 ies_core:Gender dcterms:identifier "{DBE3554A-C118-4520-8966-7A1658F8DA01}" . 
 ies_core:Gender rdfs:comment "A ClassOfPerson whose members all share the same identified gender" . 
 ies_core:Gender rdfs:subClassOf ies_core:SetOfPersons . 
+ies_core:GeodeticPlace rdf:type rdfs:Class . 
+ies_core:GeodeticPlace rdfs:label "Geodetic Place" . 
+ies_core:GeodeticPlace dcterms:identifier "{D582E991-D08E-4a36-B98D-45A51013FB36}" . 
+ies_core:GeodeticPlace rdfs:comment "A State that is at rest relative to a frame of reference (such as one fixed to the Earth, to one of its tectonic plates, or to the Moon). A geodetic place lasts for as long as its frame of reference does and is the same place at every moment: the same place yesterday, today and tomorrow. Like any State it is identified by the region of space and time it occupies, so one geodetic place can appear in several coordinate reference systems that share its frame of reference, with different coordinates in each." . 
+ies_core:GeodeticPlace ies_top:powertype ies_core:SetOfGeodeticPlaces . 
+ies_core:GeodeticPlace rdfs:subClassOf ies_top:State . 
 ies_core:GeographicFeature rdf:type skos:Concept . 
 ies_core:GeographicFeature rdfs:label "Geographic Feature" . 
 ies_core:GeographicFeature dcterms:identifier "{5794C9D0-2074-4b6c-91E8-AE1C647B866F}" . 
-ies_core:GeographicFeature rdfs:comment "A Location that is a naturally occurring feature on the earth." . 
-ies_core:GeographicFeature skos:broader ies_core:Location . 
+ies_core:GeographicFeature rdfs:comment "A PlaceOnEarth that is a naturally occurring feature on the earth." . 
+ies_core:GeographicFeature skos:broader ies_core:PlaceOnEarth . 
 ies_core:GeoIdentity rdf:type rdfs:Class . 
 ies_core:GeoIdentity rdfs:label "Geo Identity" . 
 ies_core:GeoIdentity dcterms:identifier "{10996E21-6210-474c-8AD9-A2A2E2302CCC}" . 
-ies_core:GeoIdentity rdfs:comment "A unique Identifier attributed to the respective Location." . 
+ies_core:GeoIdentity rdfs:comment "A unique Identifier attributed to the respective PlaceOnEarth." . 
 ies_core:GeoIdentity rdfs:subClassOf ies_core:Identifier . 
-ies_core:GeoPoint rdf:type rdfs:Class . 
-ies_core:GeoPoint rdfs:label "Geo Point" . 
-ies_core:GeoPoint dcterms:identifier "{80DCE57A-8C3C-4e58-8A60-85CA21C4FB44}" . 
-ies_core:GeoPoint rdfs:comment "A Location that is a point (mathematically speaking, of vanishing volume) on, below or above the surface of the WGS84 spheroid. The distance from the spheroid surface is given by the altitudeInMetres attribute." . 
-ies_core:GeoPoint rdfs:subClassOf ies_core:Location . 
 ies_core:GivenName rdf:type skos:Concept . 
 ies_core:GivenName rdfs:label "Given Name" . 
 ies_core:GivenName dcterms:identifier "{499125CC-B0FA-4f75-983E-BFDF36942EFB}" . 
@@ -472,7 +471,7 @@ ies_core:hasCharacteristic rdfs:label "has characteristic" .
 ies_core:hasCharacteristic dcterms:identifier "{B7999E75-FA09-441a-B62D-B9BC3A97CF85}" . 
 ies_core:hasCharacteristic rdfs:comment "An rdf:type relationship that asserts an Element has a Characteristic or Measure" . 
 ies_core:hasCharacteristic rdfs:subPropertyOf rdf:type . 
-ies_core:hasCharacteristic rdfs:domain ies_top:SpatiotemporalExtent . 
+ies_core:hasCharacteristic rdfs:domain ies_top:RegularSpacetimeExtent . 
 ies_core:hasCharacteristic rdfs:range ies_core:Characteristic . 
 ies_core:hasEthnicity rdf:type rdf:Property . 
 ies_core:hasEthnicity rdfs:label "has ethnicity" . 
@@ -481,10 +480,12 @@ ies_core:hasEthnicity rdfs:comment "The ethnic group that the respective Person 
 ies_core:hasEthnicity rdfs:subPropertyOf rdf:type . 
 ies_core:hasEthnicity rdfs:domain ies_core:Person . 
 ies_core:hasEthnicity rdfs:range ies_core:Ethnicity . 
-ies_core:hasGeoSparqlRepresentation rdf:type rdf:Property . 
-ies_core:hasGeoSparqlRepresentation rdfs:label "has geo sparql representation" . 
-ies_core:hasGeoSparqlRepresentation dcterms:identifier "{F5BCFCBF-53B2-47d6-BAAC-F4FAF96D0C39}" . 
-ies_core:hasGeoSparqlRepresentation rdfs:subPropertyOf ies_core:isRepresentedAs . 
+ies_core:hasGeodeticCounterpart rdf:type rdf:Property . 
+ies_core:hasGeodeticCounterpart rdfs:label "has geodetic counterpart" . 
+ies_core:hasGeodeticCounterpart dcterms:identifier "{061672B0-2455-451f-9A39-7743B4FB48D3}" . 
+ies_core:hasGeodeticCounterpart rdfs:comment "A relationshipBetweenUniverseMates between a State and a GeodeticPlace that stands in as an approximation of where the state is located. A state can have more than one geodetic counterpart: it may be approximated by a point, a line, an area or a volume, at different levels of accuracy, and in different coordinate reference systems." . 
+ies_core:hasGeodeticCounterpart rdfs:range ies_core:GeodeticPlace . 
+ies_core:hasGeodeticCounterpart rdfs:subPropertyOf ies_top:relationshipBetweenUniverseMates . 
 ies_core:hasICalRepresentation rdf:type rdf:Property . 
 ies_core:hasICalRepresentation rdfs:label "has i cal representation" . 
 ies_core:hasICalRepresentation dcterms:identifier "{F624DB5F-59EC-437f-97B2-E52A0306E074}" . 
@@ -539,6 +540,13 @@ ies_core:Identifier rdfs:label "Identifier" .
 ies_core:Identifier dcterms:identifier "{4357D08F-93D3-4e09-B816-DF7226360339}" . 
 ies_core:Identifier rdfs:comment "A Name that is unique within the specified context." . 
 ies_core:Identifier rdfs:subClassOf ies_core:Name . 
+ies_core:inCRS rdf:type rdf:Property . 
+ies_core:inCRS rdfs:label "in crs" . 
+ies_core:inCRS dcterms:identifier "{3ED47126-05CA-461e-BB4F-BD62BFE66CFE}" . 
+ies_core:inCRS rdfs:comment "An rdf:type relation that states which coordinate reference system (CRS) a GeodeticPlace belongs to. Note: A similar property is being considered for inclusion in GeoSPARQL. When GeoSPARQL publishes that property, this property will be swapped out for it. " . 
+ies_core:inCRS rdfs:subPropertyOf rdf:type . 
+ies_core:inCRS rdfs:range ies_core:SetOfCRSPlaces . 
+ies_core:inCRS rdfs:domain ies_core:GeodeticPlace . 
 ies_core:IndividualDocument rdf:type rdfs:Class . 
 ies_core:IndividualDocument rdfs:label "Individual Document" . 
 ies_core:IndividualDocument dcterms:identifier "{54A8E3BE-4B61-4362-92F2-3FB021DCD970}" . 
@@ -649,11 +657,6 @@ ies_core:LanguageProficiency rdfs:label "Language Proficiency" .
 ies_core:LanguageProficiency dcterms:identifier "{72DABEAD-12C8-459f-BFBA-7DC588C8DFEA}" . 
 ies_core:LanguageProficiency rdfs:comment "A ClassOfPersonState indicating the proficiency a person has in a particular language at that state in their life." . 
 ies_core:LanguageProficiency rdfs:subClassOf ies_core:Skill . 
-ies_core:Latitude rdf:type rdfs:Class . 
-ies_core:Latitude rdfs:label "Latitude" . 
-ies_core:Latitude dcterms:identifier "{C21F71B2-D803-4b01-8FC8-75FAC81B9FE4}" . 
-ies_core:Latitude rdfs:comment "The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection." . 
-ies_core:Latitude rdfs:subClassOf ies_core:GeoIdentity . 
 ies_core:LawEnforcementOrganization rdf:type skos:Concept . 
 ies_core:LawEnforcementOrganization rdfs:label "Law Enforcement Organization" . 
 ies_core:LawEnforcementOrganization dcterms:identifier "{CEB757C2-DFA7-441b-8168-1414ECD7EE0D}" . 
@@ -689,17 +692,6 @@ ies_core:LivingSystem dcterms:identifier "{35CA2C27-E7A2-465a-B529-AB9AFBB1B25C}
 ies_core:LivingSystem rdfs:comment "A System that is also a Living Organism, composed of interdependent subsystems that collectively sustain, regulate, and reproduce the organism as a unified spatiotemporal extent." . 
 ies_core:LivingSystem rdfs:subClassOf ies_core:LivingOrganism . 
 ies_core:LivingSystem rdfs:subClassOf ies_core:System . 
-ies_core:Location rdf:type rdfs:Class . 
-ies_core:Location rdfs:label "Location" . 
-ies_core:Location dcterms:identifier "{110EFC77-C1D2-4eb5-87F6-677F73EB8424}" . 
-ies_core:Location rdfs:comment "A geographic place which specifies a point or an area on the Earths surface or elsewhere" . 
-ies_core:Location rdfs:subClassOf ies_top:State . 
-ies_core:Location rdfs:subClassOf geo:Feature . 
-ies_core:Longitude rdf:type rdfs:Class . 
-ies_core:Longitude rdfs:label "Longitude" . 
-ies_core:Longitude dcterms:identifier "{01997102-4ABA-48a7-8CD0-BC3003DBDB30}" . 
-ies_core:Longitude rdfs:comment "The GeoIdentity that is a decimal representation of an angle of longitude of a PointOnEarthSurface (WGS84)" . 
-ies_core:Longitude rdfs:subClassOf ies_core:GeoIdentity . 
 ies_core:Measure rdf:type rdfs:Class . 
 ies_core:Measure rdfs:label "Measure" . 
 ies_core:Measure dcterms:identifier "{39C677C9-089D-48ea-BC7E-DBFC894282CA}" . 
@@ -751,11 +743,6 @@ ies_core:Nickname rdfs:label "Nickname" .
 ies_core:Nickname dcterms:identifier "{689655C6-D1ED-454a-AD88-CDDD7E34668C}" . 
 ies_core:Nickname rdfs:comment "A PersonName that is an unofficial or casual nameNote:An nickname will often be applied to a State of the Person, as these tend to be non-permanent names" . 
 ies_core:Nickname skos:broader ies_core:PersonName . 
-ies_core:Northing rdf:type rdfs:Class . 
-ies_core:Northing rdfs:label "Northing" . 
-ies_core:Northing dcterms:identifier "{AA03B814-D494-4175-AFB7-54FA78934989}" . 
-ies_core:Northing rdfs:comment "The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection." . 
-ies_core:Northing rdfs:subClassOf ies_core:GeoIdentity . 
 ies_core:NotForProfitOrganization rdf:type skos:Concept . 
 ies_core:NotForProfitOrganization rdfs:label "Not For Profit Organization" . 
 ies_core:NotForProfitOrganization dcterms:identifier "{614EE53A-7D7E-4ec3-ADFE-717993B33FF6}" . 
@@ -802,10 +789,10 @@ ies_core:Participation rdfs:label "Participation" .
 ies_core:Participation dcterms:identifier "{B47636E7-E6C4-456f-B755-8AD164240A33}" . 
 ies_core:Participation rdfs:comment "A temporal part which participates in an Activity." . 
 ies_core:Participation rdfs:subClassOf ies_top:State . 
-ies_core:ParticipationInGoverance rdf:type rdfs:Class . 
-ies_core:ParticipationInGoverance rdfs:label "Participation In Goverance" . 
-ies_core:ParticipationInGoverance dcterms:identifier "{20BBA6FA-CD95-4232-837E-C49564401315}" . 
-ies_core:ParticipationInGoverance rdfs:subClassOf ies_core:Participation . 
+ies_core:ParticipationInGovernance rdf:type rdfs:Class . 
+ies_core:ParticipationInGovernance rdfs:label "Participation In Governance" . 
+ies_core:ParticipationInGovernance dcterms:identifier "{20BBA6FA-CD95-4232-837E-C49564401315}" . 
+ies_core:ParticipationInGovernance rdfs:subClassOf ies_core:Participation . 
 ies_core:ParticularPeriod rdf:type rdfs:Class . 
 ies_core:ParticularPeriod rdfs:label "Particular Period" . 
 ies_core:ParticularPeriod dcterms:identifier "{244A8229-B9B1-4a12-9D19-AA0EB090397E}" . 
@@ -819,7 +806,7 @@ ies_core:PartNumber skos:broader ies_core:Identifier .
 ies_core:PartOfFacility rdf:type skos:Concept . 
 ies_core:PartOfFacility rdfs:label "Part Of Facility" . 
 ies_core:PartOfFacility dcterms:identifier "{22FF57C4-8D8E-4dd9-9A13-C1BF545A76B5}" . 
-ies_core:PartOfFacility rdfs:comment "A Location that is contained within a Facility - e.g. a room, laboratory, floor, etc." . 
+ies_core:PartOfFacility rdfs:comment "RealEstate that is contained within a Facility - e.g. a room, laboratory, floor, etc." . 
 ies_core:PartOfFacility skos:broader ies_core:RealEstate . 
 ies_core:PartyInCommunication rdf:type rdfs:Class . 
 ies_core:PartyInCommunication rdfs:label "Party In Communication" . 
@@ -852,6 +839,11 @@ ies_core:PersonTitle rdfs:label "Person Title" .
 ies_core:PersonTitle dcterms:identifier "{B42CFB5B-1501-4d8d-9A14-5E21286FC371}" . 
 ies_core:PersonTitle rdfs:comment "The title associated with the name of the person." . 
 ies_core:PersonTitle skos:broader ies_core:PersonName . 
+ies_core:PlaceOnEarth rdf:type rdfs:Class . 
+ies_core:PlaceOnEarth rdfs:label "Place On Earth" . 
+ies_core:PlaceOnEarth dcterms:identifier "{55E04625-48EC-4b77-8150-4C8324594AD5}" . 
+ies_core:PlaceOnEarth rdfs:comment "A State that is a physical chunk of the earth that provide useful subdivisions for locating other states within e.g. chunks of land, airspace, land and airspace, countries, continents, economic areas, buildings, settlements etc. Regions of earth can be spatially separated (e.g. economic areas)." . 
+ies_core:PlaceOnEarth rdfs:subClassOf ies_top:State . 
 ies_core:Possession rdf:type skos:Concept . 
 ies_core:Possession rdfs:label "Possession" . 
 ies_core:Possession dcterms:identifier "{9DA639DF-9D82-42c6-85E6-153790F6BDB1}" . 
@@ -876,7 +868,8 @@ ies_core:published rdfs:range ies_core:ParticularPeriod .
 ies_core:RealEstate rdf:type skos:Concept . 
 ies_core:RealEstate rdfs:label "Real Estate" . 
 ies_core:RealEstate dcterms:identifier "{3D107859-1C19-4568-9D2F-2A4F2A9E4650}" . 
-ies_core:RealEstate skos:broader ies_core:Location . 
+ies_core:RealEstate rdfs:comment "A PlaceOnEarth that has been defined or constructed for the purpose of ownership." . 
+ies_core:RealEstate skos:broader ies_core:PlaceOnEarth . 
 ies_core:Recognizer rdf:type rdfs:Class . 
 ies_core:Recognizer rdfs:label "Recognizer" . 
 ies_core:Recognizer dcterms:identifier "{886997CB-23D6-4e9b-A432-769BA6AE0A95}" . 
@@ -888,18 +881,13 @@ ies_core:RecurringTimespan rdfs:subClassOf ies_top:IntermittentTimespan .
 ies_core:RegionalConstituency rdf:type rdfs:Class . 
 ies_core:RegionalConstituency rdfs:label "Regional Constituency" . 
 ies_core:RegionalConstituency dcterms:identifier "{DE6B8201-3FF0-4dba-9B2A-01BB02DC6EC3}" . 
-ies_core:RegionalConstituency rdfs:comment "An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location." . 
+ies_core:RegionalConstituency rdfs:comment "An Organization of human members associated with a specific place on Earth, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular place on Earth." . 
 ies_core:RegionalConstituency rdfs:subClassOf ies_core:Organization . 
 ies_core:RegionOfCountry rdf:type skos:Concept . 
 ies_core:RegionOfCountry rdfs:label "Region Of Country" . 
 ies_core:RegionOfCountry dcterms:identifier "{EB604FC5-9503-4dcb-AA73-E88EAB5AAD0D}" . 
-ies_core:RegionOfCountry rdfs:comment "A Location that is a general subdivision of a Countrye.g. cities, towns, counties, states, etc." . 
-ies_core:RegionOfCountry skos:broader ies_core:Location . 
-ies_core:RegionOfEarth rdf:type skos:Concept . 
-ies_core:RegionOfEarth rdfs:label "Region Of Earth" . 
-ies_core:RegionOfEarth dcterms:identifier "{55E04625-48EC-4b77-8150-4C8324594AD5}" . 
-ies_core:RegionOfEarth rdfs:comment "A Location that is a general subdivision of the world - e.g. continents, sub-continents, economic areas, etc.Regions of the world may sometimes be spatially separated (e.g. economic areas)" . 
-ies_core:RegionOfEarth skos:broader ies_core:Location . 
+ies_core:RegionOfCountry rdfs:comment "A PlaceOnEarth that is a general subdivision of a Country e.g. cities, towns, counties, states, etc." . 
+ies_core:RegionOfCountry skos:broader ies_core:PlaceOnEarth . 
 ies_core:Religion rdf:type skos:Concept . 
 ies_core:Religion rdfs:label "Religion" . 
 ies_core:Religion dcterms:identifier "{25FC7FB1-C913-4aa5-A195-79851BD26149}" . 
@@ -916,7 +904,7 @@ ies_core:ReplaceableLifespan rdfs:subClassOf ies_core:FusionOfIntegralParts .
 ies_core:Representation rdf:type rdfs:Class . 
 ies_core:Representation rdfs:label "Representation" . 
 ies_core:Representation dcterms:identifier "{A4A8F4F5-EDC5-48a9-A926-024A25801F5F}" . 
-ies_core:Representation rdfs:comment "A SetOfSigns that symbolize or refer to other Things. Examples: (1) an identifier used for a Person; (2) an photograph of a vehicle; (3) a document (though not an individual copy of a document). Signs are States that symbolize or refer to other States. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word IES in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).Sometimes it is important to establish arbitrary categories of Representation - such as pictures of kittens or educational films. A SetOfRepresentations can be used to collect together all Representations of similar content." . 
+ies_core:Representation rdfs:comment "A SetOfSigns that symbolize or refer to other Things. Examples: (1) an identifier used for a Person; (2) an photograph of a vehicle; (3) a document (though not an individual copy of a document) Signs are States that symbolize or refer to other States. They can take many forms: a spoken or written word, a drawing, a printed symbol, or any other communicative mark. In most situations we are not concerned with individual instances of a sign. For example, no single occurrence of the word IES in this document, on its own represents the IES ontology. Rather, any occurrences -whether printed on paper, scribbled in a notebook, or stored digitally, conveys the reference. For this reason, the use of SetOfSigns, or more specifically Representations are more useful. An exception might be a specific, unique sign (for example, graffiti on a particular vehicle) where that single occurrence is significant. This differentiation between individual instances of a sign and the collection is useful in regards to documents (See Document for more details).Sometimes it is important to establish arbitrary categories of Representation - such as pictures of kittens or educational films. A SetOfRepresentations can be used to collect together all Representations of similar content." . 
 ies_core:Representation rdfs:subClassOf ies_core:SetOfSigns . 
 ies_core:Representation ies_top:powertype ies_core:SetOfRepresentations . 
 ies_core:RepresentationScheme rdf:type rdfs:Class . 
@@ -1008,6 +996,16 @@ ies_core:SetOfSigns dcterms:identifier "{4E054F55-B874-4f4d-B5F3-30963D987A3E}" 
 ies_core:SetOfSigns rdfs:comment "The powertype of Sign. An instance of this is a set that contains signs." . 
 ies_core:SetOfSigns rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfSigns ies_top:powertype ies_core:SetOfSetOfSigns . 
+ies_core:SetOfCRSPlaces rdf:type rdfs:Class . 
+ies_core:SetOfCRSPlaces rdfs:label "Set Of CRS Places" . 
+ies_core:SetOfCRSPlaces dcterms:identifier "{09D717CE-D867-424f-AB02-906723E41F82}" . 
+ies_core:SetOfCRSPlaces rdfs:comment "A SetOfGeodeticPlaces that is a coordinate reference system: the set of all geodetic places that can be expressed in that system, such as its points, lines and polygons. The URI for a SetOfCRSPlaces must correspond to one in a CRS registry. URIs from the Open Geospatial Consortium (OGC) CRS registry are recommended. For example: http://www.opengis.net/def/crs/EPSG/0/4326 for WGS 84 and http://www.opengis.net/def/crs/EPSG/0/27700 for OSGB36 / British National Grid." . 
+ies_core:SetOfCRSPlaces rdfs:subClassOf ies_core:SetOfGeodeticPlaces . 
+ies_core:SetOfGeodeticPlaces rdf:type rdfs:Class . 
+ies_core:SetOfGeodeticPlaces rdfs:label "Set Of Geodetic Places" . 
+ies_core:SetOfGeodeticPlaces dcterms:identifier "{4AF4CC56-F44F-4578-939C-0DF62E3027AE}" . 
+ies_core:SetOfGeodeticPlaces rdfs:comment "The powertype of GeodeticPlace. An instance of this is a set that contains geodetic places." . 
+ies_core:SetOfGeodeticPlaces rdfs:subClassOf ies_top:SetOfStates . 
 ies_core:SetOfStatesWithParticularDuration rdf:type rdfs:Class . 
 ies_core:SetOfStatesWithParticularDuration rdfs:label "Set Of States With Particular Duration" . 
 ies_core:SetOfStatesWithParticularDuration dcterms:identifier "{0DEA64C8-E003-488f-B9E6-A8178FC65BE7}" . 

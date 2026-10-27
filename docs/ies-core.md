@@ -3,7 +3,7 @@
 Crown Copyright (c) 2026
 # <img src="../assets/images/IES-logo-dark.png" alt="IES Logo" width="50" align="absmiddle"> Core
 
-#  version: 0.1.1 (RC1)
+# version: 0.2.0 (RC2)
 ## Contents
 * Introduction Diagrams
     * [Core Overview](#9f186615-53a2-4a74-ac80-e53c1c9a001d)
@@ -54,15 +54,16 @@ Crown Copyright (c) 2026
 * [Artefact](#221ba44e-7562-4b00-bb1d-7c246d738fe1)
 * [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
+* [GeodeticPlace](#d582e991-d08e-4a36-b98d-45a51013fb36)
 * [HumanMadeSystem](#f6b05d87-5fd9-437d-b2b2-366407489912)
 * [Installed](#9f9982b7-12c3-432a-b5cc-0195eb5708b1)
 * [IntermittentTimespan](#ed41858d-a919-4e57-9c60-e2333556c826)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
 * [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
 * [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
 * [RecurringTimespan](#6b68585b-ab19-48a0-8254-1d6768f88833)
 * [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
 * [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
@@ -74,7 +75,7 @@ IES-Core is built upon IES-Top providing a common foundational layer of patterns
 
 IES-Core extends IES-Top into 3 major ways.
 <ol>
-	<li>It extends <i>State</i> to allow us to talk about familiar tangible individuals -known as <i>Entities </i>in IES4. These include living individuals (<i>LivingOrganism</i>), human-made objects (<i>Artefact</i>), places (<i>Location</i>), individuals capable of conscious action or can effect change on the world (<i>Actor</i>) and individuals that symbolize or signify other individuals (<i>Sign</i>). These categories can naturally overlap, for example, a person is both a <i>LivingOrganism</i> and an <i>Actor</i>. IES-Core embraces such multiple inheritance, producing a flatter, more flexible hierarchy than IES4.</li>
+	<li>It extends <i>State</i> to allow us to talk about familiar tangible individuals -known as <i>Entities </i>in IES4. These include living individuals (<i>LivingOrganism</i>), human-made objects (<i>Artefact</i>), places (<i>PlaceOnEarth </i>and <i>GeodeticPlace</i>), individuals capable of conscious action or can effect change on the world (<i>Actor</i>) and individuals that symbolize or signify other individuals (<i>Sign</i>). These categories can naturally overlap, for example, a person is both a <i>LivingOrganism</i> and an <i>Actor</i>. IES-Core embraces such multiple inheritance, producing a flatter, more flexible hierarchy than IES4.</li>
 	<li>It extends <i>State</i> to provide mechanisms to describe how states combine (fuse) to form new states of interest: an <i>Activity</i> (<i>Event</i> in IES4), which is a fusion of temporal parts (<i>Participations</i>) of other states (e.g. participations of persons to make a <i>Meeting)</i>; <i>System, </i>which is the fusion of dependent states of which make up a system and which cannot exist without (e.g. a motorized road vehicle - made up of an engine, a chassis and wheels). Note, even seemingly tangible individuals can be treated as a <i>Systems</i> - e.g. <i>Vehicle</i>, is both an <i>Artefact</i> and a <i>System.</i> It is often useful with systems to see their parts as being <i>Installed</i> or removed but also call out the identity of dependent parts that endure. This persistence lets us refer to those parts even when they're temporarily uninstalled - for instance, the front-right wheel of a car, regardless of which actual wheel is installed at a given time. <i>ReplaceableLifespan</i> provides this timeless component but also can be used for other individuals that are replaceable outside systems e.g. the CEO of a company or the head of state of a nation.</li>
 	<li>Extends <i>Timespans</i> to represent timestamps, periods, durations, and recurrences in a 4D-faithful manner, while ensuring interoperability with common computer standards such as ISO 8601.</li>
 </ol>
@@ -90,11 +91,11 @@ IES-Core extends IES-Top into 3 major ways.
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
 * [LivingOrganism](#a2c20353-f683-4d31-a7dd-455813527f4b)
 * [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [ParticularPeriod](#244a8229-b9b1-4a12-9d19-aa0eb090397e)
 * [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
 
@@ -151,15 +152,15 @@ The use of the <i>isAStartOf</i> and <i>isAFinishOf</i> relations in combination
 * [Period](#d77a3301-53bb-4820-a86a-f7c6a0d4c9a4)
 * [RecurringTimespan](#6b68585b-ab19-48a0-8254-1d6768f88833)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
+* [SelfConnectedState](#40eb16bc-a0c9-4d17-bce2-e94c8d4249f1)
+* [SelfDisconnectedState](#0c7b7816-2469-49a3-bb1b-215591f1bf60)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [SetOfStatesWithParticularDuration](#0dea64c8-e003-488f-b9e6-a8178fc65be7)
 * [SetOfTimeBoundedStates](#18182b3f-22e3-4682-a4ce-5bd09e6c3c09)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [startBoundOfSet](#8343be41-469d-40b8-bff2-1c3b78488d6f)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [TemporallyContinuousState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
 * [TemporallyIntermittentState](#54795bb4-0a44-4837-ad45-2e51ede3dd2f)
-* [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
+* [TemporallyUninterruptedState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
 * [Timespan](#b9900e87-e85c-4378-8afe-d3a5ef0168a0)
 
 The big advantage to a 4D ontology is that time is treated the same way as space. This allows complex temporal logic information to be expressed using very simple constructs. <i>Timespans </i>are treated like any other state -e.g. assembled with <i>isPartOf </i>relationships. Technically, <i>Timespans </i>only differ from other states in that they are all of the universe during a time interval, or put another way, temporal parts of the universe.
@@ -204,10 +205,10 @@ For querying, the attribute <i>iso8601DurationRepresentation </i>must also be pr
 * [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [isTemporalPartOf](#91245399-d5d7-4ad7-a8da-c0db2f9e4332)
 * [LivingSystem](#35ca2c27-e7a2-465a-b529-ab9afbb1b25c)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [ReplaceableLifespan](#d71ca01c-58a9-48a5-b92c-589df7519f47)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [System](#a0cf4d1d-294d-41ca-8baa-b8bc12efe9b2)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
@@ -260,20 +261,19 @@ This regime minimizes the burden on data consumers - regardless of any custom SK
 * [inRepresentation](#79f72fb1-6350-4761-96c8-f6d1358566f6)
 * [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
 * [Language](#33330343-4547-4cf1-9277-f2eb5548724f)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
 * [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
 * [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
-* [Set](#059b5013-017b-496f-b104-ea82b69b8792)
 * [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
+* [SetOfRegularSpacetimeExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
 * [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
+* [SetOfSetOfRegularSpacetimeExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
 * [SetOfSetOfSigns](#bb9fd5e2-98d1-4690-b8c8-08796fdae208)
-* [SetOfSetOfSpatiotemporalExtents](#33a6e9f9-54b5-4045-8733-ce821d972c6f)
 * [SetOfSetOfStates](#44a34647-ea2f-4635-8dd4-9e48008a85af)
 * [SetOfSigns](#4e054f55-b874-4f4d-b5f3-30963d987a3e)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
 * [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
 * [Sign](#0600cef2-32e9-4cbd-899a-1319379aebab)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
@@ -287,6 +287,7 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [Extent](#7f27c6ff-b0db-4267-8513-cd77b1dfc36e)
 * [hasName](#d6ae651c-2252-47ff-85b9-848d14a8ab26)
 * [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
 * [InformationProcessingSystem](#b0166f18-6edd-4ec3-bfe2-f19db449e5c1)
@@ -296,6 +297,7 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 * [Name](#53e385f5-19e0-431a-970f-e49f3f6e6680)
 * [NamingScheme](#a8c23395-92c8-4f26-9b16-e4103d40656c)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
 * [RepresentationScheme](#f014d221-b422-4776-bffa-21d53afde0c6)
 * [representationValue](#344e42f1-2ac3-4fe8-bf30-c78285944484)
@@ -304,7 +306,7 @@ Sometimes it is important to establish arbitrary categories of Representation - 
 * [SetOfCharacterStrings](#fec11cc7-b62f-42fc-806b-c45c2d026021)
 * [SetOfNames](#49585484-74e3-4ce1-98e3-12cc89379a35)
 * [SetOfRepresentations](#7814f7f3-b1f9-4bee-a35d-82eff80d1f3c)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SpacetimeExtent](#77bb5948-c5bf-4cc2-b6dc-b7ffe413adf5)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
@@ -321,13 +323,15 @@ Names and Identifiers belong to <i>NamingSchemes</i> - this allows us to give co
 * [Characteristic](#2085ee5c-09ce-4467-bc60-5bb5c7af4f02)
 * [Color](#2fe15680-2107-4262-8c83-5ddd4be22312)
 * [couple](#85feafd9-50a0-42ea-9cc7-8dc7b055f47b)
+* [Extent](#7f27c6ff-b0db-4267-8513-cd77b1dfc36e)
 * [hasCharacteristic](#b7999e75-fa09-441a-b62d-b9bc3a97cf85)
 * [hasQuantity](#6f9353e2-2cfa-4017-a2af-3359ad131039)
 * [isRepresentedAs](#37400026-3e6b-4960-a8e8-832c55ddb10f)
 * [Measure](#39c677c9-089d-48ea-bc7e-dbfc894282ca)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [SetOfRegularSpacetimeExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
+* [SpacetimeExtent](#77bb5948-c5bf-4cc2-b6dc-b7ffe413adf5)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Characteristics are used to articulate properties of a <i>SpatiotemporalExtent</i> that are qualitative or quantitative, the latter being a <i>Measure</i>. IES-Core adopts the QUDT ontology to model specific measures, measure ranges and associated units. 
@@ -360,11 +364,11 @@ Dispositions are managed in IES-Core using <i>Disposition</i> -a set that collec
 ### IES elements in this diagram:
 
 * [attribute](#4ac55554-9e8c-43a4-baf8-5cc912a6be07)
+* [Extent](#7f27c6ff-b0db-4267-8513-cd77b1dfc36e)
 * [finiteMembershipCount](#e2e5cdbf-f48f-4f53-b277-9563af930d3f)
-* [FiniteSetOfSpatiotemporalExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
-* [FiniteSetOfSpatiotemporalExtents](#ad58b5e3-152f-92fe-9135-f46140af932c)
-* [SetOfSpatiotemporalExtents](#0c4a5ca9-a706-4653-ab55-69d2fcab0d23)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [FiniteSetOfExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
+* [FiniteSetOfExtents](#ad58b5e3-152f-92fe-9135-f46140af932c)
+* [SetOfExtents](#805df273-fd65-4ed5-becb-621f5b16042c)
 * [Stuff](#0f8a7a2e-896c-4b09-afde-f63807bdc767)
 * [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 
@@ -461,28 +465,48 @@ An <i>Artefact</i> is a human-made state. The activities of their lifecycle from
 
 * [Address](#b03bbd70-d5f4-48e6-84f2-cb5bbfe1c6ed)
 * [Country](#4df30ff1-e3cd-4029-82bd-7c826529bada)
-* [Easting](#8342f87e-ccef-4c4b-871d-143a778257ae)
 * [Facility](#84c679a1-d3d3-45f3-8764-46ba14b5f242)
 * [FirstLineOfAddress](#97d37b17-3e40-457b-94d8-2528697b3064)
+* [GeodeticPlace](#d582e991-d08e-4a36-b98d-45a51013fb36)
 * [GeographicFeature](#5794c9d0-2074-4b6c-91e8-ae1c647b866f)
 * [GeoIdentity](#10996e21-6210-474c-8ad9-a2a2e2302ccc)
-* [GeoPoint](#80dce57a-8c3c-4e58-8a60-85ca21c4fb44)
+* [hasGeodeticCounterpart](#061672b0-2455-451f-9a39-7743b4fb48d3)
+* [Identifier](#4357d08f-93d3-4e09-b816-df7226360339)
+* [inCRS](#3ed47126-05ca-461e-bb4f-bd62bfe66cfe)
 * [ISO3166_1Alpha_3](#64a956ae-f567-458a-b64c-9204311970ea)
-* [Latitude](#c21f71b2-d803-4b01-8fc8-75fac81b9fe4)
+* [isPartOf](#b51571e4-8ac5-4387-bb47-ab110e15f586)
 * [LineOfAddress](#e26d69e3-1586-4e97-8ba7-bf38db8283ce)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
-* [Longitude](#01997102-4aba-48a7-8cd0-bc3003dbdb30)
-* [Northing](#aa03b814-d494-4175-afb7-54fa78934989)
 * [OSGridReference](#72710367-542e-48c1-bf36-e3552f80d6fe)
 * [PartOfFacility](#22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
 * [PostalCode](#5aa9b0b5-3219-4d62-b41a-9f3452c8b831)
 * [RealEstate](#3d107859-1c19-4568-9d2f-2a4f2a9e4650)
 * [RegionOfCountry](#eb604fc5-9503-4dcb-aa73-e88eab5aad0d)
-* [RegionOfEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
+* [relationshipBetweenStates](#4f36c24c-39a3-472d-94c3-b2bbd48f951f)
+* [relationshipBetweenUniverseMates](#030e8b68-77eb-4013-bd03-33198a229c83)
 * [RoomNumber](#327f0797-a422-4456-806c-5aaa1e954f29)
+* [SetOfCRSPlaces](#09d717ce-d867-424f-ab02-906723e41f82)
+* [SetOfGeodeticPlaces](#4af4cc56-f44f-4578-939c-0df62e3027ae)
+* [SetOfStates](#e25c3b00-4ca3-40f4-9443-15c9dc4ee972)
+* [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [TOID](#36d10e0e-9301-4295-ad6d-16ef5f9ea82a)
 
-THIS PATTERN IS STILL IN DEVELOPMENT AND SUBJECT TO CHANGE IN RELEASE CANDIDATE 2.
+As set out in <i>Where and When</i>, if something happens within a location, it is part of that location, and if a person walks through a location, there is a temporal chunk of them that is part of that location. Likewise, if a person is traveling in a car, there is a temporal part of them that is part of the car. Being somewhere is therefore a matter of parts and wholes, asserted with <i>isPartOf</i>, and both the thing located and the place it is in are <i>States</i>.
+
+Here we focus on the locations that are notionally considered "not moving" or, to be more precise, not moving relative to something else, e.g. countries, cities and coordinate points. To support locations that are static relative to something, we have two types of <i>place </i>in IES:
+
+1. <b>PlaceOnEarth</b>: covering common notions of place, e.g. countries, cities, continents and buildings; and
+2. <b>GeodeticPlace</b>: covering points, lines, areas and volumes that are at rest relative to a frame of reference, such as the places of a coordinate reference system.
+
+A <i>PlaceOnEarth </i>is a physical chunk of the Earth - land, airspace, the ground beneath, or a combination of these - that provides a useful subdivision for locating other states within. It need not be in one piece: an economic area can be scattered.
+
+A <i>GeodeticPlace </i>is what a coordinate, a line on a map or a boundary polygon picks out: a chunk of the world that stays put relative to something we have agreed to treat as fixed, such as the Earth as a whole, one of its tectonic plates, or the Moon. Because it is tied to that frame of reference rather than to whatever happens to be there, it is not the kind of thing that moves or changes.
+
+Two relations therefore do the work of locating things, and they should not be confused. <i>isPartOf</i> says that a state is genuinely within a place: a meeting is part of the room it is held in, and a lorry crossing France is, for that stretch of its journey, part of France. <i>hasGeodeticCounterpart </i>says that a geodetic place stands in for where a state is, without claiming that the state is part of it: the counterpart may be smaller than the state, as a point is, or larger, as a bounding box is. A geodetic counterpart is always an approximation, e.g. a point for where a ship is reported to be, or the grid square an aircraft is said to be flying over. A state can have more than one if the data has them at several levels of detail. Attach the geometry to the state it approximates: a building can be given its geometry directly, while a moving aircraft gets one per position report, each report being a temporal part of the aircraft.
+
+This is how GeoSPARQL 1.1, the Open Geospatial Consortium (OGC) standard for geospatial linked data, has been integrated with IES: a <i>geo:Geometry</i> is a <i>GeodeticPlace</i> and <i>geo:hasGeometry</i> is a <i>hasGeodeticCounterpart</i>, so GeoSPARQL data can be used directly in IES, with <i>geo:Geometry</i> instances associated with states using <i>geo:hasGeometry</i>. Note, as of RC2, we have not explicitly defined how GeoSPARQL's <i>geo:Feature</i> relates to the rest of IES: we are still working through the details and will be updating this area of the ontology for RC3. For now, the <i>rdfs:domain</i> for <i>geo:hasGeometry</i> implies that states are also features.
+
+Every geometry must say which coordinate reference system (CRS) its coordinates are in. GeoSPARQL currently puts the CRS URI at the front of the WKT literal; IES also links the geometry to the CRS with <i>inCRS</i>, so that the CRS is a node that can be queried. This latter approach mirrors a proposed update to GeoSPARQL for linking a geometry to its coordinate reference system; when GeoSPARQL publishes it, <i>inCRS </i>will be swapped for the GeoSPARQL property.
 
 ## <a id="e92412a1-25ed-4292-b471-da70de7ed415"></a>Document
 ![Document Diagram](diagrams/UML_ID_E92412A1_25ED_4292_B471_DA70DE7ED415.png)
@@ -532,8 +556,7 @@ IES makes a clear distinction between a specific, individual copy of a document,
 * [Ticket](#068b5b19-170e-4766-959d-2e00e412b568)
 * [WorkOfDocumentation](#068fd872-409b-4565-8ea3-00d9a515ec60)
 
-A <i>Ticket </i>is an <i>WorkOfDocumentation</i> that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
-
+A <i>Ticket </i>is an <i>WorkOfDocumentation </i>that authorises access to an <i>Activity </i>- e.g. a travel service, entertainment event etc. There are to be used with the Entitlement and Ownership pattern to articulate the Activities or Entitlements they grant access to. In the modern age, there can be multiple copies of the same ticket (<i>IndividualTickets</i>), either printed out or stored on one or many digital devices. The Entitlement pattern assumes that while there can be multiple copies of a ticket, it is normally just one or a few of those individual tickets that grant access.
 
 ## <a id="{7782E49B-2F99-4ecd-9004-EDEE21511B5E}"></a>System
 
@@ -702,7 +725,6 @@ The <i>Communication</i> activity can be used for communication that happens in 
 * [AccountClosure](#9693758b-a11c-493d-84ce-c80e47ecf18c)
 * [AccountDetails](#f3b91341-7a4c-4fb0-b21a-7b3333ecbed3)
 * [AccountHolder](#e682fbfe-6589-4f3e-af50-1bdc3344e4f1)
-* [AccountInCommunication](#5d631dcc-d745-4ddc-9e6b-9efa0b07da3e)
 * [AccountNumber](#7d21d4f3-bd4a-4e7b-a34d-6865fa1ec024)
 * [AccountOpening](#a97c14c5-3c4a-4935-9b59-ca5612001f53)
 * [AccountProvider](#6ab883d4-3230-48f6-8543-b458e9ec714b)
@@ -721,8 +743,8 @@ The <i>Communication</i> activity can be used for communication that happens in 
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Provision](#d5618a34-72b6-4b6f-a139-e89520ab8d05)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [Representation](#a4a8f4f5-edc5-48a9-a926-024a25801f5f)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
@@ -736,12 +758,12 @@ Accounts are ways to collect together activities which occur in the act of provi
 * [Actor](#91dc289a-74a8-40b9-b737-feaa7424bc6c)
 * [CoLocation](#57160f30-618c-4b30-b817-be952b309052)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 
 In a 4D ontology, the co-location of two or more individuals is expressed through all those individuals being a part of a location at a given time. However, there are cases where it is useful to explicitly call out co-location for the purpose of querying. This pattern offers a pragmatic solution while remaining consistent with a 4D approach.
-In IES-Core, <i>CoLocation </i>is defined as a fusion of states that are deemed to be co-located. A <i>CoLocation </i>instance must contain at least two fused states - each a part of it<i>. </i>Additionally, the instance must be associated with at least one location. More specific locations can be added later if greater precision is needed.
+In IES-Core, <i>CoLocation </i>is defined as a fusion of states that are deemed to be co-located. A <i>CoLocation </i>instance must contain at least two fused states - each a part of it<i>. </i>Additionally, the instance must be associated with at least one place-of-Earth. More specific locations can be added later if greater precision is needed.
 
 ### <a id="06752635-fe0c-4643-9e62-c8f9c1441d45"></a>Entitlement and Ownership
 ![Entitlement and Ownership Diagram](diagrams/UML_ID_06752635_FE0C_4643_9E62_C8F9C1441D45.png)
@@ -809,11 +831,11 @@ In IES-Core, this process is represented by an <i>Exchange</i> activity, which c
 * [EndToEndActivity](#a72bc26a-54e4-4531-924e-9d2508ee358b)
 * [FusionOfIntegralParts](#519227c7-5c84-4ae0-8e44-b6eeb29e4f58)
 * [Journey](#52e9683f-dea0-4845-b75c-d2b218f5bb49)
-* [Location](#110efc77-c1d2-4eb5-87f6-677f73eb8424)
 * [Movement](#5d61d503-bf44-4069-a8e1-0f9cea34ea91)
+* [PlaceOnEarth](#55e04625-48ec-4b77-8150-4c8324594ad5)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 
-The travel or movement of a single individual (person or otherwise) from one place to another is articulated using a temporal part (a <i>State</i>) of that individual. This temporal part begins with a <i>Departure</i> state and concludes with an <i>Arrive</i> state. The time and place of where it moves from and time and place where it moves to, can then be asserted by the <i>Location</i> and <i>Period</i> they are part of.
+The travel or movement of a single individual (person or otherwise) from one place to another is articulated using a temporal part (a <i>State</i>) of that individual. This temporal part begins with a <i>Departure</i> state and concludes with an <i>Arrive</i> state. The time and place of where it moves from and time and place where it moves to, can then be asserted by the <i>PlaceOnEarth </i>and <i>Period</i> they are part of.
 Sometimes we need to describe the coordinated movement of multiple individuals. In such cases, we combine the all the "moving" states into a collective <i>Movement</i> activity.
 We can sometime refer to travel as consisting multiple "legs". For example, a trip from New York to Rome might involve an initial flight to London followed by a second flight to Rome. Similarly, a person's commute could include driving to a train station, taking the train, and then walking to the office. The <i>EndToEndActivity</i> of <i>Journey</i> is used to collect together individual <i>Movement</i> activities as parts to support said use case.
 
@@ -827,7 +849,7 @@ We can sometime refer to travel as consisting multiple "legs". For example, a tr
 * [GovernanceActivity](#f39d718a-7d3a-462f-b1ea-8d25ac70901c)
 * [Organization](#e09d8f52-5b28-4ee6-af3a-935467b8dc45)
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
-* [ParticipationInGoverance](#20bba6fa-cd95-4232-837e-c49564401315)
+* [ParticipationInGovernance](#20bba6fa-cd95-4232-837e-c49564401315)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 
@@ -873,7 +895,7 @@ An <i>Observation</i> is an activity which involves an <i>Actor</i>(s) participa
 * [Participation](#b47636e7-e6c4-456f-b755-8ad164240a33)
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
-* [SpatiotemporalExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
+* [RegularSpacetimeExtent](#dcb3f671-0fa3-4de6-b037-a011c432a087)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
@@ -897,9 +919,10 @@ This pattern shall be extended using SKOS taxonomies to satisfy requirements for
 * [Person](#673a1da9-3a5d-4310-9752-f0899f31de5d)
 * [PersonOrOrganization](#cc6c3605-ccf7-4f23-af4c-0be46f1fb5f5)
 * [Possession](#9da639df-9d82-42c6-85e6-153790f6bdb1)
+* [SelfDisconnectedState](#0c7b7816-2469-49a3-bb1b-215591f1bf60)
 * [State](#885fc001-7738-47ab-8870-30d004a57180)
-* [TemporallyContinuousState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
 * [TemporallyIntermittentState](#54795bb4-0a44-4837-ad45-2e51ede3dd2f)
+* [TemporallyUninterruptedState](#01fbe830-dc8b-4c9d-8cda-d8d2bfd22dfe)
 * [Usage](#2d2db9cc-7e06-45ca-b239-03603271cb32)
 
 Access is an activity in IES-Core which is used for material access to something and not the right to access something - see Entitlement and Ownership pattern for that. Moreover, access is separate to ownership of a thing. The <i>Accessor</i> may well be the legal owner (again, see Entitlement and Ownership pattern) but may also be a result of borrowing, temporary custodianship or even unauthorized access or theft.
@@ -1000,11 +1023,11 @@ A fusion of temporal parts participating in an incident of interest. e.g. busine
 An Actor is a bounded spatiotemporal extent whose properties and relations enable causal or intentional effects on other states.
 
 ### <a id="b03bbd70-d5f4-48e6-84f2-cb5bbfe1c6ed"></a>Address
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that can be specified by a postal address
+RealEstate that can be specified by a postal address.
 
 
 ### <a id="c17aaa45-7699-42c1-86d3-2ad01d0209ba"></a>allHaveCharacteristic
-An rdfs:subClassOf <a href="#DCE662F5-7BDB-457e-AE7E-2E5FE43DBA1A"><font color="#0000ff"><u>relationship</u></font></a> that asserts that all instances of a ClassOfElement share a particular Characteristic or Measure
+An rdfs:subClassOf relationship that asserts that all instances of a SetOfRegularSpacetimeExtents share a particular Characteristic.
 
 e.g. all London buses being red, all heavyweight boxers weighing more than 200lbs
 
@@ -1065,7 +1088,7 @@ Example: Vehicles capable of Mach 2
 
 
 ### <a id="2085ee5c-09ce-4467-bc60-5bb5c7af4f02"></a>Characteristic
-A SetOfSpatiotemporalExtents whose instances all share a common property - e.g. they are all the same color, mass, etc. 
+A SetOfRegularSpacetimeExtents whose instances all share a common property - e.g. they are all the same color, mass, etc. 
 
 
 ### <a id="f3b474cb-755e-4062-a714-f55b01e54924"></a>CharacterString
@@ -1096,7 +1119,7 @@ An activity where two or more parties interact and exchange information
 
 
 ### <a id="4df30ff1-e3cd-4029-82bd-7c826529bada"></a>Country
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> whose land extent / borders are recognised as a <a href="#92EBA9B9-48C2-4082-9FE5-603977BD6846"><font color="#0000ff"><u>Country</u></font></a> by the International Standards <a href="#1ECB4C6E-6A30-4dc5-A4AC-9A9DF5B6A54F"><font color="#0000ff"><u>Organisation</u></font></a> (ISO)
+A PlaceOnEarth whose land extent / borders are recognised as a Country by the International Organization for Standardization (ISO)
 
 Note: this is simply the land, any buildings on it, and the airspace and ground beneath as recognised by the ISO definition. It does not include the nationals of the Country, its Government, etc. 
 
@@ -1162,10 +1185,6 @@ Note: inRepresentation should be used to associate the DocumentSection with the 
 ### <a id="482f061e-4262-40f8-87b9-b099d9ac7f7b"></a>duration
 
 
-### <a id="8342f87e-ccef-4c4b-871d-143a778257ae"></a>Easting
-The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection.
-
-
 ### <a id="1d46d575-3ac3-4793-917c-b06ae53e628a"></a>EducationalOrganization
 
 
@@ -1193,19 +1212,15 @@ A ClassOfPerson whose members all share the same sex
 
 
 ### <a id="84c679a1-d3d3-45f3-8764-46ba14b5f242"></a>Facility
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is man-made, but is typically larger than an <a href="#C90267B5-77A3-4b79-BD0D-7C50C3F4C333"><font color="#0000ff"><u>Address</u></font></a> (i.e. it may have more than one postal address)
-
-Examples:
-
-Military camps, factories, sports facilities, airports, etc.
+RealEstate that is man-made. Examples include: Military camps, factories, sports facilities, airports, etc.
 
 
 ### <a id="e2e5cdbf-f48f-4f53-b277-9563af930d3f"></a>finiteMembershipCount
 An integer count of members of a FiniteClassOfElement. 
 
 
-### <a id="8df90785-8066-4e37-a8ff-64d4232cf266"></a>FiniteSetOfSpatiotemporalExtents
-A SetOfSpatiotemporalExtents whose instances are sets with finite, fixed membership of spatio-temporal extents.
+### <a id="8df90785-8066-4e37-a8ff-64d4232cf266"></a>FiniteSetOfExtents
+A SetOfExtents whose instances are sets with finite, fixed membership of extents.
 
 
 ### <a id="97d37b17-3e40-457b-94d8-2528697b3064"></a>FirstLineOfAddress
@@ -1245,16 +1260,15 @@ A State composed of multiple integral parts forming a single, unified spatiotemp
 A ClassOfPerson whose members all share the same identified gender
 
 
+### <a id="d582e991-d08e-4a36-b98d-45a51013fb36"></a>GeodeticPlace
+A State that is at rest relative to a frame of reference (such as one fixed to the Earth, to one of its tectonic plates, or to the Moon). A geodetic place lasts for as long as its frame of reference does and is the same place at every moment: the same place yesterday, today and tomorrow. Like any State it is identified by the region of space and time it occupies, so one geodetic place can appear in several coordinate reference systems that share its frame of reference, with different coordinates in each.
+
 ### <a id="5794c9d0-2074-4b6c-91e8-ae1c647b866f"></a>GeographicFeature
-A Location that is a naturally occurring feature on the earth.
+A PlaceOnEarth that is a naturally occurring feature on the earth.
 
 
 ### <a id="10996e21-6210-474c-8ad9-a2a2e2302ccc"></a>GeoIdentity
-A unique Identifier attributed to the respective Location.
-
-
-### <a id="80dce57a-8c3c-4e58-8a60-85ca21c4fb44"></a>GeoPoint
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is a point (mathematically speaking, of vanishing volume) on, below or above the surface of the WGS84 spheroid. The distance from the spheroid surface is given by the altitudeInMetres attribute.
+A unique Identifier attributed to the respective PlaceOnEarth.
 
 
 ### <a id="499125cc-b0fa-4f75-983e-bfdf36942efb"></a>GivenName
@@ -1284,8 +1298,8 @@ The ethnic group that the respective <a href="#5D5C5B9B-5E90-4100-8353-8EE9F3D77
 The Metropolitan Police standard shall be used as the reference data standard.
 
 
-### <a id="f5bcfcbf-53b2-47d6-baac-f4faf96d0c39"></a>hasGeoSparqlRepresentation
-
+### <a id="061672b0-2455-451f-9a39-7743b4fb48d3"></a>hasGeodeticCounterpart
+A relationshipBetweenUniverseMates between a State and a GeodeticPlace that stands in as an approximation of where the state is located. A state can have more than one geodetic counterpart: it may be approximated by a point, a line, an area or a volume, at different levels of accuracy, and in different coordinate reference systems.
 
 ### <a id="f624db5f-59ec-437f-97b2-e52a0306e074"></a>hasICalRepresentation
 
@@ -1325,6 +1339,11 @@ A system that is also an Artefact.
 
 ### <a id="4357d08f-93d3-4e09-b816-df7226360339"></a>Identifier
 A <a href="#7D7CC966-56EB-4220-A650-A993E598F2E2"><font color="#0000ff"><u>Name</u></font></a> that is unique within the specified context.
+
+### <a id="3ed47126-05ca-461e-bb4f-bd62bfe66cfe"></a>inCRS
+An rdf:type relation that states which coordinate reference system (CRS) a GeodeticPlace belongs to. 
+Note: A similar property is being considered for inclusion in GeoSPARQL. When GeoSPARQL publishes that property, this property will be swapped out for it. 
+
 
 ### <a id="54a8e3be-4b61-4362-92f2-3fb021dcd970"></a>IndividualDocument
 An Artefact that is a written, photographed or drawn representation of thoughts. This might include, but not limited to, formal reports, books, legal instruments. Such documents might exist in a wide variety of forms, both printed and in electronic form.
@@ -1403,11 +1422,6 @@ A SetOfRepresentations that is a spoken or written form of human communication
 A <a href="#92CDC810-9DFA-476b-A2E7-33121F65905B"><font color="#0000ff"><u>ClassOfPersonState</u></font></a> indicating the proficiency a person has in a particular language at that state in their life.
 
 
-### <a id="c21f71b2-d803-4b01-8fc8-75fac81b9fe4"></a>Latitude
-The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection.
-
-
-
 ### <a id="ceb757c2-dfa7-441b-8168-1414ecd7ee0d"></a>LawEnforcementOrganization
 
 
@@ -1431,13 +1445,6 @@ A State that is a self-sustaining, cellular, and genetically organized spatiotem
 
 ### <a id="35ca2c27-e7a2-465a-b529-ab9afbb1b25c"></a>LivingSystem
 A System that is also a Living Organism, composed of interdependent subsystems that collectively sustain, regulate, and reproduce the organism as a unified spatiotemporal extent.
-
-### <a id="110efc77-c1d2-4eb5-87f6-677f73eb8424"></a>Location
-A geographic place which specifies a point or an area on the Earth's surface or elsewhere
-
-### <a id="01997102-4aba-48a7-8cd0-bc3003dbdb30"></a>Longitude
-The GeoIdentity that is a decimal representation of an angle of longitude of a <a href="#9A9467C3-D5FC-4964-8943-FE63ADF38914"><font color="#0000ff"><u>PointOnEarthSurface</u></font></a> (WGS84)
-
 
 ### <a id="39c677c9-089d-48ea-bc7e-dbfc894282ca"></a>Measure
 An Characteristic which is measurable on a scale
@@ -1484,12 +1491,6 @@ Note:
 An nickname will often be applied to a <a href="#47301D66-CBD5-4d10-9481-B66966A3F3A2"><font color="#0000ff"><u>State</u></font></a> of the Person, as these tend to be non-permanent names
 
 
-### <a id="aa03b814-d494-4175-afb7-54fa78934989"></a>Northing
-The GeoIdentity that is a representation of the eastward componrnent of cartesian point on a map - i.e. on a 2D projection of the globe such as a mercator projection.
-
-
-
-
 ### <a id="614ee53a-7d7e-4ec3-adfe-717993b33ff6"></a>NotForProfitOrganization
 
 
@@ -1526,7 +1527,7 @@ A GeoIdentity that is an Ordnance Survey Grid Reference - i.e. pertaining to Gre
 ### <a id="b47636e7-e6c4-456f-b755-8ad164240a33"></a>Participation
 A temporal part which participates in an Activity.
 
-### <a id="20bba6fa-cd95-4232-837e-c49564401315"></a>ParticipationInGoverance
+### <a id="20bba6fa-cd95-4232-837e-c49564401315"></a>ParticipationInGovernance
 
 
 ### <a id="244a8229-b9b1-4a12-9d19-aa0eb090397e"></a>ParticularPeriod
@@ -1545,7 +1546,7 @@ December 1944
 A unique Identifier for the a HumanMadeSystem. Note:  this is different to a serial number which is unique to each HumanMadeSystem.
 
 ### <a id="22ff57c4-8d8e-4dd9-9a13-c1bf545a76b5"></a>PartOfFacility
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is contained within a Facility - e.g. a room, laboratory, floor, etc.
+RealEstate that is contained within a Facility - e.g. a room, laboratory, floor, etc.
 
 
 
@@ -1576,6 +1577,9 @@ An Actor that exists as a spatiotemporally bounded state exhibiting coherent age
 The title associated with the name of the person.
 
 
+### <a id="55e04625-48ec-4b77-8150-4c8324594ad5"></a>PlaceOnEarth
+A State that is a physical chunk of the earth that provide useful subdivisions for locating other states within e.g. chunks of land, airspace, land and airspace, countries, continents, economic areas, buildings, settlements etc. Regions of earth can be spatially separated (e.g. economic areas).
+
 ### <a id="9da639df-9d82-42c6-85e6-153790f6bdb1"></a>Possession
 A Relationship between a <a href="#D09EDE21-E862-4ec1-BC0F-045CCE5454A9"><font color="#0000ff"><u>ResponsibleActor</u></font></a> and an <a href="#40231334-5ACC-4dd4-A8C1-05012E2170E0"><font color="#0000ff"><u>Asset</u></font></a> they have in their possession.
 
@@ -1594,6 +1598,7 @@ ParticularPeriod of publication of the respective document.
 
 
 ### <a id="3d107859-1c19-4568-9d2f-2a4f2a9e4650"></a>RealEstate
+A PlaceOnEarth that has been defined or constructed for the purpose of ownership.
 
 
 ### <a id="886997cb-23d6-4e9b-a432-769ba6ae0a95"></a>Recognizer
@@ -1603,19 +1608,11 @@ ParticularPeriod of publication of the respective document.
 
 
 ### <a id="de6b8201-3ff0-4dba-9b2a-01bb02dc6ec3"></a>RegionalConstituency
-An Organization of human members associated with a specific Location, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular Location.
+An Organization of human members associated with a specific place on Earth, forming a unified, spatiotemporally bounded collective actor.  The people can be residing or entitled to reside or vote in a particular place on Earth.
 
 
 ### <a id="eb604fc5-9503-4dcb-aa73-e88eab5aad0d"></a>RegionOfCountry
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is a general subdivision of a Country
-
-e.g. cities, towns, counties, states, etc.
-
-### <a id="55e04625-48ec-4b77-8150-4c8324594ad5"></a>RegionOfEarth
-A <a href="#E1A494ED-D493-44ab-8BF9-ABC6889D4D9A"><font color="#0000ff"><u>Location</u></font></a> that is a general subdivision of the world - e.g. continents, sub-continents, economic areas, etc.
-
-Regions of the world may sometimes be spatially separated (e.g. economic areas)
-
+A PlaceOnEarth that is a general subdivision of a Country e.g. cities, towns, counties, states, etc.
 
 ### <a id="25fc7fb1-c913-4aa5-a195-79851bd26149"></a>Religion
 
@@ -1695,6 +1692,12 @@ The powertype of SetOfSigns. An instance of this is a set that contains sets of 
 
 ### <a id="4e054f55-b874-4f4d-b5f3-30963d987a3e"></a>SetOfSigns
 The powertype of Sign. An instance of this is a set that contains signs.
+
+### <a id="09d717ce-d867-424f-ab02-906723e41f82"></a>SetOfCRSPlaces
+A SetOfGeodeticPlaces that is a coordinate reference system: the set of all geodetic places that can be expressed in that system, such as its points, lines and polygons. The URI for a SetOfCRSPlaces must correspond to one in a CRS registry. URIs from the Open Geospatial Consortium (OGC) CRS registry are recommended. For example: http://www.opengis.net/def/crs/EPSG/0/4326 for WGS 84 and http://www.opengis.net/def/crs/EPSG/0/27700 for OSGB36 / British National Grid.
+
+### <a id="4af4cc56-f44f-4578-939c-0df62e3027ae"></a>SetOfGeodeticPlaces
+The powertype of GeodeticPlace. An instance of this is a set that contains geodetic places.
 
 ### <a id="0dea64c8-e003-488f-b9e6-a8178fc65be7"></a>SetOfStatesWithParticularDuration
 A SetOfStates where all members are states with the same temporal duration e.g. all states that are 2 hours and 30 minutes long in duration.
