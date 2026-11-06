@@ -213,7 +213,7 @@ ies_core:BirthState rdfs:subClassOf ies_core:LivingOrganism .
 ies_core:Capability rdf:type rdfs:Class . 
 ies_core:Capability rdfs:label "Capability" . 
 ies_core:Capability dcterms:identifier "{36F517D6-27EA-47f0-A8AA-4F92DEFFD333}" . 
-ies_core:Capability rdfs:comment "A Disposition where all the instances share the same capability.It may be that the State has never actually done the thing it is capable of - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast.Example: Vehicles capable of Mach 2" . 
+ies_core:Capability rdfs:comment "A Disposition where all the instances share the same capability. It may be that the State has never actually done the thing it is capable of - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast. Example: Vehicles capable of Mach 2" . 
 ies_core:Capability rdfs:subClassOf ies_core:Disposition . 
 ies_core:category rdf:type rdf:Property . 
 ies_core:category rdfs:label "category" . 
