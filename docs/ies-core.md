@@ -126,7 +126,7 @@ In the example presented here, we articulate three different locations in Fred's
 
 The starts and ends of an individual are special temporal parts of that individual. They are the portions of that individual that exist at its start and at its finish. These are temporal parts that relate to the whole using special forms of the <i>isTemporalPartOf</i> property - <i>isAStartOf</i> or and <i>isAFinishOf</i>. The naming of these relations - implying that they are one of many, is deliberate. From a 4D perspective a single entity can have multiple intervals that mark its beginning - for example Birth and Childhood are well understood starts of a person. Likewise, same goes for ends. While a person's life is considered at its end at death, we may also speak of an ending in terms of adulthood but equally or, sadly, in some cases, childhood or even at birth.
 Generally, the temporal part which is either the start or end of a state is itself an instance of <i>State</i>, however there are special start states and end states we call out. They include <i>BirthState</i> and <i>DeathState</i> for <i>LivingOrganisms</i> like <i>Person</i>; <i>Departure</i> and <i>Arrival</i> for bounding the start and end of a moving individual (see Movement for more details) and; <i>Created</i> and <i>Destroyed</i> which is common for human-made individuals (<i>Artefacts</i>). <i>Created</i> and <i>Destroyed</i> states also are complimented by the Activities of <i>Create</i> and <i>Destroy</i> and allows the articulation of who was involved in the creation or destruction (see Lifecycle for more details).
-The use of the <i>isAStartOf</i> and <i>isAFinishOf</i> relations in combination with the <i>entirelyAfter</i> relation allow complex temporal logic to be expressed using very simple constructs - e.g. states starting before others, ending before others, etc.
+The use of the <i>isAStartOf</i> and <i>isAFinishOf</i> relations in combination with the <i>after</i> relation allow complex temporal logic to be expressed using very simple constructs - e.g. states starting before others, ending before others, etc.
 
 ## <a id="3dcf73cb-fceb-4a67-9396-4b542f0ffcf1"></a>Time (1 of 2)
 ![Time (1 of 2) Diagram](diagrams/UML_ID_3DCF73CB_FCEB_4a67_9396_4B542F0FFCF1.png)
@@ -334,9 +334,9 @@ Names and Identifiers belong to <i>NamingSchemes</i> - this allows us to give co
 * [SpacetimeExtent](#77bb5948-c5bf-4cc2-b6dc-b7ffe413adf5)
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
-Characteristics are used to articulate properties of a <i>SpatiotemporalExtent</i> that are qualitative or quantitative, the latter being a <i>Measure</i>. IES-Core adopts the QUDT ontology to model specific measures, measure ranges and associated units. 
+Characteristics are used to articulate properties of a <i>RegularSpacetimeExtent </i>that are qualitative or quantitative, the latter being a <i>Measure</i>. IES-Core adopts the QUDT ontology to model specific measures, measure ranges and associated units. 
 Because QUDT is highly flexible, IES-Core mandates a more explicit modelling pattern in which the property being measured (<i>qudt:Quantity </i>and its<i> qudt:QuantityKind</i>) is separate from its value (<i>qudt:QuantityValue</i>). This allows for the same measure to have more than one value with different units of measure (e.g. 1kg and 2.2lbs).
-Characteristics and measures can be applied to a <i>SpatiotemporalExtent</i> and, in most cases, to a <i>State</i>. They may also be attached to a <i>SetOfSpatiotemporalExtents</i> (or <i>SetOfStates</i>) when every member shares the same property -for example, all London buses being red. 
+Characteristics and measures can be applied to a <i>RegularSpacetimeExtent</i> and, in most cases, to a <i>State</i>. They may also be attached to a <i>SetOfRegularSpacetimeExtents</i> (or <i>SetOfStates</i>) when every member shares the same property -for example, all London buses being red. 
 
 
 ## <a id="cbe62e9d-537c-4f33-a2db-9679c2058565"></a>Disposition
@@ -367,13 +367,12 @@ Dispositions are managed in IES-Core using <i>Disposition</i> -a set that collec
 * [Extent](#7f27c6ff-b0db-4267-8513-cd77b1dfc36e)
 * [finiteMembershipCount](#e2e5cdbf-f48f-4f53-b277-9563af930d3f)
 * [FiniteSetOfExtents](#8df90785-8066-4e37-a8ff-64d4232cf266)
-* [FiniteSetOfExtents](#ad58b5e3-152f-92fe-9135-f46140af932c)
 * [SetOfExtents](#805df273-fd65-4ed5-becb-621f5b16042c)
 * [Stuff](#0f8a7a2e-896c-4b09-afde-f63807bdc767)
 * [Vehicle](#2a33309a-f899-469f-8133-db01cfdb5e68)
 
-There are times where we want to talk about sets of spatiotemporal extents without having to instantiate every individual extent as an instance. Instead, we want to just provide a count of the members of the set e.g. the number of cars in the set parked at Acacia Avenue. Such sets are instances of <i>FiniteSetOfSpatiotemporalExtents</i> where the count is provided using the attribute <i>finiteMembershipCount.</i>
-In the illustrated example, to get the set of vehicles parked at Acacia Avenue, we create a subClassOf of the set of Vehicle. This gives us a specific subset of vehicles parked at Acacia Avenue at a time. This subclass is also an instance of <i>FiniteSetOfSpatiotemporalExtents</i> allowing us to assign <i>57</i> as its <i>finiteMembershipCount</i>.
+There are times where we want to talk about sets of extents without having to instantiate every individual extent as an instance. Instead, we want to just provide a count of the members of the set e.g. the number of cars in the set parked at Acacia Avenue. Such sets are instances of <i>FiniteSetOfExtents</i> where the count is provided using the attribute <i>finiteMembershipCount.</i>
+In the illustrated example, to get the set of vehicles parked at Acacia Avenue, we create a subClassOf of the set of Vehicle. This gives us a specific subset of vehicles parked at Acacia Avenue at a time. This subclass is also an instance of <i>FiniteSetOfExtents</i> allowing us to assign <i>57</i> as its <i>finiteMembershipCount</i>.
 There are physical things in the world that are difficult to call out as separate individuals due to their high divisibility - any division of them yields the same type of thing. For example, water in a swimming pool, sand on a beach or the walls and floors of a building. <i>Stuff</i> allows us to talk about these highly divisible or generally uncountable things.
 
 
@@ -1079,8 +1078,10 @@ Attributes are not as widely used in IES, they are only used as pragmatic shortc
 A state at the beginning of a LivingOrganism's spatiotemporal extent.
 
 ### <a id="36f517d6-27ea-47f0-a8aa-4f92deffd333"></a>Capability
-A Disposition where all the instances share the same capability
-It may be that the SpatiotemporalExtent has never actually done the thing it is capable of - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast.
+A Disposition where all the instances share the same capability.
+
+It may be that the State has never actually done the thing it is capable of - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast.
+
 Example: Vehicles capable of Mach 2
 
 
