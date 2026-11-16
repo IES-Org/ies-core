@@ -27,7 +27,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -45,7 +44,7 @@
    A mid-level ontology built upon IES-Top providing a common foundational layer of patterns and concepts useful for expressing information in all manner of domains.
    """@en-GB ;
    dcterms:created "2025-09-30"^^xsd:date ;
-   dcterms:modified "2026-11-05"^^xsd:date ;
+   dcterms:modified "2026-11-16"^^xsd:date ;
    dcterms:publisher "UK Department for Business and Trade"@en-GB ;
    dcterms:language "en-GB" ;
    dcterms:license <https://spdx.org/licenses/MIT.html> ;
@@ -119,7 +118,7 @@ ies_core:AccountUpdate rdfs:label "Account Update" .
 ies_core:AccountUpdate dcterms:identifier "{5703251E-4516-4888-8D90-3A8336C44CE0}" . 
 ies_core:AccountUpdate rdfs:comment "An AccountAdminEvent where an Account is modified" . 
 ies_core:AccountUpdate rdfs:subClassOf ies_core:AccountAdminActivity . 
-ies_core:aCopyOf rdf:type rdf:Property . 
+ies_core:aCopyOf rdf:type owl:ObjectProperty . 
 ies_core:aCopyOf rdfs:label "a copy of" . 
 ies_core:aCopyOf dcterms:identifier "{AFB98A78-7F58-4a5a-9CC0-F140811BCCD5}" . 
 ies_core:aCopyOf rdfs:comment "An rdf:type relationship that asserts a Document is a copy of WorkOfDocumentationNote: Document instances are individual physical documents whereas WorkOfDocumentation is the general case of a document - e.g. War and Peace vs my copy of War and Peace" . 
@@ -146,14 +145,14 @@ ies_core:Address rdfs:label "Address" .
 ies_core:Address dcterms:identifier "{B03BBD70-D5F4-48e6-84F2-CB5BBFE1C6ED}" . 
 ies_core:Address rdfs:comment "RealEstate that can be specified by a postal address." . 
 ies_core:Address skos:broader ies_core:RealEstate . 
-ies_core:allHaveCharacteristic rdf:type rdf:Property . 
+ies_core:allHaveCharacteristic rdf:type owl:ObjectProperty . 
 ies_core:allHaveCharacteristic rdfs:label "all have characteristic" . 
 ies_core:allHaveCharacteristic dcterms:identifier "{C17AAA45-7699-42c1-86D3-2AD01D0209BA}" . 
 ies_core:allHaveCharacteristic rdfs:comment "An rdfs:subClassOf relationship that asserts that all instances of a SetOfRegularSpacetimeExtents share a particular Characteristic.e.g. all London buses being red, all heavyweight boxers weighing more than 200lbs" . 
 ies_core:allHaveCharacteristic rdfs:subPropertyOf rdfs:subClassOf . 
 ies_core:allHaveCharacteristic rdfs:domain ies_top:SetOfRegularSpacetimeExtents . 
 ies_core:allHaveCharacteristic rdfs:range ies_core:Characteristic . 
-ies_core:allHaveDisposition rdf:type rdf:Property . 
+ies_core:allHaveDisposition rdf:type owl:ObjectProperty . 
 ies_core:allHaveDisposition rdfs:label "all have disposition" . 
 ies_core:allHaveDisposition dcterms:identifier "{B6AC8BF8-1060-4fea-B00B-8AD509DF69E9}" . 
 ies_core:allHaveDisposition rdfs:subPropertyOf rdfs:subClassOf . 
@@ -178,7 +177,7 @@ ies_core:Artefact rdfs:label "Artefact" .
 ies_core:Artefact dcterms:identifier "{221BA44E-7562-4b00-BB1D-7C246D738FE1}" . 
 ies_core:Artefact rdfs:comment "A human-made state." . 
 ies_core:Artefact rdfs:subClassOf ies_top:State . 
-ies_core:assessed rdf:type rdf:Property . 
+ies_core:assessed rdf:type owl:ObjectProperty . 
 ies_core:assessed rdfs:label "assessed" . 
 ies_core:assessed dcterms:identifier "{F20F37CF-D03D-4f41-BD19-1FECF02D153D}" . 
 ies_core:assessed rdfs:comment "An owl:objectProperty that links an Assessment to the rdfs:Resource that is assessed to be true." . 
@@ -199,7 +198,7 @@ ies_core:Attendance rdf:type rdfs:Class .
 ies_core:Attendance rdfs:label "Attendance" . 
 ies_core:Attendance dcterms:identifier "{EE89F97E-F3A5-4ef3-A73E-646E0DB70684}" . 
 ies_core:Attendance rdfs:subClassOf ies_core:Participation . 
-ies_core:attribute rdf:type rdf:Property . 
+ies_core:attribute rdf:type owl:DatatypeProperty . 
 ies_core:attribute rdfs:label "attribute" . 
 ies_core:attribute dcterms:identifier "{4AC55554-9E8C-43a4-BAF8-5CC912A6BE07}" . 
 ies_core:attribute rdfs:comment "Attributes are not as widely used in IES, they are only used as pragmatic shortcuts for more philosophically complex structures." . 
@@ -215,7 +214,7 @@ ies_core:Capability rdfs:label "Capability" .
 ies_core:Capability dcterms:identifier "{36F517D6-27EA-47f0-A8AA-4F92DEFFD333}" . 
 ies_core:Capability rdfs:comment "A Disposition where all the instances share the same capability. It may be that the State has never actually done the thing it is capable of - e.g. an aircraft capable of Mach 2 but that has not yet flown that fast. Example: Vehicles capable of Mach 2" . 
 ies_core:Capability rdfs:subClassOf ies_core:Disposition . 
-ies_core:category rdf:type rdf:Property . 
+ies_core:category rdf:type owl:ObjectProperty . 
 ies_core:category rdfs:label "category" . 
 ies_core:category dcterms:identifier "{FB9DF2EE-CBEB-4bf5-ABD4-34405DC3BC52}" . 
 ies_core:category rdfs:domain ies_top:Thing . 
@@ -315,7 +314,7 @@ ies_core:Disposition rdfs:label "Disposition" .
 ies_core:Disposition dcterms:identifier "{3A8D029D-E43D-4a16-A220-EE8B4B802AA4}" . 
 ies_core:Disposition rdfs:comment "A ClassOfElement whose instances all share the same disposition - e.g. capability or tendencyExample: Vehicles capable of Mach 2" . 
 ies_core:Disposition rdfs:subClassOf ies_top:SetOfStates . 
-ies_core:documentedBy rdf:type rdf:Property . 
+ies_core:documentedBy rdf:type owl:ObjectProperty . 
 ies_core:documentedBy rdfs:label "documented by" . 
 ies_core:documentedBy dcterms:identifier "{DF65005D-F603-4d63-AC78-B8AC8B4B6D74}" . 
 ies_core:documentedBy rdfs:comment "An isRepresentedAs relationship that asserts a WorkOfDocumentation is about a Thing." . 
@@ -331,7 +330,7 @@ ies_core:DocumentSection rdfs:label "Document Section" .
 ies_core:DocumentSection dcterms:identifier "{33903533-FF0F-4421-95CC-B57F8508C07E}" . 
 ies_core:DocumentSection rdfs:comment "A Representation that is a section/chapter/paragraph in a WorkOfDocumentationNote: inRepresentation should be used to associate the DocumentSection with the WorkOfDocumentation or other DocumentSection it is part of." . 
 ies_core:DocumentSection skos:broader ies_core:WorkOfDocumentation . 
-ies_core:duration rdf:type rdf:Property . 
+ies_core:duration rdf:type owl:ObjectProperty . 
 ies_core:duration rdfs:label "duration" . 
 ies_core:duration dcterms:identifier "{482F061E-4262-40f8-87B9-B099D9AC7F7B}" . 
 ies_core:duration rdfs:range ies_core:SetOfStatesWithParticularDuration . 
@@ -341,7 +340,7 @@ ies_core:EducationalOrganization rdf:type skos:Concept .
 ies_core:EducationalOrganization rdfs:label "Educational Organization" . 
 ies_core:EducationalOrganization dcterms:identifier "{1D46D575-3AC3-4793-917C-B06AE53E628A}" . 
 ies_core:EducationalOrganization skos:broader ies_core:Organization . 
-ies_core:endBoundOfSet rdf:type rdf:Property . 
+ies_core:endBoundOfSet rdf:type owl:ObjectProperty . 
 ies_core:endBoundOfSet rdfs:label "end bound of set" . 
 ies_core:endBoundOfSet dcterms:identifier "{20732E8A-A42B-4cf5-BE38-C005A2BE6B46}" . 
 ies_core:endBoundOfSet rdfs:comment "A relationship linking a TimeBoundedClass to the ParticularPeriod that marks the end bound date of its instances" . 
@@ -379,7 +378,7 @@ ies_core:Facility rdfs:label "Facility" .
 ies_core:Facility dcterms:identifier "{84C679A1-D3D3-45f3-8764-46BA14B5F242}" . 
 ies_core:Facility rdfs:comment "RealEstate that is man-made. Examples include: Military camps, factories, sports facilities, airports, etc." . 
 ies_core:Facility skos:broader ies_core:RealEstate . 
-ies_core:finiteMembershipCount rdf:type rdf:Property . 
+ies_core:finiteMembershipCount rdf:type owl:DatatypeProperty . 
 ies_core:finiteMembershipCount rdfs:label "finite membership count" . 
 ies_core:finiteMembershipCount dcterms:identifier "{E2E5CDBF-F48F-4f53-B277-9563AF930D3F}" . 
 ies_core:finiteMembershipCount rdfs:comment "An integer count of members of a FiniteClassOfElement. " . 
@@ -401,14 +400,14 @@ ies_core:Forgery rdfs:label "Forgery" .
 ies_core:Forgery dcterms:identifier "{1C20A1D0-4AED-4a17-8F5A-B6B88ACF1677}" . 
 ies_core:Forgery rdfs:comment "A Create activity that is the creation of fake artefacts." . 
 ies_core:Forgery skos:broader ies_core:Create . 
-ies_core:format rdf:type rdf:Property . 
+ies_core:format rdf:type owl:ObjectProperty . 
 ies_core:format rdfs:label "format" . 
 ies_core:format dcterms:identifier "{B7BC6BF3-AC03-49a7-8F2F-65F91D969C5B}" . 
 ies_core:format rdfs:comment "The format of the respective WorkOfDocumentation.Examples:PDFMS Word" . 
 ies_core:format rdfs:subPropertyOf rdfs:subClassOf . 
 ies_core:format rdfs:domain ies_core:WorkOfDocumentation . 
 ies_core:format rdfs:range ies_core:DocumentFormat . 
-ies_core:formatOfIndividualDocument rdf:type rdf:Property . 
+ies_core:formatOfIndividualDocument rdf:type owl:ObjectProperty . 
 ies_core:formatOfIndividualDocument rdfs:label "format of individual document" . 
 ies_core:formatOfIndividualDocument dcterms:identifier "{F727B70F-3339-4eaa-A048-9BF9B73434B0}" . 
 ies_core:formatOfIndividualDocument rdfs:comment "The format of the respective IndividualDocument.Examples:PDFPrinted" . 
@@ -460,65 +459,65 @@ ies_core:GovernmentOrganization rdf:type skos:Concept .
 ies_core:GovernmentOrganization rdfs:label "Government Organization" . 
 ies_core:GovernmentOrganization dcterms:identifier "{72015C19-D922-47a8-B0A5-D744690F338A}" . 
 ies_core:GovernmentOrganization skos:broader ies_core:Organization . 
-ies_core:hasAssociatedRepresentation rdf:type rdf:Property . 
+ies_core:hasAssociatedRepresentation rdf:type owl:ObjectProperty . 
 ies_core:hasAssociatedRepresentation rdfs:label "has associated representation" . 
 ies_core:hasAssociatedRepresentation dcterms:identifier "{9C14DA25-C1A8-456e-AEA9-37EA1C6E01AC}" . 
 ies_core:hasAssociatedRepresentation rdfs:comment "Use with care, this is meant to relate representations that are referred by or mentioned by a Thing but which they are not representations of that Thing." . 
 ies_core:hasAssociatedRepresentation rdfs:subPropertyOf ies_top:couple . 
 ies_core:hasAssociatedRepresentation rdfs:range ies_core:Representation . 
-ies_core:hasCharacteristic rdf:type rdf:Property . 
+ies_core:hasCharacteristic rdf:type owl:ObjectProperty . 
 ies_core:hasCharacteristic rdfs:label "has characteristic" . 
 ies_core:hasCharacteristic dcterms:identifier "{B7999E75-FA09-441a-B62D-B9BC3A97CF85}" . 
 ies_core:hasCharacteristic rdfs:comment "An rdf:type relationship that asserts an Element has a Characteristic or Measure" . 
 ies_core:hasCharacteristic rdfs:subPropertyOf rdf:type . 
 ies_core:hasCharacteristic rdfs:domain ies_top:RegularSpacetimeExtent . 
 ies_core:hasCharacteristic rdfs:range ies_core:Characteristic . 
-ies_core:hasEthnicity rdf:type rdf:Property . 
+ies_core:hasEthnicity rdf:type owl:ObjectProperty . 
 ies_core:hasEthnicity rdfs:label "has ethnicity" . 
 ies_core:hasEthnicity dcterms:identifier "{4495F6DB-149A-4866-B2D3-CEED4324FF1D}" . 
 ies_core:hasEthnicity rdfs:comment "The ethnic group that the respective Person belongs to.The Metropolitan Police standard shall be used as the reference data standard." . 
 ies_core:hasEthnicity rdfs:subPropertyOf rdf:type . 
 ies_core:hasEthnicity rdfs:domain ies_core:Person . 
 ies_core:hasEthnicity rdfs:range ies_core:Ethnicity . 
-ies_core:hasGeodeticCounterpart rdf:type rdf:Property . 
+ies_core:hasGeodeticCounterpart rdf:type owl:ObjectProperty . 
 ies_core:hasGeodeticCounterpart rdfs:label "has geodetic counterpart" . 
 ies_core:hasGeodeticCounterpart dcterms:identifier "{061672B0-2455-451f-9A39-7743B4FB48D3}" . 
 ies_core:hasGeodeticCounterpart rdfs:comment "A relationshipBetweenUniverseMates between a State and a GeodeticPlace that stands in as an approximation of where the state is located. A state can have more than one geodetic counterpart: it may be approximated by a point, a line, an area or a volume, at different levels of accuracy, and in different coordinate reference systems." . 
 ies_core:hasGeodeticCounterpart rdfs:range ies_core:GeodeticPlace . 
 ies_core:hasGeodeticCounterpart rdfs:subPropertyOf ies_top:relationshipBetweenUniverseMates . 
-ies_core:hasICalRepresentation rdf:type rdf:Property . 
+ies_core:hasICalRepresentation rdf:type owl:ObjectProperty . 
 ies_core:hasICalRepresentation rdfs:label "has i cal representation" . 
 ies_core:hasICalRepresentation dcterms:identifier "{F624DB5F-59EC-437f-97B2-E52A0306E074}" . 
 ies_core:hasICalRepresentation rdfs:domain ies_core:RecurringTimespan . 
 ies_core:hasICalRepresentation rdfs:subPropertyOf ies_core:isRepresentedAs . 
 ies_core:hasICalRepresentation rdfs:range ies_core:ICalRepresentation . 
-ies_core:hasIdentifiedGender rdf:type rdf:Property . 
+ies_core:hasIdentifiedGender rdf:type owl:ObjectProperty . 
 ies_core:hasIdentifiedGender rdfs:label "has identified gender" . 
 ies_core:hasIdentifiedGender dcterms:identifier "{0C0A078A-70EF-4f0d-9841-3A3A6A7171E2}" . 
 ies_core:hasIdentifiedGender rdfs:subPropertyOf rdf:type . 
-ies_core:hasName rdf:type rdf:Property . 
+ies_core:hasName rdf:type owl:ObjectProperty . 
 ies_core:hasName rdfs:label "has name" . 
 ies_core:hasName dcterms:identifier "{D6AE651C-2252-47ff-85B9-848D14A8AB26}" . 
 ies_core:hasName rdfs:range ies_core:Name . 
 ies_core:hasName rdfs:subPropertyOf ies_core:isRepresentedAs . 
-ies_core:hasQuantity rdf:type rdf:Property . 
+ies_core:hasQuantity rdf:type owl:ObjectProperty . 
 ies_core:hasQuantity rdfs:label "has quantity" . 
 ies_core:hasQuantity dcterms:identifier "{6F9353E2-2CFA-4017-A2AF-3359AD131039}" . 
 ies_core:hasQuantity rdfs:comment "An isRepresentedAs relationship that points to a qudt:Quantity which represents a MeasureNote: a given Measure may have more than quantity associated to it(e.g. 1kg or 2.2lbs) in different units of measure." . 
 ies_core:hasQuantity rdfs:domain ies_core:Measure . 
 ies_core:hasQuantity rdfs:range qudt:Quantity . 
 ies_core:hasQuantity rdfs:subPropertyOf ies_core:isRepresentedAs . 
-ies_core:hasSex rdf:type rdf:Property . 
+ies_core:hasSex rdf:type owl:ObjectProperty . 
 ies_core:hasSex rdfs:label "has sex" . 
 ies_core:hasSex dcterms:identifier "{D2C21F1C-52D8-401f-AA8F-369231968235}" . 
 ies_core:hasSex rdfs:domain ies_core:LivingOrganism . 
 ies_core:hasSex rdfs:range ies_core:Sex . 
 ies_core:hasSex rdfs:subPropertyOf rdf:type . 
-ies_core:hasSkill rdf:type rdf:Property . 
+ies_core:hasSkill rdf:type owl:ObjectProperty . 
 ies_core:hasSkill rdfs:label "has skill" . 
 ies_core:hasSkill dcterms:identifier "{EE39E108-9618-4d52-9E32-E4B4382AEF4A}" . 
 ies_core:hasSkill rdfs:subPropertyOf rdf:type . 
-ies_core:hasTheme rdf:type rdf:Property . 
+ies_core:hasTheme rdf:type owl:ObjectProperty . 
 ies_core:hasTheme rdfs:label "has theme" . 
 ies_core:hasTheme dcterms:identifier "{E6FD0971-B0EF-48ec-A6A0-D0EDB0E0C3AB}" . 
 ies_core:hasTheme rdfs:comment "A couple linking an Activity to a Thing that is a theme (or topic).Examples:* An Activity being investigated after it occurred.* A general investigation into a Location.* A Meeting discussing a new project* A VoiceCall about a Vehicle." . 
@@ -540,7 +539,7 @@ ies_core:Identifier rdfs:label "Identifier" .
 ies_core:Identifier dcterms:identifier "{4357D08F-93D3-4e09-B816-DF7226360339}" . 
 ies_core:Identifier rdfs:comment "A Name that is unique within the specified context." . 
 ies_core:Identifier rdfs:subClassOf ies_core:Name . 
-ies_core:inCRS rdf:type rdf:Property . 
+ies_core:inCRS rdf:type owl:ObjectProperty . 
 ies_core:inCRS rdfs:label "in crs" . 
 ies_core:inCRS dcterms:identifier "{3ED47126-05CA-461e-BB4F-BD62BFE66CFE}" . 
 ies_core:inCRS rdfs:comment "An rdf:type relation that states which coordinate reference system (CRS) a GeodeticPlace belongs to. Note: A similar property is being considered for inclusion in GeoSPARQL. When GeoSPARQL publishes that property, this property will be swapped out for it. " . 
@@ -574,14 +573,14 @@ ies_core:InformationProcessingSystemInCommunication rdfs:label "Information Proc
 ies_core:InformationProcessingSystemInCommunication dcterms:identifier "{90E234AD-CC9B-4591-9ADD-565065C2698D}" . 
 ies_core:InformationProcessingSystemInCommunication rdfs:comment "A DeviceState (and an EventParticipant) when a Device is communicating. " . 
 ies_core:InformationProcessingSystemInCommunication rdfs:subClassOf ies_core:ActiveParticipation . 
-ies_core:inLanguage rdf:type rdf:Property . 
+ies_core:inLanguage rdf:type owl:ObjectProperty . 
 ies_core:inLanguage rdfs:label "in language" . 
 ies_core:inLanguage dcterms:identifier "{9881A5A7-EC98-461f-A1A3-B7E2B2CFBD7D}" . 
 ies_core:inLanguage rdfs:comment "An rdf:type relationship that asserts a Representation is in a particular Language" . 
 ies_core:inLanguage rdfs:subPropertyOf rdf:type . 
 ies_core:inLanguage rdfs:range ies_core:Language . 
 ies_core:inLanguage rdfs:domain ies_core:Representation . 
-ies_core:inRepresentation rdf:type rdf:Property . 
+ies_core:inRepresentation rdf:type owl:ObjectProperty . 
 ies_core:inRepresentation rdfs:label "in representation" . 
 ies_core:inRepresentation dcterms:identifier "{79F72FB1-6350-4761-96C8-F6D1358566F6}" . 
 ies_core:inRepresentation rdfs:subPropertyOf ies_top:couple . 
@@ -605,13 +604,13 @@ ies_core:InternationalCoalition rdf:type skos:Concept .
 ies_core:InternationalCoalition rdfs:label "International Coalition" . 
 ies_core:InternationalCoalition dcterms:identifier "{C3881149-3B9C-4a78-85FC-17F57E070C1C}" . 
 ies_core:InternationalCoalition skos:broader ies_core:Alliance . 
-ies_core:isDisposedTo rdf:type rdf:Property . 
+ies_core:isDisposedTo rdf:type owl:ObjectProperty . 
 ies_core:isDisposedTo rdfs:label "is disposed to" . 
 ies_core:isDisposedTo dcterms:identifier "{6CEDCD94-0F0C-4407-A2D0-CB7A0BC91EA2}" . 
 ies_core:isDisposedTo rdfs:subPropertyOf rdf:type . 
 ies_core:isDisposedTo rdfs:domain ies_top:State . 
 ies_core:isDisposedTo rdfs:range ies_core:Disposition . 
-ies_core:isIdentifiedBy rdf:type rdf:Property . 
+ies_core:isIdentifiedBy rdf:type owl:ObjectProperty . 
 ies_core:isIdentifiedBy rdfs:label "is identified by" . 
 ies_core:isIdentifiedBy dcterms:identifier "{53F6C6C7-1DAB-408b-98F3-162E7C72F95A}" . 
 ies_core:isIdentifiedBy rdfs:comment "A hasName relationship that asserts an Identifier identifies a Thing" . 
@@ -622,20 +621,20 @@ ies_core:ISO3166_1Alpha_3 rdfs:label "ISO3166_1 Alpha_3" .
 ies_core:ISO3166_1Alpha_3 dcterms:identifier "{64A956AE-F567-458a-B64C-9204311970EA}" . 
 ies_core:ISO3166_1Alpha_3 rdfs:comment "ISO 3166-1 alpha 3 (3-Letter Country Code)" . 
 ies_core:ISO3166_1Alpha_3 rdfs:subClassOf ies_core:GeoIdentity . 
-ies_core:iso8601DurationRepresentation rdf:type rdf:Property . 
+ies_core:iso8601DurationRepresentation rdf:type owl:DatatypeProperty . 
 ies_core:iso8601DurationRepresentation rdfs:label "iso8601 duration representation" . 
 ies_core:iso8601DurationRepresentation dcterms:identifier "{098E6261-4D32-475c-8DE1-33DAA558D478}" . 
 ies_core:iso8601DurationRepresentation rdfs:comment "A ISO8601 duration (as xsd:duration) that represents the duration of states within this set. This representation is also encoded in the URI of the SetOfStatesWithParticularDuration, this is an additional required attribute to enable querying by duration and SPARQL temporal operations." . 
 ies_core:iso8601DurationRepresentation rdfs:range xsd:duration . 
 ies_core:iso8601DurationRepresentation rdfs:subPropertyOf ies_core:attribute . 
 ies_core:iso8601DurationRepresentation rdfs:domain ies_core:SetOfStatesWithParticularDuration . 
-ies_core:iso8601PeriodRepresentation rdf:type rdf:Property . 
+ies_core:iso8601PeriodRepresentation rdf:type owl:DatatypeProperty . 
 ies_core:iso8601PeriodRepresentation rdfs:label "iso8601 period representation" . 
 ies_core:iso8601PeriodRepresentation dcterms:identifier "{75DBF1EE-2C1F-4131-95E2-1D476A1EAE31}" . 
 ies_core:iso8601PeriodRepresentation rdfs:comment "A ISO8601 datetime that represents the ParticularPeriod. This representation is also encoded in the URI of the period, this is an additional required attribute to enable querying by dateTime and SPARQL temporal operations. The literal string shall be encoded in UTC (Coordinated Universal Time) but unlike the URI, it must be punctuated. For example: 2007-01-18T15:30:00" . 
 ies_core:iso8601PeriodRepresentation rdfs:domain ies_core:ParticularPeriod . 
 ies_core:iso8601PeriodRepresentation rdfs:subPropertyOf ies_core:attribute . 
-ies_core:isRepresentedAs rdf:type rdf:Property . 
+ies_core:isRepresentedAs rdf:type owl:ObjectProperty . 
 ies_core:isRepresentedAs rdfs:label "is represented as" . 
 ies_core:isRepresentedAs dcterms:identifier "{37400026-3E6B-4960-A8E8-832C55DDB10F}" . 
 ies_core:isRepresentedAs rdfs:comment "A couple that asserts a Representation is part of another Representation" . 
@@ -858,7 +857,7 @@ ies_core:Provision rdf:type rdfs:Class .
 ies_core:Provision rdfs:label "Provision" . 
 ies_core:Provision dcterms:identifier "{D5618A34-72B6-4b6f-A139-E89520AB8D05}" . 
 ies_core:Provision rdfs:subClassOf ies_core:Participation . 
-ies_core:published rdf:type rdf:Property . 
+ies_core:published rdf:type owl:ObjectProperty . 
 ies_core:published rdfs:label "published" . 
 ies_core:published dcterms:identifier "{DDEF4A69-71A5-490f-98CE-6E55F8298FEB}" . 
 ies_core:published rdfs:comment "ParticularPeriod of publication of the respective document." . 
@@ -911,7 +910,7 @@ ies_core:RepresentationScheme rdf:type rdfs:Class .
 ies_core:RepresentationScheme rdfs:label "Representation Scheme" . 
 ies_core:RepresentationScheme dcterms:identifier "{F014D221-B422-4776-BFFA-21D53AFDE0C6}" . 
 ies_core:RepresentationScheme rdfs:subClassOf ies_core:SetOfRepresentations . 
-ies_core:representationValue rdf:type rdf:Property . 
+ies_core:representationValue rdf:type owl:DatatypeProperty . 
 ies_core:representationValue rdfs:label "representation value" . 
 ies_core:representationValue dcterms:identifier "{344E42F1-2AC3-4fe8-BF30-C78285944484}" . 
 ies_core:representationValue rdfs:comment "The examplar text, number, etc. of a Representation" . 
@@ -933,13 +932,13 @@ ies_core:RoomNumber rdf:type skos:Concept .
 ies_core:RoomNumber rdfs:label "Room Number" . 
 ies_core:RoomNumber dcterms:identifier "{327F0797-A422-4456-806C-5AAA1E954F29}" . 
 ies_core:RoomNumber skos:broader ies_core:GeoIdentity . 
-ies_core:schemeMasteredIn rdf:type rdf:Property . 
+ies_core:schemeMasteredIn rdf:type owl:ObjectProperty . 
 ies_core:schemeMasteredIn rdfs:label "scheme mastered in" . 
 ies_core:schemeMasteredIn dcterms:identifier "{08F7BC6A-0DF3-4bae-8CD9-5EB21E3F6FF1}" . 
 ies_core:schemeMasteredIn rdfs:range ies_core:InformationProcessingSystem . 
 ies_core:schemeMasteredIn rdfs:domain ies_core:NamingScheme . 
 ies_core:schemeMasteredIn rdfs:subPropertyOf ies_top:couple . 
-ies_core:schemeOwner rdf:type rdf:Property . 
+ies_core:schemeOwner rdf:type owl:ObjectProperty . 
 ies_core:schemeOwner rdfs:label "scheme owner" . 
 ies_core:schemeOwner dcterms:identifier "{20D7D2A7-0B41-417a-AFAB-9ECB97DC710E}" . 
 ies_core:schemeOwner rdfs:range ies_core:PersonOrOrganization . 
@@ -1031,7 +1030,7 @@ ies_core:Sign dcterms:identifier "{0600CEF2-32E9-4cbd-899A-1319379AEBAB}" .
 ies_core:Sign rdfs:comment "An individual utterance (e.g. a spoken word, a written word, a drawn or printed symbol, etc.) that signify a State - i.e. uttered in order to refer to something" . 
 ies_core:Sign rdfs:subClassOf ies_top:State . 
 ies_core:Sign ies_top:powertype ies_core:SetOfSigns . 
-ies_core:similarState rdf:type rdf:Property . 
+ies_core:similarState rdf:type owl:ObjectProperty . 
 ies_core:similarState rdfs:label "similar state" . 
 ies_core:similarState dcterms:identifier "{D145D3EF-5D69-4ecd-97BA-47DABD663BB5}" . 
 ies_core:similarState rdfs:subPropertyOf rdf:type . 
@@ -1046,14 +1045,14 @@ ies_core:Skill rdfs:label "Skill" .
 ies_core:Skill dcterms:identifier "{90DE0C27-8EE7-4e15-92A5-031319613DB5}" . 
 ies_core:Skill rdfs:subClassOf ies_core:Capability . 
 ies_core:Skill rdfs:subClassOf ies_core:SetOfPersons . 
-ies_core:spokenLanguage rdf:type rdf:Property . 
+ies_core:spokenLanguage rdf:type owl:ObjectProperty . 
 ies_core:spokenLanguage rdfs:label "spoken language" . 
 ies_core:spokenLanguage dcterms:identifier "{4EFE40AC-08C0-40b7-BC68-B11D0306EE78}" . 
 ies_core:spokenLanguage rdfs:comment "The language in which someone is proficient" . 
 ies_core:spokenLanguage rdfs:range ies_core:Language . 
 ies_core:spokenLanguage rdfs:domain ies_core:LanguageProficiency . 
 ies_core:spokenLanguage rdfs:subPropertyOf ies_top:couple . 
-ies_core:startBoundOfSet rdf:type rdf:Property . 
+ies_core:startBoundOfSet rdf:type owl:ObjectProperty . 
 ies_core:startBoundOfSet rdfs:label "start bound of set" . 
 ies_core:startBoundOfSet dcterms:identifier "{8343BE41-469D-40b8-BFF2-1C3B78488D6F}" . 
 ies_core:startBoundOfSet rdfs:comment "A relationship linking a TimeBoundedClass to the ParticularPeriod that marks the beginning bound date of its instances" . 
@@ -1120,7 +1119,7 @@ ies_core:VersionNumber rdfs:label "Version Number" .
 ies_core:VersionNumber dcterms:identifier "{B9ACF20B-311C-4be0-BFD4-A86912C80692}" . 
 ies_core:VersionNumber rdfs:comment "The number or code that identifies the version of something." . 
 ies_core:VersionNumber rdfs:subClassOf ies_core:Identifier . 
-ies_core:versionOf rdf:type rdf:Property . 
+ies_core:versionOf rdf:type owl:ObjectProperty . 
 ies_core:versionOf rdfs:label "version of" . 
 ies_core:versionOf dcterms:identifier "{3F57B7AC-28B9-445d-BB0B-FE4405A6C933}" . 
 ies_core:versionOf rdfs:comment "A relationship between a VersionOfDocument and the WorkOfDocumentation it is a version of." . 
