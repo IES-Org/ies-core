@@ -637,7 +637,7 @@ ies_core:iso8601PeriodRepresentation rdfs:subPropertyOf ies_core:attribute .
 ies_core:isRepresentedAs rdf:type owl:ObjectProperty . 
 ies_core:isRepresentedAs rdfs:label "is represented as" . 
 ies_core:isRepresentedAs dcterms:identifier "{37400026-3E6B-4960-A8E8-832C55DDB10F}" . 
-ies_core:isRepresentedAs rdfs:comment "A couple that asserts a representation (a set of instances of the same reference), in someway, refers to a thing." . 
+ies_core:isRepresentedAs rdfs:comment "A couple that asserts a Representation is part of another Representation" . 
 ies_core:isRepresentedAs rdfs:subPropertyOf ies_top:couple . 
 ies_core:isRepresentedAs rdfs:range ies_core:Representation . 
 ies_core:Journey rdf:type rdfs:Class . 
