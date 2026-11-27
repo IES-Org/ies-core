@@ -403,9 +403,10 @@ The 4D (extensional) approach gives us a criterion for identifying if two things
 * [Thing](#27c6bcf1-9ffe-4172-ac2c-e32653b43014)
 
 Attributes can be applied to any <i>Thing</i>.
-Attributes are RDF properties whose range is an RDF literal. In almost all cases, these literals will be typed by any XML Schema simple datatype - e.g. xsd:string, xsd:double, xsd:dateTime, etc. (refer to W3C XML Schema specification for the complete list).<ins> </ins>
-Attributes are used sparingly in IES-Core and generally serve as convenient shortcuts for more complex 4D constructs. Whenever an Attribute appears in the model, it reflects a pragmatic decision to simplify implementation while acknowledging that a fuller, more detailed 4D structure exists behind it.
 
+Attributes are RDF properties (specifically, OWL datatype properties). In almost all cases, these literals will be typed by any XML Schema simple datatype - e.g. xsd:string, xsd:double, xsd:dateTime, etc. (refer to W3C XML Schema specification for the complete list).
+
+Attributes are used sparingly in IES-Core and generally serve as convenient shortcuts for more complex 4D constructs. Whenever an Attribute appears in the model, it reflects a pragmatic decision to simplify implementation while acknowledging that a fuller, more detailed 4D structure exists behind it.
 
 ## <a id="f210348a-622d-4fcd-93b1-4445beb53ff2"></a>Source Reference
 ![Source Reference Diagram](diagrams/UML_ID_F210348A_622D_4fcd_93B1_4445BEB53FF2.png)
